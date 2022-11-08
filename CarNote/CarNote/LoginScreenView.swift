@@ -17,9 +17,9 @@ struct LoginScreenView: View {
             ZStack{
                 Color.blue.ignoresSafeArea()
                 Circle().scale(1.7).foregroundColor(.white.opacity(0.15))
-                Circle().scale(1.35).foregroundColor(.white)
+                Circle().scale(1.50).foregroundColor(.white)
                 VStack{
-                    Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100)
+                    Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(Circle())
                         
                     Text("Login").font(.largeTitle).bold().padding()
                     TextField("User Name", text: $username)
@@ -32,17 +32,24 @@ struct LoginScreenView: View {
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                    Button("Login"){}
+                   
+                   
+                    NavigationLink(destination:ProfileView()){ Text("Login")
                         .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
+                        .frame(width: 100, height: 50)
                         .background(Color.blue)
                         .cornerRadius(10)
+                
+                        
+                   NavigationLink(destination:ForgotPasswordView()){
                     Text("Forgot Password")
                         .foregroundColor(.blue)
-                        .frame(width: 300, height: 50)
+                        .frame(width: 200, height: 100)
                         .background(Color.white)
                         .cornerRadius(10)
-
+                        
+                    }
+                    }
                 }
             }
         }

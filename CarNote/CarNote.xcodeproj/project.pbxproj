@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */; };
+		0441B5CB2919D0CA003B386D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CA2919D0CA003B386D /* FirstView.swift */; };
+		0441B5CD2919FB42003B386D /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CC2919FB42003B386D /* VerifView.swift */; };
 		9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455998E2916B3B700DD69A2 /* AppDelegate.swift */; };
 		945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599902916B3B700DD69A2 /* SceneDelegate.swift */; };
 		945599932916B3B700DD69A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599922916B3B700DD69A2 /* ViewController.swift */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		0441B5CA2919D0CA003B386D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		0441B5CC2919FB42003B386D /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
 		9455998B2916B3B700DD69A2 /* CarNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9455998E2916B3B700DD69A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945599902916B3B700DD69A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				9455999F2916B3B800DD69A2 /* Info.plist */,
 				945599972916B3B700DD69A2 /* CarNote.xcdatamodeld */,
 				945599A72916B4FA00DD69A2 /* LoginScreenView.swift */,
+				0441B5CC2919FB42003B386D /* VerifView.swift */,
+				0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */,
+				0441B5CA2919D0CA003B386D /* FirstView.swift */,
 				945599AD2916CB3700DD69A2 /* RegisterView.swift */,
 				945599AF2916CBA400DD69A2 /* ProfileView.swift */,
 				945599B12916CBEA00DD69A2 /* ModifyView.swift */,
@@ -154,12 +163,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				945599A82916B4FA00DD69A2 /* LoginScreenView.swift in Sources */,
+				0441B5CB2919D0CA003B386D /* FirstView.swift in Sources */,
 				945599992916B3B700DD69A2 /* CarNote.xcdatamodeld in Sources */,
 				945599932916B3B700DD69A2 /* ViewController.swift in Sources */,
+				0441B5CD2919FB42003B386D /* VerifView.swift in Sources */,
 				945599AE2916CB3700DD69A2 /* RegisterView.swift in Sources */,
 				9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */,
 				945599B02916CBA400DD69A2 /* ProfileView.swift in Sources */,
 				945599B22916CBEA00DD69A2 /* ModifyView.swift in Sources */,
+				0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */,
 				945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

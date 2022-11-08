@@ -21,7 +21,7 @@ struct RegisterView: View {
             ZStack{
 
                 VStack{
-                    Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100)
+                    Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(Circle()).padding()
                     Text("Register").font(.largeTitle).bold().padding()
                     
                     TextField("First Name", text: $firstName)
@@ -66,14 +66,14 @@ struct RegisterView: View {
                         .background(Color.white)
                         .cornerRadius(10)
                     
-                    Button("Register"){}
+                    NavigationLink(destination:LoginScreenView()){
+                    Text("Register")
                         .foregroundColor(.white)
                         .frame(width: 300, height: 50)
                         .background(Color.blue)
                         .cornerRadius(10)
                     
-
-                }
+                }                }
             }
         }
         .navigationBarHidden(true)
