@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct LoginScreenView: View {
-    @State private var username=""
+    @State private var email=""
     @State private var password=""
-    @State private var wrongUsername=""
-
+    @ObservedObject var viewModel = UserViewModel()
     var body: some View {
         NavigationView{
             ZStack{
@@ -20,50 +19,52 @@ struct LoginScreenView: View {
                 Circle().scale(1.50).foregroundColor(.white)
                 VStack{
                     Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 200, height: 200).clipShape(Circle())
-                        
                     Text("Login").font(.largeTitle).bold().padding()
-                    TextField("User Name", text: $username)
+                    
+                    TextField("email", text: $viewModel.email)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                    TextField("Password", text: $password)
+                    TextField("Password", text: $viewModel.password)
                         .padding()
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
-                   
-                   
-                    NavigationLink(destination:ProfileView()){ Text("Login")
-                        .foregroundColor(.white)
-                        .frame(width: 100, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                
+                    
+                    
+                    NavigationLink(destination:ProfileView()){ Button("Login", action:{
+                        viewModel.LogIn(email: viewModel.email, password: viewModel.password)
+                    })
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                         
-                   NavigationLink(destination:ForgotPasswordView()){
-                    Text("Forgot Password")
-                        .foregroundColor(.blue)
-                        .frame(width: 200, height: 100)
-                        .background(Color.white)
-                        .cornerRadius(10)
                         
-                    }
+                        
+                        NavigationLink(destination:ForgotPasswordView()){
+                            Text("Forgot Password")
+                                .foregroundColor(.blue)
+                                .frame(width: 200, height: 100)
+                                .background(Color.white)
+                                .cornerRadius(10)
+                            
+                        }
                     }
                 }
-            }
+            } .navigationBarHidden(true)
+            
         }
-        .navigationBarHidden(true)
         
     }
     
-}
-
-struct LoginScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            LoginScreenView()
-                .previewInterfaceOrientation(.portrait)
+    struct LoginScreenView_Previews: PreviewProvider {
+        static var previews: some View {
+            Group {
+                LoginScreenView()
+                    .previewInterfaceOrientation(.portrait)
+            }
         }
     }
 }

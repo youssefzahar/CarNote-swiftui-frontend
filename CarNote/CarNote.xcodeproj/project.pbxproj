@@ -10,6 +10,9 @@
 		0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */; };
 		0441B5CB2919D0CA003B386D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CA2919D0CA003B386D /* FirstView.swift */; };
 		0441B5CD2919FB42003B386D /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CC2919FB42003B386D /* VerifView.swift */; };
+		04989ED1291FEE740041FF59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989ED0291FEE740041FF59 /* User.swift */; };
+		04989ED4291FEECA0041FF59 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989ED3291FEECA0041FF59 /* UserViewModel.swift */; };
+		04989ED7291FF9A60041FF59 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04989ED6291FF9A60041FF59 /* Alamofire */; };
 		9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455998E2916B3B700DD69A2 /* AppDelegate.swift */; };
 		945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599902916B3B700DD69A2 /* SceneDelegate.swift */; };
 		945599932916B3B700DD69A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599922916B3B700DD69A2 /* ViewController.swift */; };
@@ -27,6 +30,8 @@
 		0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		0441B5CA2919D0CA003B386D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		0441B5CC2919FB42003B386D /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
+		04989ED0291FEE740041FF59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04989ED3291FEECA0041FF59 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9455998B2916B3B700DD69A2 /* CarNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9455998E2916B3B700DD69A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		945599902916B3B700DD69A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,12 +52,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04989ED7291FF9A60041FF59 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04989ECF291FEE2D0041FF59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04989ED0291FEE740041FF59 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04989ED2291FEE7C0041FF59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04989ED3291FEECA0041FF59 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		945599822916B3B700DD69A2 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +94,8 @@
 		9455998D2916B3B700DD69A2 /* CarNote */ = {
 			isa = PBXGroup;
 			children = (
+				04989ED2291FEE7C0041FF59 /* ViewModel */,
+				04989ECF291FEE2D0041FF59 /* Model */,
 				9455998E2916B3B700DD69A2 /* AppDelegate.swift */,
 				945599902916B3B700DD69A2 /* SceneDelegate.swift */,
 				945599922916B3B700DD69A2 /* ViewController.swift */,
@@ -107,6 +131,9 @@
 			dependencies = (
 			);
 			name = CarNote;
+			packageProductDependencies = (
+				04989ED6291FF9A60041FF59 /* Alamofire */,
+			);
 			productName = CarNote;
 			productReference = 9455998B2916B3B700DD69A2 /* CarNote.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 945599822916B3B700DD69A2;
+			packageReferences = (
+				04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 9455998C2916B3B700DD69A2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -170,6 +200,8 @@
 				945599AE2916CB3700DD69A2 /* RegisterView.swift in Sources */,
 				9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */,
 				945599B02916CBA400DD69A2 /* ProfileView.swift in Sources */,
+				04989ED1291FEE740041FF59 /* User.swift in Sources */,
+				04989ED4291FEECA0041FF59 /* UserViewModel.swift in Sources */,
 				945599B22916CBEA00DD69A2 /* ModifyView.swift in Sources */,
 				0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */,
 				945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */,
@@ -319,7 +351,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 953V584L2D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarNote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -347,7 +379,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 953V584L2D;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CarNote/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -390,6 +422,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04989ED6291FF9A60041FF59 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		945599972916B3B700DD69A2 /* CarNote.xcdatamodeld */ = {
