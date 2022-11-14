@@ -40,17 +40,14 @@ struct LoginScreenView: View {
                                 .frame(width: 100, height: 50)
                                 .background(Color.blue)
                                 .cornerRadius(10)
-                            
-                            
-                            
-                            NavigationLink(destination:ForgotPasswordView()){
-                                Text("Forgot Password")
-                                    .foregroundColor(.blue)
-                                    .frame(width: 200, height: 100)
-                                    .background(Color.white)
-                                    .cornerRadius(10)
-                                
+                               
                             }
+                        NavigationLink(destination:ForgotPasswordView()){
+                            Text("Forgot Password")
+                                .foregroundColor(.blue)
+                                .frame(width: 200, height: 100)
+                                .background(Color.white)
+                                .cornerRadius(10)
                         }
                     }
                 } .navigationBarHidden(true)

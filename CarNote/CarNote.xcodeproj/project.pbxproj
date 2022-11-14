@@ -3,240 +3,219 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 55;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */; };
-		0441B5CB2919D0CA003B386D /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CA2919D0CA003B386D /* FirstView.swift */; };
-		0441B5CD2919FB42003B386D /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0441B5CC2919FB42003B386D /* VerifView.swift */; };
-		04989ED1291FEE740041FF59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989ED0291FEE740041FF59 /* User.swift */; };
-		04989ED4291FEECA0041FF59 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989ED3291FEECA0041FF59 /* UserViewModel.swift */; };
-		04989ED7291FF9A60041FF59 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04989ED6291FF9A60041FF59 /* Alamofire */; };
-		9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9455998E2916B3B700DD69A2 /* AppDelegate.swift */; };
-		945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599902916B3B700DD69A2 /* SceneDelegate.swift */; };
-		945599932916B3B700DD69A2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599922916B3B700DD69A2 /* ViewController.swift */; };
-		945599962916B3B700DD69A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945599942916B3B700DD69A2 /* Main.storyboard */; };
-		945599992916B3B700DD69A2 /* CarNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 945599972916B3B700DD69A2 /* CarNote.xcdatamodeld */; };
-		9455999B2916B3B800DD69A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9455999A2916B3B800DD69A2 /* Assets.xcassets */; };
-		9455999E2916B3B800DD69A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9455999C2916B3B800DD69A2 /* LaunchScreen.storyboard */; };
-		945599A82916B4FA00DD69A2 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599A72916B4FA00DD69A2 /* LoginScreenView.swift */; };
-		945599AE2916CB3700DD69A2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599AD2916CB3700DD69A2 /* RegisterView.swift */; };
-		945599B02916CBA400DD69A2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599AF2916CBA400DD69A2 /* ProfileView.swift */; };
-		945599B22916CBEA00DD69A2 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945599B12916CBEA00DD69A2 /* ModifyView.swift */; };
+		04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F7729202E7D0041FF59 /* carNoteApp.swift */; };
+		04989F7A29202E7D0041FF59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F7929202E7D0041FF59 /* ContentView.swift */; };
+		04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04989F7B29202E7E0041FF59 /* Assets.xcassets */; };
+		04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04989F7E29202E7E0041FF59 /* Preview Assets.xcassets */; };
+		04989F8129202E7E0041FF59 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F8029202E7E0041FF59 /* Persistence.swift */; };
+		04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04989F8229202E7E0041FF59 /* carNote.xcdatamodeld */; };
+		04989F9129202F6A0041FF59 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9029202F6A0041FF59 /* User.swift */; };
+		04989F9329202F940041FF59 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9229202F940041FF59 /* UserViewModel.swift */; };
+		04989F9529202FBE0041FF59 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */; };
+		04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9629202FE20041FF59 /* LoginScreenView.swift */; };
+		04989F9929202FFC0041FF59 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9829202FFC0041FF59 /* ModifyView.swift */; };
+		04989F9B292030130041FF59 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9A292030130041FF59 /* ProfileView.swift */; };
+		04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9C2920302C0041FF59 /* RegisterView.swift */; };
+		04989F9F2920305F0041FF59 /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9E2920305F0041FF59 /* VerifView.swift */; };
+		04989FA2292030F70041FF59 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04989FA1292030F70041FF59 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
-		0441B5CA2919D0CA003B386D /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
-		0441B5CC2919FB42003B386D /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
-		04989ED0291FEE740041FF59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		04989ED3291FEECA0041FF59 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		9455998B2916B3B700DD69A2 /* CarNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		9455998E2916B3B700DD69A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		945599902916B3B700DD69A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		945599922916B3B700DD69A2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		945599952916B3B700DD69A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		945599982916B3B700DD69A2 /* CarNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CarNote.xcdatamodel; sourceTree = "<group>"; };
-		9455999A2916B3B800DD69A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9455999D2916B3B800DD69A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		9455999F2916B3B800DD69A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		945599A72916B4FA00DD69A2 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		945599AD2916CB3700DD69A2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
-		945599AF2916CBA400DD69A2 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		945599B12916CBEA00DD69A2 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
+		04989F7429202E7D0041FF59 /* carNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04989F7729202E7D0041FF59 /* carNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carNoteApp.swift; sourceTree = "<group>"; };
+		04989F7929202E7D0041FF59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		04989F7B29202E7E0041FF59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		04989F7E29202E7E0041FF59 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		04989F8029202E7E0041FF59 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		04989F8329202E7E0041FF59 /* carNote.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = carNote.xcdatamodel; sourceTree = "<group>"; };
+		04989F9029202F6A0041FF59 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		04989F9229202F940041FF59 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		04989F9629202FE20041FF59 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
+		04989F9829202FFC0041FF59 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
+		04989F9A292030130041FF59 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		04989F9C2920302C0041FF59 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		04989F9E2920305F0041FF59 /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		945599882916B3B700DD69A2 /* Frameworks */ = {
+		04989F7129202E7D0041FF59 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04989ED7291FF9A60041FF59 /* Alamofire in Frameworks */,
+				04989FA2292030F70041FF59 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		04989ECF291FEE2D0041FF59 /* Model */ = {
+		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
-				04989ED0291FEE740041FF59 /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		04989ED2291FEE7C0041FF59 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				04989ED3291FEECA0041FF59 /* UserViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		945599822916B3B700DD69A2 = {
-			isa = PBXGroup;
-			children = (
-				9455998D2916B3B700DD69A2 /* CarNote */,
-				9455998C2916B3B700DD69A2 /* Products */,
+				04989F7629202E7D0041FF59 /* carNote */,
+				04989F7529202E7D0041FF59 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		9455998C2916B3B700DD69A2 /* Products */ = {
+		04989F7529202E7D0041FF59 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9455998B2916B3B700DD69A2 /* CarNote.app */,
+				04989F7429202E7D0041FF59 /* carNote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9455998D2916B3B700DD69A2 /* CarNote */ = {
+		04989F7629202E7D0041FF59 /* carNote */ = {
 			isa = PBXGroup;
 			children = (
-				04989ED2291FEE7C0041FF59 /* ViewModel */,
-				04989ECF291FEE2D0041FF59 /* Model */,
-				9455998E2916B3B700DD69A2 /* AppDelegate.swift */,
-				945599902916B3B700DD69A2 /* SceneDelegate.swift */,
-				945599922916B3B700DD69A2 /* ViewController.swift */,
-				945599942916B3B700DD69A2 /* Main.storyboard */,
-				9455999A2916B3B800DD69A2 /* Assets.xcassets */,
-				9455999C2916B3B800DD69A2 /* LaunchScreen.storyboard */,
-				9455999F2916B3B800DD69A2 /* Info.plist */,
-				945599972916B3B700DD69A2 /* CarNote.xcdatamodeld */,
-				945599A72916B4FA00DD69A2 /* LoginScreenView.swift */,
-				0441B5CC2919FB42003B386D /* VerifView.swift */,
-				0441B5C82919BAD7003B386D /* ForgotPasswordView.swift */,
-				0441B5CA2919D0CA003B386D /* FirstView.swift */,
-				945599AD2916CB3700DD69A2 /* RegisterView.swift */,
-				945599AF2916CBA400DD69A2 /* ProfileView.swift */,
-				945599B12916CBEA00DD69A2 /* ModifyView.swift */,
+				04989F8F29202F410041FF59 /* ViewModel */,
+				04989F8E29202F360041FF59 /* Model */,
+				04989F7729202E7D0041FF59 /* carNoteApp.swift */,
+				04989F7929202E7D0041FF59 /* ContentView.swift */,
+				04989F7B29202E7E0041FF59 /* Assets.xcassets */,
+				04989F8029202E7E0041FF59 /* Persistence.swift */,
+				04989F8229202E7E0041FF59 /* carNote.xcdatamodeld */,
+				04989F7D29202E7E0041FF59 /* Preview Content */,
+				04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */,
+				04989F9629202FE20041FF59 /* LoginScreenView.swift */,
+				04989F9829202FFC0041FF59 /* ModifyView.swift */,
+				04989F9A292030130041FF59 /* ProfileView.swift */,
+				04989F9C2920302C0041FF59 /* RegisterView.swift */,
+				04989F9E2920305F0041FF59 /* VerifView.swift */,
 			);
-			path = CarNote;
+			path = carNote;
+			sourceTree = "<group>";
+		};
+		04989F7D29202E7E0041FF59 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				04989F7E29202E7E0041FF59 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		04989F8E29202F360041FF59 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04989F9029202F6A0041FF59 /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04989F8F29202F410041FF59 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04989F9229202F940041FF59 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9455998A2916B3B700DD69A2 /* CarNote */ = {
+		04989F7329202E7D0041FF59 /* carNote */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 945599A22916B3B800DD69A2 /* Build configuration list for PBXNativeTarget "CarNote" */;
+			buildConfigurationList = 04989F8729202E7E0041FF59 /* Build configuration list for PBXNativeTarget "carNote" */;
 			buildPhases = (
-				945599872916B3B700DD69A2 /* Sources */,
-				945599882916B3B700DD69A2 /* Frameworks */,
-				945599892916B3B700DD69A2 /* Resources */,
+				04989F7029202E7D0041FF59 /* Sources */,
+				04989F7129202E7D0041FF59 /* Frameworks */,
+				04989F7229202E7D0041FF59 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = CarNote;
+			name = carNote;
 			packageProductDependencies = (
-				04989ED6291FF9A60041FF59 /* Alamofire */,
+				04989FA1292030F70041FF59 /* Alamofire */,
 			);
-			productName = CarNote;
-			productReference = 9455998B2916B3B700DD69A2 /* CarNote.app */;
+			productName = carNote;
+			productReference = 04989F7429202E7D0041FF59 /* carNote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		945599832916B3B700DD69A2 /* Project object */ = {
+		04989F6C29202E7D0041FF59 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					9455998A2916B3B700DD69A2 = {
-						CreatedOnToolsVersion = 13.3;
+					04989F7329202E7D0041FF59 = {
+						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = 945599862916B3B700DD69A2 /* Build configuration list for PBXProject "CarNote" */;
-			compatibilityVersion = "Xcode 13.0";
+			buildConfigurationList = 04989F6F29202E7D0041FF59 /* Build configuration list for PBXProject "carNote" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 945599822916B3B700DD69A2;
+			mainGroup = 04989F6B29202E7D0041FF59;
 			packageReferences = (
-				04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
-			productRefGroup = 9455998C2916B3B700DD69A2 /* Products */;
+			productRefGroup = 04989F7529202E7D0041FF59 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9455998A2916B3B700DD69A2 /* CarNote */,
+				04989F7329202E7D0041FF59 /* carNote */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		945599892916B3B700DD69A2 /* Resources */ = {
+		04989F7229202E7D0041FF59 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9455999E2916B3B800DD69A2 /* LaunchScreen.storyboard in Resources */,
-				9455999B2916B3B800DD69A2 /* Assets.xcassets in Resources */,
-				945599962916B3B700DD69A2 /* Main.storyboard in Resources */,
+				04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */,
+				04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		945599872916B3B700DD69A2 /* Sources */ = {
+		04989F7029202E7D0041FF59 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				945599A82916B4FA00DD69A2 /* LoginScreenView.swift in Sources */,
-				0441B5CB2919D0CA003B386D /* FirstView.swift in Sources */,
-				945599992916B3B700DD69A2 /* CarNote.xcdatamodeld in Sources */,
-				945599932916B3B700DD69A2 /* ViewController.swift in Sources */,
-				0441B5CD2919FB42003B386D /* VerifView.swift in Sources */,
-				945599AE2916CB3700DD69A2 /* RegisterView.swift in Sources */,
-				9455998F2916B3B700DD69A2 /* AppDelegate.swift in Sources */,
-				945599B02916CBA400DD69A2 /* ProfileView.swift in Sources */,
-				04989ED1291FEE740041FF59 /* User.swift in Sources */,
-				04989ED4291FEECA0041FF59 /* UserViewModel.swift in Sources */,
-				945599B22916CBEA00DD69A2 /* ModifyView.swift in Sources */,
-				0441B5C92919BAD7003B386D /* ForgotPasswordView.swift in Sources */,
-				945599912916B3B700DD69A2 /* SceneDelegate.swift in Sources */,
+				04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */,
+				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
+				04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */,
+				04989F9529202FBE0041FF59 /* ForgotPasswordView.swift in Sources */,
+				04989F9B292030130041FF59 /* ProfileView.swift in Sources */,
+				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
+				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
+				04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */,
+				04989F9929202FFC0041FF59 /* ModifyView.swift in Sources */,
+				04989F7A29202E7D0041FF59 /* ContentView.swift in Sources */,
+				04989F9129202F6A0041FF59 /* User.swift in Sources */,
+				04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		945599942916B3B700DD69A2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				945599952916B3B700DD69A2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9455999C2916B3B800DD69A2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9455999D2916B3B800DD69A2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		945599A02916B3B800DD69A2 /* Debug */ = {
+		04989F8529202E7E0041FF59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -280,7 +259,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -290,13 +269,13 @@
 			};
 			name = Debug;
 		};
-		945599A12916B3B800DD69A2 /* Release */ = {
+		04989F8629202E7E0041FF59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -334,7 +313,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -344,19 +323,19 @@
 			};
 			name = Release;
 		};
-		945599A32916B3B800DD69A2 /* Debug */ = {
+		04989F8829202E7E0041FF59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "\"carNote/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CarNote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -364,7 +343,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = esprit.tn.CarNote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.carNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -372,19 +351,19 @@
 			};
 			name = Debug;
 		};
-		945599A42916B3B800DD69A2 /* Release */ = {
+		04989F8929202E7E0041FF59 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "\"carNote/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CarNote/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -392,7 +371,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = esprit.tn.CarNote;
+				PRODUCT_BUNDLE_IDENTIFIER = com.esprit.carNote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -403,20 +382,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		945599862916B3B700DD69A2 /* Build configuration list for PBXProject "CarNote" */ = {
+		04989F6F29202E7D0041FF59 /* Build configuration list for PBXProject "carNote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				945599A02916B3B800DD69A2 /* Debug */,
-				945599A12916B3B800DD69A2 /* Release */,
+				04989F8529202E7E0041FF59 /* Debug */,
+				04989F8629202E7E0041FF59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		945599A22916B3B800DD69A2 /* Build configuration list for PBXNativeTarget "CarNote" */ = {
+		04989F8729202E7E0041FF59 /* Build configuration list for PBXNativeTarget "carNote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				945599A32916B3B800DD69A2 /* Debug */,
-				945599A42916B3B800DD69A2 /* Release */,
+				04989F8829202E7E0041FF59 /* Debug */,
+				04989F8929202E7E0041FF59 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -424,36 +403,36 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
+				branch = master;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		04989ED6291FF9A60041FF59 /* Alamofire */ = {
+		04989FA1292030F70041FF59 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04989ED5291FF9A60041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		945599972916B3B700DD69A2 /* CarNote.xcdatamodeld */ = {
+		04989F8229202E7E0041FF59 /* carNote.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				945599982916B3B700DD69A2 /* CarNote.xcdatamodel */,
+				04989F8329202E7E0041FF59 /* carNote.xcdatamodel */,
 			);
-			currentVersion = 945599982916B3B700DD69A2 /* CarNote.xcdatamodel */;
-			path = CarNote.xcdatamodeld;
+			currentVersion = 04989F8329202E7E0041FF59 /* carNote.xcdatamodel */;
+			path = carNote.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
 	};
-	rootObject = 945599832916B3B700DD69A2 /* Project object */;
+	rootObject = 04989F6C29202E7D0041FF59 /* Project object */;
 }

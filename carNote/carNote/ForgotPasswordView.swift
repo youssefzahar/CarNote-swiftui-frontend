@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State private var email=""
+    @ObservedObject var viewModel = UserViewModel()
         
         var body: some View {
             ZStack{
@@ -31,22 +32,28 @@ struct ForgotPasswordView: View {
                
                 HStack{
                     Spacer()
-                    TextField("email", text: $email)
+                    TextField("email", text: $viewModel.email)
                         .padding(.all)
                         .frame(width: 300, height: 50)
                         .background(Color.black.opacity(0.05))
                         .cornerRadius(10)
                     Spacer()
+                   
                     
                    
                 }
+                
                 HStack{
                     
-                    Text("Submit")
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
+                     Button("Submit", action:{
+                        viewModel.ResetPassword(email: viewModel.email)
+                    })
+                            .foregroundColor(.white)
+                            .frame(width: 100, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                           
+                        
 
             }
             }
