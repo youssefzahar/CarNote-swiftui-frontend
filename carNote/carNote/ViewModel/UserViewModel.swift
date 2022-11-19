@@ -7,6 +7,8 @@
 
 import Foundation
 import Alamofire
+import  PhotosUI
+
 class UserViewModel: ObservableObject {
 
     static let sharedInstance = UserViewModel()
@@ -17,8 +19,10 @@ class UserViewModel: ObservableObject {
     var cin:String = ""
     var role:String = ""
     var phone_number:String = ""
-    var image:String = ""
+    var image:UIImage?
     var emailToken:String = ""
+
+    var url:String = "http://172.17.0.166:3000/api/user/"
 
     
     func LogIn(email: String,password: String) {
@@ -26,7 +30,7 @@ class UserViewModel: ObservableObject {
             "username": email,
             "password": password
         ]
-        AF.request("http://172.17.5.248:3000/api/user/login" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"login" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -52,7 +56,7 @@ class UserViewModel: ObservableObject {
             "role":role,
             "image":image
         ]
-        AF.request("http://172.17.5.248:3000/api/user/register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -69,7 +73,7 @@ class UserViewModel: ObservableObject {
         let parametres: [String: Any] = [
             "token":emailToken
         ]
-        AF.request("http://172.17.5.248:3000/api/user/verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -86,7 +90,7 @@ class UserViewModel: ObservableObject {
         let parametres: [String: Any] = [
             "username": email
         ]
-        AF.request("http://172.17.5.248:3000/api/user/forgotPassword" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"forgotPassword" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -101,15 +105,12 @@ class UserViewModel: ObservableObject {
 
     }
     
-    func UpdateUser(email: String) {
+    
+    func DeleteUser(email: String) {
         let parametres: [String: Any] = [
-            "first_name": first_name,
-            "last_name": last_name,
-            "cin":cin,
-            "phone_number":phone_number,
-            "role":role,
+            "userId": email
         ]
-        AF.request("http://172.17.5.248:3000/api/user/update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"delete" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -122,5 +123,52 @@ class UserViewModel: ObservableObject {
         
 
     }
+    
+    
+       func UpdateUser(email: String ,first_name:String, last_name:String, phone_number:String,image:UIImage) {
+        let parametres: [String: Any] = [
+            "userId": email,
+            "first_name": first_name,
+            "last_name": last_name,
+            "phone_number":phone_number,
+            "image":image
+
+       
+             ]
+        AF.request(url+"update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+            .responseJSON {
+                (response) in
+                switch response.result {
+                case .success(let JSON):
+                    print("success \(JSON)")
+                case .failure(let error):
+                    print("request failed \(error)")
+                }
+            }
+    }
+    
+    
+    func ShowUser(email: String ,first_name:String, last_name:String, phone_number:String, image:UIImage) {
+     let parametres: [String: Any] = [
+         "userId": email,
+          ]
+        
+        
+
+     AF.request(url+"show" , method: .get,parameters: parametres,encoding: JSONEncoding.default)
+         .responseJSON {
+             (response) in
+             switch response.result {
+             case .success(let JSON):
+                 print("success \(JSON)")
+             case .failure(let error):
+                 print("request failed \(error)")
+             }
+         }
+ }
+    
+    
+    
+    
 
 }

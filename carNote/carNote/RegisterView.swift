@@ -83,7 +83,7 @@ struct RegisterView: View {
                         
                         
                         NavigationLink(destination:VerifView()){
-                            Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, cin:viewModel.cin, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role,  image:viewModel.image)
+                            Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, cin:viewModel.cin, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role,  image:viewModel.image?)
                                                     
                                                 })
                                                         .foregroundColor(.white)

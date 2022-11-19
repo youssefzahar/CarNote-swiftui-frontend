@@ -39,7 +39,6 @@ struct VerifView: View { @State private var email=""
                 
                
                 
-                NavigationLink(destination:ProfileView()){
                 
                 
                 Button("Submit", action:{
@@ -50,7 +49,7 @@ struct VerifView: View { @State private var email=""
                 .background(Color.blue)
                 .cornerRadius(10)
                 
-            }
+            
         }
         }
         }

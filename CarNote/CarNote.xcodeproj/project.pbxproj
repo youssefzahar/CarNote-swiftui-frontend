@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04100ECC29293089004E124C /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04100ECB29293089004E124C /* ImagePickerView.swift */; };
 		04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F7729202E7D0041FF59 /* carNoteApp.swift */; };
 		04989F7A29202E7D0041FF59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F7929202E7D0041FF59 /* ContentView.swift */; };
 		04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04989F7B29202E7E0041FF59 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04100ECB29293089004E124C /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		04989F7429202E7D0041FF59 /* carNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04989F7729202E7D0041FF59 /* carNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carNoteApp.swift; sourceTree = "<group>"; };
 		04989F7929202E7D0041FF59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
+				04100ECB29293089004E124C /* ImagePickerView.swift */,
 				04989F7629202E7D0041FF59 /* carNote */,
 				04989F7529202E7D0041FF59 /* Products */,
 			);
@@ -200,6 +203,7 @@
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
 				04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */,
 				04989F9929202FFC0041FF59 /* ModifyView.swift in Sources */,
+				04100ECC29293089004E124C /* ImagePickerView.swift in Sources */,
 				04989F7A29202E7D0041FF59 /* ContentView.swift in Sources */,
 				04989F9129202F6A0041FF59 /* User.swift in Sources */,
 				04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */,

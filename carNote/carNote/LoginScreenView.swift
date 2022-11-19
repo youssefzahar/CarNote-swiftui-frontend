@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginScreenView: View {
+   
     @State private var email=""
         @State private var password=""
         @ObservedObject var viewModel = UserViewModel()
@@ -33,7 +34,7 @@ struct LoginScreenView: View {
                             .cornerRadius(10)
                         
                         
-                        NavigationLink(destination:ProfileView()){ Button("Login", action:{
+                        NavigationLink(destination:ProfileView(email:$email)){ Button("Login", action:{
                             viewModel.LogIn(email: viewModel.email, password: viewModel.password)
                         })
                                 .foregroundColor(.white)
