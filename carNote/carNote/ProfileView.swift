@@ -35,6 +35,13 @@ struct ProfileView: View {
                     .frame(width: 200, height: 50)
      
                 }
+                
+                NavigationLink(destination:LoginScreenView()){ Text("Logout")
+                    .foregroundColor(.blue)
+                    .frame(width: 200, height: 50)
+     
+                }
+
 
             }
             }

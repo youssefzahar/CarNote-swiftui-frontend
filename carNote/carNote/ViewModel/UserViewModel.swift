@@ -26,7 +26,7 @@ class UserViewModel: ObservableObject {
             "username": email,
             "password": password
         ]
-        AF.request("http://172.17.8.25:3000/api/user/login" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request("http://172.17.5.248:3000/api/user/login" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -52,7 +52,7 @@ class UserViewModel: ObservableObject {
             "role":role,
             "image":image
         ]
-        AF.request("http://172.17.8.25:3000/api/user/register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request("http://172.17.5.248:3000/api/user/register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -69,7 +69,7 @@ class UserViewModel: ObservableObject {
         let parametres: [String: Any] = [
             "token":emailToken
         ]
-        AF.request("http://172.17.8.25:3000/api/user/verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request("http://172.17.5.248:3000/api/user/verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -86,13 +86,35 @@ class UserViewModel: ObservableObject {
         let parametres: [String: Any] = [
             "username": email
         ]
-        AF.request("http://172.17.8.25:3000/api/user/forgotPassword" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request("http://172.17.5.248:3000/api/user/forgotPassword" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
                 case .success(let JSON):
                     print("success \(JSON)")
                     print("email : ",email)
+                case .failure(let error):
+                    print("request failed \(error)")
+                }
+            }
+        
+
+    }
+    
+    func UpdateUser(email: String) {
+        let parametres: [String: Any] = [
+            "first_name": first_name,
+            "last_name": last_name,
+            "cin":cin,
+            "phone_number":phone_number,
+            "role":role,
+        ]
+        AF.request("http://172.17.5.248:3000/api/user/update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+            .responseJSON {
+                (response) in
+                switch response.result {
+                case .success(let JSON):
+                    print("success \(JSON)")
                 case .failure(let error):
                     print("request failed \(error)")
                 }

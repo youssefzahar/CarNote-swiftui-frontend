@@ -37,15 +37,20 @@ struct VerifView: View { @State private var email=""
           
             HStack{
                 
+               
+                
+                NavigationLink(destination:ProfileView()){
+                
+                
                 Button("Submit", action:{
                     viewModel.VerifyAccount(emailToken: viewModel.emailToken)
                 })
-                        .foregroundColor(.white)
-                        .frame(width: 100, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                       
-                    
+                .foregroundColor(.white)
+                .frame(width: 100, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                
+            }
         }
         }
         }

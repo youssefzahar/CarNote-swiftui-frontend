@@ -42,6 +42,15 @@ struct LoginScreenView: View {
                                 .cornerRadius(10)
                                
                             }
+                        NavigationLink(destination:RegisterView()){
+                        
+                        
+                        Text("Sign up")                .foregroundColor(.white)
+                        .frame(width: 100, height: 50)
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                        
+                    }
                         NavigationLink(destination:ForgotPasswordView()){
                             Text("Forgot Password")
                                 .foregroundColor(.blue)
