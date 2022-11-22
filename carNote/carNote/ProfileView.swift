@@ -25,8 +25,8 @@ struct ProfileView: View {
          
                 HStack{
                     Spacer()
-                    Text("foulen").foregroundColor(.blue).font(.title).padding()
-                    Text("Ben foulen").foregroundColor(.blue).font(.title).padding()
+                    Text(viewModel.first_name).foregroundColor(.blue).font(.title).padding()
+                    Text(viewModel.last_name).foregroundColor(.blue).font(.title).padding()
                     Spacer()
                 }
              
@@ -68,6 +68,10 @@ struct ProfileView: View {
             }
             }
             .navigationBarHidden(true)
+            .onAppear(){
+                let user = viewModel
+
+            }
             
         }
     }

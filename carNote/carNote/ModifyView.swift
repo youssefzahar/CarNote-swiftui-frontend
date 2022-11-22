@@ -100,7 +100,7 @@ struct ModifyView: View {
                         
                         NavigationLink(destination:ProfileView(email:$email)){ Button("Save Profile", action:{
                             viewModel.UpdateUser(email: viewModel.email,first_name:viewModel.first_name, last_name:viewModel.last_name, phone_number:viewModel.phone_number,
-                                                 image:viewModel.image!)
+                                                 image:viewModel.image)  //image!)
                         })
                                 .foregroundColor(.white)
                                 .frame(width: 100, height: 50)

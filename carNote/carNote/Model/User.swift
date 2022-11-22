@@ -6,7 +6,7 @@
 //
 
 import Foundation
- import  PhotosUI
+// import  PhotosUI
 
 struct User{
   
@@ -20,11 +20,12 @@ struct User{
     var phone_number: String
     var  emailToken: String
     var isVerified: Bool
-    var image: UIImage
+    //var image: UIImage
+    var image : String
     var  createdAt: String
     var  updatedAt: String
     
-    init(_id: String,first_name: String,last_name: String,cin: String,email: String,password: String,role: String,phone_number: String,emailToken: String,isVerified: Bool,image: UIImage,createdAt: String,updatedAt: String){
+   init(_id: String,first_name: String,last_name: String,cin: String,email: String,password: String,role: String,phone_number: String,emailToken: String,isVerified: Bool,image: String,createdAt: String,updatedAt: String){
         self._id=_id
         self.first_name=first_name
         self.last_name=last_name
@@ -39,5 +40,9 @@ struct User{
         self.createdAt=createdAt
         self.updatedAt=updatedAt
     }
+    
+    
+    
+   
     
 }

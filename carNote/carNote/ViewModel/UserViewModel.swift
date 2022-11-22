@@ -9,6 +9,7 @@ import Foundation
 import Alamofire
 import  PhotosUI
 
+
 class UserViewModel: ObservableObject {
 
     static let sharedInstance = UserViewModel()
@@ -19,13 +20,16 @@ class UserViewModel: ObservableObject {
     var cin:String = ""
     var role:String = ""
     var phone_number:String = ""
-    var image:UIImage?
+   // var image:UIImage?
     var emailToken:String = ""
+    var image:String=""
+   // static var currentUser: User?
+    
 
-    var url:String = "http://172.17.0.166:3000/api/user/"
+    var url:String = "http://172.17.14.228:3000/api/user/"
 
     
-    func LogIn(email: String,password: String) {
+    func LogIn(email: String,password: String){ //complited: @escaping(User?)-> Void) {
         let parametres: [String: Any] = [
             "username": email,
             "password": password
@@ -35,6 +39,28 @@ class UserViewModel: ObservableObject {
                 (response) in
                 switch response.result {
                 case .success(let JSON):
+                   /* let response = JSON as! NSDictionary
+                    let userResponse = response.object(forKey: "user") as! NSDictionary
+                    let email = response.object(forKey: "email") as? String ?? ""
+                    let  first_name = response.object(forKey: "firstname") as? String ?? ""
+                    let  last_name = response.object(forKey: "lastname") as? String ?? ""
+                    let  phone_number = response.object(forKey: "phonenumber") as? String ?? ""
+                    let  _id = response.object(forKey: "_id") as? String ?? ""
+
+                    print("success /(email)")
+                    print("success /(first_name)")
+                    print("success /(last_name)")
+                    print("success /(phone_number)")
+                    var currentUser = User(_id:_id,first_name:first_name, last_name:last_name ,email:email, phone_number:phone_number)
+                    currentUser._id=_id
+                    self.currentUser = currentUser
+
+*/
+
+
+                    
+
+                    
                     print("success \(JSON)")
                 case .failure(let error):
                     print("request failed \(error)")
@@ -125,7 +151,7 @@ class UserViewModel: ObservableObject {
     }
     
     
-       func UpdateUser(email: String ,first_name:String, last_name:String, phone_number:String,image:UIImage) {
+       func UpdateUser(email: String ,first_name:String, last_name:String, phone_number:String,image:String) {
         let parametres: [String: Any] = [
             "userId": email,
             "first_name": first_name,
@@ -148,7 +174,7 @@ class UserViewModel: ObservableObject {
     }
     
     
-    func ShowUser(email: String ,first_name:String, last_name:String, phone_number:String, image:UIImage) {
+    func ShowUser(email: String ,first_name:String, last_name:String, phone_number:String, image:String) {
      let parametres: [String: Any] = [
          "userId": email,
           ]
