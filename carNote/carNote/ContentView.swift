@@ -2,43 +2,39 @@
 //  ContentView.swift
 //  carNote
 //
-//  Created by youssef-mariem on 12/11/2022.
+//  Created by youssef-mariem on 25/11/2022.
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    
-    
+    @StateObject var cartManager = CartManager()
+    var columns = [GridItem(.adaptive(minimum: 150), spacing: 30)]
     var body: some View {
-        TabView {
-            ShopUIView()
-                .tabItem{
-                    Image(systemName: "cart")
-                    Text("Shop")
+        NavigationView{
+            ScrollView{
+                LazyVGrid(columns: columns, spacing: 20){
+                    ForEach(productList, id: \.id) {
+                        product in ProductCard(product : product)
+                            .environmentObject(cartManager)
+                    }
                 }
-            StatistiqueUIView().tabItem{
-                Image(systemName: "chart.xyaxis.line")
-                Text("Stat")
+                .padding()
             }
-            AddCarUIView() .tabItem{
-                Image(systemName: "plus.circle.fill")
-                Text("Add")
+            .navigationTitle(Text("Product Shop"))
+            .toolbar{
+                NavigationLink{
+                    CartView()
+                        .environmentObject(cartManager)
+                } label: {
+                    CartButton(numberOfProducts: cartManager.products.count)
+                    
+                }
             }
-            ChatUIView()  .tabItem{
-                Image(systemName: "bolt.horizontal.circle.fill")
-                Text("Chat")
             }
-            UserProfileView()
-                .tabItem{
-                Image(systemName: "person")
-                Text("Account")
-            }
-            
-            
+        .navigationViewStyle(StackNavigationViewStyle())
         }
-    }
+   
 }
 
 struct ContentView_Previews: PreviewProvider {

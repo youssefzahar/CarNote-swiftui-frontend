@@ -16,7 +16,7 @@ class CarViewModel : ObservableObject{
     var modele: String = ""
     var type: String = ""
     var marque: String = ""
-    var nbPlace: Int = 0
+    var immatricule: String = ""
     var puissance: Int = 0
     var carburant: String = ""
     var description: String = ""
@@ -47,20 +47,16 @@ class CarViewModel : ObservableObject{
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, nbPlace: Int,  puissance: Int, carburant:String, description:String,  ownedBy:String ,attribute:String,image:String,age : Int ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String,   age : Int ) {
         let parametres: [String: Any] = [
-           
-             "modele": modele,
-             "type":type,
-             "marque": marque,
-             "nbPlace": nbPlace,
-            " puissance": puissance,
-             "carburant": carburant,
-            " description": description,
-             "ownedBy": ownedBy,
-             "attribute": attribute,
-             "image": image,
-             "age": age
+            "modele": modele,
+            "immatricule": immatricule,
+            "type":type,
+            "marque": marque,
+           "puissance": puissance,
+            "carburant": carburant,
+           "description": description,
+            "age": age
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -76,18 +72,14 @@ class CarViewModel : ObservableObject{
     }
     
     
-    func UpdateCar( modele:String, type:String, marque:String, nbPlace: Int,  puissance: Int, carburant:String, description:String,  ownedBy:String ,attribute:String,image:String,age : Int ) {
+    func UpdateCar( modele:String, marque:String, puissance: Int, carburant:String, description:String ,age : Int ) {
      let parametres: [String: Any] = [
+        "carID":"2tunis1",
         "modele": modele,
-        "type":type,
         "marque": marque,
-        "nbPlace": nbPlace,
-       " puissance": puissance,
+       "puissance": puissance,
         "carburant": carburant,
-       " description": description,
-        "ownedBy": ownedBy,
-        "attribute": attribute,
-        "image": image,
+       "description": description,
         "age": age
     
           ]

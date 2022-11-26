@@ -12,7 +12,7 @@ struct Car {
     var modele: String
     var type: String
     var marque: String
-    var nbPlace: Int
+    var immatricule: String
     var puissance: Int
     var carburant: String
     var description: String
@@ -21,12 +21,12 @@ struct Car {
     var image: String
     var age : Int
 
-    init(_id: String,modele: String,type: String,marque: String,nbPlace: Int,puissance: Int,carburant: String,description: String,ownedBy: String,attribute: String, image: String, age:Int){
+    init(_id: String,modele: String,type: String,marque: String,immatricule: String,puissance: Int,carburant: String,description: String,ownedBy: String,attribute: String, image: String, age:Int){
          self._id=_id
         self.modele=modele
         self.type=type
         self.marque=marque
-        self.nbPlace=nbPlace
+        self.immatricule=immatricule
         self.puissance=puissance
         self.carburant=carburant
         self.description = description

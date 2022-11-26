@@ -23,7 +23,7 @@ class UserViewModel: ObservableObject {
    // var image:UIImage?
     var emailToken:String = ""
     var image:String=""
-   // static var currentUser: User?
+    static var currentUser: User?
     
 
     var url:String = "http://172.17.14.228:3000/api/user/"
@@ -39,23 +39,25 @@ class UserViewModel: ObservableObject {
                 (response) in
                 switch response.result {
                 case .success(let JSON):
-                   /* let response = JSON as! NSDictionary
-                    let userResponse = response.object(forKey: "user") as! NSDictionary
+                 /*   let response = JSON as! NSDictionary
                     let email = response.object(forKey: "email") as? String ?? ""
                     let  first_name = response.object(forKey: "firstname") as? String ?? ""
                     let  last_name = response.object(forKey: "lastname") as? String ?? ""
                     let  phone_number = response.object(forKey: "phonenumber") as? String ?? ""
+                    let   cin = response.object(forKey: "cin") as? String ?? ""
+                    let  password = response.object(forKey: "password") as? String ?? ""
+                    let  role = response.object(forKey: "role") as? String ?? ""
+                    let  emailToken = response.object(forKey: "emailToken") as? String ?? ""
+                    let  isVerified = response.object(forKey: "isVerified") as? Bool ?? true
+                    let  image = response.object(forKey: "image") as? String ?? ""
+                    let  createdAt = response.object(forKey: "createdAt") as? String ?? ""
+                    let  updatedAt = response.object(forKey: "updatedAt") as? String ?? ""
                     let  _id = response.object(forKey: "_id") as? String ?? ""
 
-                    print("success /(email)")
-                    print("success /(first_name)")
-                    print("success /(last_name)")
-                    print("success /(phone_number)")
-                    var currentUser = User(_id:_id,first_name:first_name, last_name:last_name ,email:email, phone_number:phone_number)
-                    currentUser._id=_id
-                    self.currentUser = currentUser
+                    var currentUser = User(_id: _id,first_name: first_name,last_name: last_name,cin: cin,email: email,password: password,role: role,phone_number: phone_number,emailToken: emailToken,isVerified: isVerified,image: image,createdAt: createdAt,updatedAt: updatedAt)
+                    Self.currentUser = currentUser*/
 
-*/
+
 
 
                     
