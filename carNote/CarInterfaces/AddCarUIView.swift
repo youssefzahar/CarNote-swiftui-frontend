@@ -7,20 +7,31 @@
 
 import SwiftUI
 
+
 struct AddCarUIView: View {
     @State private var modele=""
-    @State private var type=""
-    @State private var marque=""
+   // @State private var type=""
+    //@State private var marque=""
     @State private var immatricule=""
     @State private var puissance=""
     //@Binding public var email :String
     
-    @State private var carburant=""
+   // @State private var carburant = ""
     @State private var description=""
     // @State private var ownedBy
     @State private var image=""
     @State private var age=""
     
+    @State private var selectioncarburant = 0
+    @State private var selectiontype = 0
+    @State private var selectionmarque = 0
+
+    
+    @State var carburant = ["Essence","Gasoil"]
+    @State var type = ["Voiture","Moto","Bus"]
+    @State var marque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
+
+
     
     //@State private var image=""
     @ObservedObject var viewModel = CarViewModel()
@@ -43,17 +54,32 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                             
-                            TextField("Type", text: $viewModel.type)
+                          /*  TextField("Type", text: $viewModel.type)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                                .cornerRadius(10)*/
                             
-                            TextField("Marque", text: $viewModel.marque)
+                            Picker(selection: $selectiontype, label: Text("Type")){
+                            ForEach(0 ..< type.count ) {
+                                Text(self.type[$0]).tag($0)
+                                }
+                                
+                            }
+
+                            
+                         /*   TextField("Marque", text: $viewModel.marque)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                                .cornerRadius(10)*/
+                            
+                            Picker(selection: $selectionmarque, label: Text("Type")){
+                            ForEach(0 ..< marque.count ) {
+                                Text(self.marque[$0]).tag($0)
+                                }
+                                
+                            }
                             
                             TextField("Immatricule", text: $viewModel.immatricule)
                                 .padding()
@@ -67,11 +93,24 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                             
-                            TextField("carburant", text: $viewModel.carburant)
+                            /*TextField("carburant", text: $viewModel.carburant)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                                .cornerRadius(10)*/
+                            
+                         //   Form{
+                              //  Section {
+                                    Picker(selection: $selectioncarburant, label: Text("Carburant")){
+                                    ForEach(0 ..< carburant.count ) {
+                                        Text(self.carburant[$0]).tag($0)
+                                        }
+                                        
+                                    }
+                              //  }
+                         //   }.navigationBarTitle(Text("Carburant"))
+                            
+                            
                             
                             TextField("description", text: $viewModel.description)
                                 .padding()
