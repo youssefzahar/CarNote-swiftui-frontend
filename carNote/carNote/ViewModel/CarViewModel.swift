@@ -25,7 +25,7 @@ class CarViewModel : ObservableObject{
     var image: String = ""
     var age : Int = 0
     
-    var url:String = "http://172.17.14.228:3000/api/car/"
+    var url:String = "http://172.17.2.50:3000/api/car/"
 
     
     func DeleteCar(_id: String) {
@@ -72,29 +72,7 @@ class CarViewModel : ObservableObject{
     }
     
     
-    func UpdateCar( modele:String, marque:String, puissance: Int, carburant:String, description:String ,age : Int ) {
-     let parametres: [String: Any] = [
-        "carID":"2tunis1",
-        "modele": modele,
-        "marque": marque,
-       "puissance": puissance,
-        "carburant": carburant,
-       "description": description,
-        "age": age
-    
-          ]
-     AF.request(url+"update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
-         .responseJSON {
-             (response) in
-             switch response.result {
-             case .success(let JSON):
-                 print("success \(JSON)")
-             case .failure(let error):
-                 print("request failed \(error)")
-             }
-         }
- }
-    
+  
     
     
     

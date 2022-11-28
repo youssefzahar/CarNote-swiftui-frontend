@@ -18,7 +18,7 @@ struct ProductRow: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 50)
                 .cornerRadius(10)
-            VStack(alignment: .leading, spacing: 10){
+            VStack(alignment: .leading, spacing: 10){ //cartManager
                 Text("product.name")
                     .bold()
                 

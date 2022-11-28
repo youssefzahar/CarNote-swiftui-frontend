@@ -37,6 +37,10 @@
 		04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9C2920302C0041FF59 /* RegisterView.swift */; };
 		04989F9F2920305F0041FF59 /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9E2920305F0041FF59 /* VerifView.swift */; };
 		04989FA2292030F70041FF59 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04989FA1292030F70041FF59 /* Alamofire */; };
+		04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78B829324F25007FBBC8 /* AddProductUIView.swift */; };
+		04DA78BD2932546C007FBBC8 /* Productt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78BC2932546C007FBBC8 /* Productt.swift */; };
+		04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */; };
+		04DA78C32932600F007FBBC8 /* ModifyProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */; };
 		04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53371292D0CE9008BB882 /* CarViewModel.swift */; };
 		04E53377292D54D4008BB882 /* CarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53376292D54D4008BB882 /* CarUIView.swift */; };
 /* End PBXBuildFile section */
@@ -72,6 +76,10 @@
 		04989F9A292030130041FF59 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		04989F9C2920302C0041FF59 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		04989F9E2920305F0041FF59 /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
+		04DA78B829324F25007FBBC8 /* AddProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductUIView.swift; sourceTree = "<group>"; };
+		04DA78BC2932546C007FBBC8 /* Productt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Productt.swift; sourceTree = "<group>"; };
+		04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduitViewModel.swift; sourceTree = "<group>"; };
+		04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProductUIView.swift; sourceTree = "<group>"; };
 		04E53371292D0CE9008BB882 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		04E53376292D54D4008BB882 /* CarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,28 +101,18 @@
 			children = (
 				04E53376292D54D4008BB882 /* CarUIView.swift */,
 				0444E683292C1390000AD700 /* AddCarUIView.swift */,
-				0431740129310D5500BF0ADC /* ProductCard.swift */,
-				043174062931279900BF0ADC /* CartButton.swift */,
-				0431740829312B9100BF0ADC /* CartView.swift */,
-				0431740A29312D7C00BF0ADC /* CartManager.swift */,
-				0431740C29313BCD00BF0ADC /* ProductRow.swift */,
 			);
 			path = CarInterfaces;
-			sourceTree = "<group>";
-		};
-		04317403293116FE00BF0ADC /* Product */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Product;
 			sourceTree = "<group>";
 		};
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
+				04D1BD862934C33700044278 /* OtherInterfaces */,
+				04D1BD852934C31700044278 /* CartInterfaces */,
+				04D1BD842934C2F100044278 /* ProductInterfaces */,
 				043174002930FCC700BF0ADC /* CarInterfaces */,
 				04E53373292D5214008BB882 /* userinterfaces */,
-				04100ECB29293089004E124C /* ImagePickerView.swift */,
 				04989F7629202E7D0041FF59 /* carNote */,
 				04989F7529202E7D0041FF59 /* Products */,
 			);
@@ -139,10 +137,6 @@
 				04989F8029202E7E0041FF59 /* Persistence.swift */,
 				04989F8229202E7E0041FF59 /* carNote.xcdatamodeld */,
 				04989F7D29202E7E0041FF59 /* Preview Content */,
-				0444E67F292C12B3000AD700 /* StatistiqueUIView.swift */,
-				0444E681292C12C5000AD700 /* ChatUIView.swift */,
-				0444E679292C0CD3000AD700 /* SwiftUIView.swift */,
-				0444E677292BF9A9000AD700 /* DateEntretienUIView.swift */,
 				0431740429311A1D00BF0ADC /* ContentView.swift */,
 			);
 			path = carNote;
@@ -162,6 +156,7 @@
 				04989F9029202F6A0041FF59 /* User.swift */,
 				0444E685292C1DFF000AD700 /* Car.swift */,
 				043173FC2930FC6200BF0ADC /* Produit.swift */,
+				04DA78BC2932546C007FBBC8 /* Productt.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,14 +166,47 @@
 			children = (
 				04989F9229202F940041FF59 /* UserViewModel.swift */,
 				04E53371292D0CE9008BB882 /* CarViewModel.swift */,
+				04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04D1BD842934C2F100044278 /* ProductInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				0431740129310D5500BF0ADC /* ProductCard.swift */,
+				0431740C29313BCD00BF0ADC /* ProductRow.swift */,
+				04DA78B829324F25007FBBC8 /* AddProductUIView.swift */,
+				04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */,
+			);
+			path = ProductInterfaces;
+			sourceTree = "<group>";
+		};
+		04D1BD852934C31700044278 /* CartInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				043174062931279900BF0ADC /* CartButton.swift */,
+				0431740829312B9100BF0ADC /* CartView.swift */,
+				0431740A29312D7C00BF0ADC /* CartManager.swift */,
+			);
+			path = CartInterfaces;
+			sourceTree = "<group>";
+		};
+		04D1BD862934C33700044278 /* OtherInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				04100ECB29293089004E124C /* ImagePickerView.swift */,
+				0444E67F292C12B3000AD700 /* StatistiqueUIView.swift */,
+				0444E681292C12C5000AD700 /* ChatUIView.swift */,
+				0444E679292C0CD3000AD700 /* SwiftUIView.swift */,
+				0444E677292BF9A9000AD700 /* DateEntretienUIView.swift */,
+			);
+			path = OtherInterfaces;
 			sourceTree = "<group>";
 		};
 		04E53373292D5214008BB882 /* userinterfaces */ = {
 			isa = PBXGroup;
 			children = (
-				04317403293116FE00BF0ADC /* Product */,
 				0444E675292BEAE0000AD700 /* UserProfileView.swift */,
 				04989F9629202FE20041FF59 /* LoginScreenView.swift */,
 				04989F9829202FFC0041FF59 /* ModifyView.swift */,
@@ -270,6 +298,7 @@
 				0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */,
 				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
 				0431740D29313BCD00BF0ADC /* ProductRow.swift in Sources */,
+				04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */,
 				04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */,
 				0444E67A292C0CD3000AD700 /* SwiftUIView.swift in Sources */,
 				04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */,
@@ -280,6 +309,7 @@
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
 				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
 				0431740529311A1D00BF0ADC /* ContentView.swift in Sources */,
+				04DA78BD2932546C007FBBC8 /* Productt.swift in Sources */,
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
 				0444E676292BEAE0000AD700 /* UserProfileView.swift in Sources */,
 				043173FD2930FC6200BF0ADC /* Produit.swift in Sources */,
@@ -290,8 +320,10 @@
 				0431740229310D5500BF0ADC /* ProductCard.swift in Sources */,
 				04989F7A29202E7D0041FF59 /* HomeView.swift in Sources */,
 				0444E682292C12C5000AD700 /* ChatUIView.swift in Sources */,
+				04DA78C32932600F007FBBC8 /* ModifyProductUIView.swift in Sources */,
 				04E53377292D54D4008BB882 /* CarUIView.swift in Sources */,
 				0444E680292C12B3000AD700 /* StatistiqueUIView.swift in Sources */,
+				04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */,
 				04989F9129202F6A0041FF59 /* User.swift in Sources */,
 				0444E678292BF9A9000AD700 /* DateEntretienUIView.swift in Sources */,
 				04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */,

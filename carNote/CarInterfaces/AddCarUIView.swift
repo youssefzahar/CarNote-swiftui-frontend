@@ -22,14 +22,14 @@ struct AddCarUIView: View {
     @State private var image=""
     @State private var age=""
     
-    @State private var selectioncarburant = 0
-    @State private var selectiontype = 0
-    @State private var selectionmarque = 0
+    @State private var carburant = 0
+    @State private var type = 0
+    @State private var marque = 0
 
     
-    @State var carburant = ["Essence","Gasoil"]
-    @State var type = ["Voiture","Moto","Bus"]
-    @State var marque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
+    @State var selectioncarburant = ["Essence","Gasoil"]
+    @State var selectiontype = ["Voiture","Moto","Bus"]
+    @State var selectionmarque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
 
 
     
@@ -60,9 +60,9 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)*/
                             
-                            Picker(selection: $selectiontype, label: Text("Type")){
-                            ForEach(0 ..< type.count ) {
-                                Text(self.type[$0]).tag($0)
+                            Picker(selection: $type, label: Text("Type")){
+                            ForEach(0 ..< selectiontype.count ) {
+                                Text(self.selectiontype[$0]).tag($0)
                                 }
                                 
                             }
@@ -74,9 +74,9 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)*/
                             
-                            Picker(selection: $selectionmarque, label: Text("Type")){
-                            ForEach(0 ..< marque.count ) {
-                                Text(self.marque[$0]).tag($0)
+                            Picker(selection: $marque, label: Text("Type")){
+                            ForEach(0 ..< selectionmarque.count ) {
+                                Text(self.selectionmarque[$0]).tag($0)
                                 }
                                 
                             }
@@ -101,9 +101,9 @@ struct AddCarUIView: View {
                             
                          //   Form{
                               //  Section {
-                                    Picker(selection: $selectioncarburant, label: Text("Carburant")){
-                                    ForEach(0 ..< carburant.count ) {
-                                        Text(self.carburant[$0]).tag($0)
+                                    Picker(selection: $carburant , label: Text("Carburant")){
+                                    ForEach(0 ..< selectioncarburant.count ) {
+                                        Text(self.selectioncarburant[$0]).tag($0)
                                         }
                                         
                                     }
