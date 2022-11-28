@@ -43,6 +43,9 @@
 		04DA78C32932600F007FBBC8 /* ModifyProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */; };
 		04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53371292D0CE9008BB882 /* CarViewModel.swift */; };
 		04E53377292D54D4008BB882 /* CarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53376292D54D4008BB882 /* CarUIView.swift */; };
+		04FBD2992935191200ECCA5B /* ShowProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FBD2982935191200ECCA5B /* ShowProduct.swift */; };
+		04FBD29C29351C7400ECCA5B /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 04FBD29B29351C7400ECCA5B /* SwiftyJSON */; };
+		04FBD29F29351D0A00ECCA5B /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 04FBD29E29351D0A00ECCA5B /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,7 @@
 		04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProductUIView.swift; sourceTree = "<group>"; };
 		04E53371292D0CE9008BB882 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		04E53376292D54D4008BB882 /* CarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUIView.swift; sourceTree = "<group>"; };
+		04FBD2982935191200ECCA5B /* ShowProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowProduct.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FBD29F29351D0A00ECCA5B /* SDWebImageSwiftUI in Frameworks */,
+				04FBD29C29351C7400ECCA5B /* SwiftyJSON in Frameworks */,
 				04989FA2292030F70041FF59 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -178,6 +184,7 @@
 				0431740C29313BCD00BF0ADC /* ProductRow.swift */,
 				04DA78B829324F25007FBBC8 /* AddProductUIView.swift */,
 				04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */,
+				04FBD2982935191200ECCA5B /* ShowProduct.swift */,
 			);
 			path = ProductInterfaces;
 			sourceTree = "<group>";
@@ -236,6 +243,8 @@
 			name = carNote;
 			packageProductDependencies = (
 				04989FA1292030F70041FF59 /* Alamofire */,
+				04FBD29B29351C7400ECCA5B /* SwiftyJSON */,
+				04FBD29E29351D0A00ECCA5B /* SDWebImageSwiftUI */,
 			);
 			productName = carNote;
 			productReference = 04989F7429202E7D0041FF59 /* carNote.app */;
@@ -267,6 +276,8 @@
 			mainGroup = 04989F6B29202E7D0041FF59;
 			packageReferences = (
 				04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04FBD29A29351C7400ECCA5B /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				04FBD29D29351D0A00ECCA5B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 04989F7529202E7D0041FF59 /* Products */;
 			projectDirPath = "";
@@ -294,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04FBD2992935191200ECCA5B /* ShowProduct.swift in Sources */,
 				04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */,
 				0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */,
 				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
@@ -535,6 +547,22 @@
 				kind = branch;
 			};
 		};
+		04FBD29A29351C7400ECCA5B /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		04FBD29D29351D0A00ECCA5B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -542,6 +570,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
+		};
+		04FBD29B29351C7400ECCA5B /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FBD29A29351C7400ECCA5B /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		04FBD29E29351D0A00ECCA5B /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04FBD29D29351D0A00ECCA5B /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 
