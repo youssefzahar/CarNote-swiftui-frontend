@@ -9,6 +9,11 @@ import SwiftUI
 
 
 struct AddCarUIView: View {
+    
+  /*  struct selectioncarburant {
+
+    }*/
+    
     @State private var modele=""
    // @State private var type=""
     //@State private var marque=""
@@ -22,14 +27,14 @@ struct AddCarUIView: View {
     @State private var image=""
     @State private var age=""
     
-    @State private var carburant = 0
-    @State private var type = 0
-    @State private var marque = 0
+    //let carburant = [selectioncarburant].self()
+    @State private var type = ""
+    @State private var marque = ""
 
     
-    @State var selectioncarburant = ["Essence","Gasoil"]
-    @State var selectiontype = ["Voiture","Moto","Bus"]
-    @State var selectionmarque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
+ //   @State var selectioncarburant = ["Essence","Gasoil"]
+ //   @State var selectiontype = ["Voiture","Moto","Bus"]
+ //   @State var selectionmarque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
 
 
     
@@ -54,32 +59,32 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                             
-                          /*  TextField("Type", text: $viewModel.type)
+                            TextField("Type", text: $viewModel.type)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)*/
+                                .cornerRadius(10)
                             
-                            Picker(selection: $type, label: Text("Type")){
+                         /*   Picker(selection: $type, label: Text("Type")){
                             ForEach(0 ..< selectiontype.count ) {
                                 Text(self.selectiontype[$0]).tag($0)
                                 }
                                 
-                            }
+                            }*/
 
                             
-                         /*   TextField("Marque", text: $viewModel.marque)
+                            TextField("Marque", text: $viewModel.marque)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)*/
+                                .cornerRadius(10)
                             
-                            Picker(selection: $marque, label: Text("Type")){
+                         /*   Picker(selection: $marque, label: Text("Type")){
                             ForEach(0 ..< selectionmarque.count ) {
                                 Text(self.selectionmarque[$0]).tag($0)
                                 }
                                 
-                            }
+                            }*/
                             
                             TextField("Immatricule", text: $viewModel.immatricule)
                                 .padding()
@@ -93,20 +98,20 @@ struct AddCarUIView: View {
                                 .background(Color.black.opacity(0.05))
                                 .cornerRadius(10)
                             
-                            /*TextField("carburant", text: $viewModel.carburant)
+                            TextField("carburant", text: $viewModel.carburant)
                                 .padding()
                                 .frame(width: 300, height: 50)
                                 .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)*/
+                                .cornerRadius(10)
                             
                          //   Form{
                               //  Section {
-                                    Picker(selection: $carburant , label: Text("Carburant")){
+                                  /*  Picker(selection: $carburant , label: Text("Carburant")){
                                     ForEach(0 ..< selectioncarburant.count ) {
                                         Text(self.selectioncarburant[$0]).tag($0)
                                         }
                                         
-                                    }
+                                    }*/
                               //  }
                          //   }.navigationBarTitle(Text("Carburant"))
                             

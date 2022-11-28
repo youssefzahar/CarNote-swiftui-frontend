@@ -21,31 +21,7 @@ class ProduitViewModel : ObservableObject{
     var owned_by : String = ""
    var image : String = ""
     
-    var url:String = "http://172.17.13.160:3000/api/product/"
-    
-    
-    
-  /*  func AddProduit( title:String, stock:Int, prix:Int, description: String) {
-        let parametres: [String: Any] = [
-            "title": title,
-            "stock": stock ,
-            "prix":prix,
-            "description": description,
-          // "image": image,
-            
-        ]
-        AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
-            .responseJSON {
-                (response) in
-                switch response.result {
-                case .success(let JSON):
-                    print("success \(JSON)")
-                case .failure(let error):
-                    print("request failed \(error)")
-                }
-            }
-            
-    }*/
+    var url:String = "http://172.17.5.23:3000/api/product/"
     
     func AddProduct( title:String, stock:Int, prix:Int, description: String) {
         let parametres: [String: Any] = [
