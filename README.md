@@ -16,6 +16,7 @@ Un utilisateur avoir le role de vendeur dans ce cas il n'a pas access au module 
 
 C'est un projet IOS, le travail est sur XCode
 
-Building NoteCar requires the following tools:
+**Building NoteCar requires the following tools:
+**
 
 Git (obviously) XCODE (Version supèrieur a 13 recommendè)
