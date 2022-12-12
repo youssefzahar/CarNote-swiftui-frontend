@@ -33,7 +33,7 @@ struct LoginScreenView: View {
                             .background(Color.black.opacity(0.05))
                             .cornerRadius(10)
                         
-                        NavigationLink(destination:HomeView() .navigationBarBackButtonHidden(true), isActive: $isLogin){
+                        NavigationLink(destination:ControlLogin() .navigationBarBackButtonHidden(true), isActive: $isLogin){
 
                                               Button("Login", action: {
 

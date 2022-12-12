@@ -44,7 +44,7 @@ struct ShowProductUIView_Previews: PreviewProvider {
 class Observer : ObservableObject {
     @Published var datas = [datatype]()
     init(){
-        AF.request("http://172.17.7.174:3000/api/product").responseData {
+        AF.request("http://172.17.8.0:3000/api/product").responseData {
             (data) in
             let json = try! JSON(data: data.data!)
             for i in json ["response"] {

@@ -15,6 +15,7 @@ struct UserProfileView: View {
     @State var  last_name:String = UserViewModel.currentUser?.last_name ?? ""
     @State var  email:String = UserViewModel.currentUser?.email ?? ""
     @State var  phone_number:String = UserViewModel.currentUser?.phone_number ?? ""
+    @State var  role:String = UserViewModel.currentUser?.role ?? ""
 
 
 
@@ -25,17 +26,19 @@ struct UserProfileView: View {
         VStack{
             VStack{
                 
-                NavigationLink(destination:DateEntretienUIView()) {
-                    Text("Pick Date ")
-                }      .foregroundColor(.blue)
+                if role == "User" {
+                    
+                    NavigationLink(destination:DateEntretienUIView()) {
+                        Text("Pick Date ")
+                    }      .foregroundColor(.blue)
                         .frame(width: 100, height: 50)
                         .background(Color.white)
                         .cornerRadius(10)
                         .offset(x:150,y: -50)
-                Image(systemName: "calendar.badge.plus")
-                    .foregroundColor(.blue)
-                    .offset(x:80,y:-85)
-                        
+                    Image(systemName: "calendar.badge.plus")
+                        .foregroundColor(.blue)
+                        .offset(x:80,y:-85)
+                }
                 
                 
                 

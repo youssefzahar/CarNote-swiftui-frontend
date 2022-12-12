@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 struct CartView: View {
     @EnvironmentObject var cartManager : CartManager
     
@@ -26,8 +27,9 @@ struct CartView: View {
                 }
                 .padding()
                 
-            } else {
                 
+            } else {
+                Text("Your cart is empty")
             }
             
         }

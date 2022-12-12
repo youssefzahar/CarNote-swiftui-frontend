@@ -26,7 +26,7 @@ class UserViewModel: ObservableObject {
     static var currentUser: User?
     
 
-    var url:String = "http://172.17.7.174:3000/api/user/"
+    var url:String = "http://172.17.8.0:3000/api/user/"
 
     
     func LogIn(email: String,password: String , complited: @escaping(User?)-> Void) {

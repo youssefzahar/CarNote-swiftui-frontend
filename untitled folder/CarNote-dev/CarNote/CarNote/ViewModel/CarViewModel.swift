@@ -25,7 +25,7 @@ class CarViewModel : ObservableObject{
     var image: String = ""
     var age : Int = 0
     
-    var url:String = "http://172.17.7.174:3000/api/car/"
+    var url:String = "http://172.17.8.0:3000/api/car/"
 
     
     func DeleteCar(_id: String) {

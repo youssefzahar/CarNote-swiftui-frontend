@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProductRowView: View {
-    @EnvironmentObject var cartManager : CartManager
+    @EnvironmentObject var cartManager: CartManager
+    
     var product : Product
     
     var body: some View {
@@ -26,10 +27,28 @@ struct ProductRowView: View {
                 Text("\(product.prix!,format: .number)DT")
             }
              Spacer()
+            
+            
+            
+            
+         /*   Button{
+                cartManager.removeFromCart( product : product)
+                
+            }label: {
+             Image(systemName: "trash")
+                    .foregroundColor(Color(hue:  1.0, saturation: 0.89, brightness : 0.835))
+            }
+            
+            */
+            
+            
+            
+            
+            
             Image(systemName: "trash")
                 .foregroundColor(Color(hue:  1.0, saturation: 0.89, brightness : 0.835))
                 .onTapGesture {
-                    cartManager.removeFromCart(product:product)
+                    //cartManager.removeFromCart(product: product)
                 }
             
         }
