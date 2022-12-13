@@ -27,7 +27,7 @@ public class ProduitViewModel : ObservableObject{
     
     
     
-    var url:String = "http://172.17.8.0:3000/api/product/"
+    var url:String = "http://172.17.1.71:3000/api/product/"
     
  /*  init() {
         
@@ -106,7 +106,7 @@ public class ProduitViewModel : ObservableObject{
     
     
     func GetProducts(completed: @escaping (Bool,[Product]?) -> Void){
-        AF.request("http://172.17.8.0:3000/api/product", method: .get)
+        AF.request("http://172.17.1.71:3000/api/product", method: .get)
             .validate(statusCode: 200..<300)
            // .validate(contentType: ["application/json"] )
             .responseData{ response in

@@ -7,11 +7,15 @@
 
 import Foundation
 import Alamofire
-
+import SwiftyJSON
 
 class CarViewModel : ObservableObject{
     
     static let sharedInstance = CarViewModel()
+    @Published var ListCars = [Car] ()
+
+    
+    
     var _id: String = ""
     var modele: String = ""
     var type: String = ""
@@ -72,6 +76,29 @@ class CarViewModel : ObservableObject{
     }
     
     
+    
+   /*
+    func makeItem (jsonItem: JSON) -> Car{
+        return Car (
+            _id: jsonItem["_id"].stringValue,
+            modele: jsonItem["modele"].stringValue,
+            type: jsonItem["type"].stringValue,
+            marque: jsonItem["marque"].stringValue,
+            immatricule: jsonItem["immatricule"].stringValue,
+            puissance: jsonItem["puissance"].intValue,
+            carburant: jsonItem["carburant"].stringValue,
+            description: jsonItem["description"].stringValue,
+            owned_by: jsonItem["owned_by"].stringValue,
+            attribute: jsonItem["attribute"].stringValue,
+            image: jsonItem["image"].stringValue,
+            age: jsonItem["age"].intValue
+
+
+            
+            
+        )
+    }
+    */
   
     
     

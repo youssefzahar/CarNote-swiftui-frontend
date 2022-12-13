@@ -21,4 +21,12 @@ class  CartManager: ObservableObject{
         total -= product.prix!
     }
     
+    var cartTotal: Int {
+            return ListProducts.reduce(0) { result, product in
+                result + product.prix!
+            }
+        }
+    
+    
+    
 }

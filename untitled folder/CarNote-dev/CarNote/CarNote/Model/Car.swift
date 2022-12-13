@@ -7,40 +7,42 @@
 
 import Foundation
 
-struct Car {
-    var _id: String
-    var modele: String
-    var type: String
-    var marque: String
-    var immatricule: String
-    var puissance: Int
-    var carburant: String
-    var description: String
-    var ownedBy: String
-    var attribute: String
-    var image: String
-    var age : Int
+struct Car : Identifiable  {
+    
+    internal init(_id: String? = nil,modele: String? = nil,type:String? = nil,marque: String? = nil,immatricule: String ,puissance: Int? = nil,carburant:String? = nil,description: String? = nil,ownedBy:String? = nil,attribute: String? = nil, image:String? = nil, age:Int? = nil){
+         
+        self._id=_id
+       self.modele=modele
+       self.type=type
+       self.marque=marque
+       self.immatricule=immatricule
+       self.puissance=puissance
+       self.carburant=carburant
+       self.description = description
+       self.ownedBy=ownedBy
+       self.attribute=attribute
+       self.image=image
+       self.age=age
 
-    init(_id: String,modele: String,type: String,marque: String,immatricule: String,puissance: Int,carburant: String,description: String,ownedBy: String,attribute: String, image: String, age:Int){
-         self._id=_id
-        self.modele=modele
-        self.type=type
-        self.marque=marque
-        self.immatricule=immatricule
-        self.puissance=puissance
-        self.carburant=carburant
-        self.description = description
-        self.ownedBy=ownedBy
-        self.attribute=attribute
-        self.image=image
-        self.age=age
-
+         
      }
-     
-
-
-
-
+    var _id: String?
+    var modele: String?
+    var type: String?
+    var marque: String?
+    var immatricule: String
+    var puissance: Int?
+    var carburant: String?
+    var description: String?
+    var ownedBy: String?
+    var attribute: String?
+    var image: String?
+    var age : Int?
+    var id: String { immatricule }
 
 
 }
+
+var  CarList = [Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo"),
+                Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo"),
+                Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo")]
