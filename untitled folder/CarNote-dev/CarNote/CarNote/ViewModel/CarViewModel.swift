@@ -27,9 +27,9 @@ class CarViewModel : ObservableObject{
     var ownedBy: String = ""
     var attribute: String = ""
     var image: String = ""
-    var age : Int = 0
+    var kilometrage : Int = 0
     
-    var url:String = "http://172.17.8.0:3000/api/car/"
+    var url:String = "http://172.17.1.71:3000/api/car/"
 
     
     func DeleteCar(_id: String) {
@@ -51,7 +51,7 @@ class CarViewModel : ObservableObject{
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String,   age : Int ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String,   kilometrage : Int ) {
         let parametres: [String: Any] = [
             "modele": modele,
             "immatricule": immatricule,
@@ -60,7 +60,7 @@ class CarViewModel : ObservableObject{
            "puissance": puissance,
             "carburant": carburant,
            "description": description,
-            "age": age
+            "kilometrage": kilometrage
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {

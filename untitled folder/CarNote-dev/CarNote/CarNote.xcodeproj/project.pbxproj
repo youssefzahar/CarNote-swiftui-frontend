@@ -19,6 +19,8 @@
 		0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444E683292C1390000AD700 /* AddCarUIView.swift */; };
 		0444E686292C1DFF000AD700 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0444E685292C1DFF000AD700 /* Car.swift */; };
 		04918F6B2948A8C9007024BC /* HomeUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04918F6A2948A8C9007024BC /* HomeUser.swift */; };
+		04918F702948ED13007024BC /* Entretien.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04918F6F2948ED13007024BC /* Entretien.swift */; };
+		04918F722948F014007024BC /* EntretienViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04918F712948F014007024BC /* EntretienViewModel.swift */; };
 		04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F7729202E7D0041FF59 /* carNoteApp.swift */; };
 		04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04989F7B29202E7E0041FF59 /* Assets.xcassets */; };
 		04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04989F7E29202E7E0041FF59 /* Preview Assets.xcassets */; };
@@ -63,6 +65,8 @@
 		0444E683292C1390000AD700 /* AddCarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarUIView.swift; sourceTree = "<group>"; };
 		0444E685292C1DFF000AD700 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 		04918F6A2948A8C9007024BC /* HomeUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUser.swift; sourceTree = "<group>"; };
+		04918F6F2948ED13007024BC /* Entretien.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Entretien.swift; path = CarNote/Model/Entretien.swift; sourceTree = SOURCE_ROOT; };
+		04918F712948F014007024BC /* EntretienViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntretienViewModel.swift; path = CarNote/ViewModel/EntretienViewModel.swift; sourceTree = SOURCE_ROOT; };
 		04989F7429202E7D0041FF59 /* carNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = carNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04989F7729202E7D0041FF59 /* carNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carNoteApp.swift; sourceTree = "<group>"; };
 		04989F7B29202E7E0041FF59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -133,9 +137,18 @@
 			path = Homes;
 			sourceTree = "<group>";
 		};
+		04918F6C2948CB49007024BC /* Enretien */ = {
+			isa = PBXGroup;
+			children = (
+				0444E677292BF9A9000AD700 /* DateEntretienUIView.swift */,
+			);
+			path = Enretien;
+			sourceTree = "<group>";
+		};
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
+				04918F6C2948CB49007024BC /* Enretien */,
 				04918F692948A899007024BC /* Homes */,
 				04F1F9FE2947B62000F2E30C /* Vendeur */,
 				0414DCDD2944ACCB007BB308 /* Chat */,
@@ -185,6 +198,7 @@
 				04989F9029202F6A0041FF59 /* User.swift */,
 				0444E685292C1DFF000AD700 /* Car.swift */,
 				04E20193293FEA8900D92706 /* Product.swift */,
+				04918F6F2948ED13007024BC /* Entretien.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -195,6 +209,7 @@
 				04989F9229202F940041FF59 /* UserViewModel.swift */,
 				04E53371292D0CE9008BB882 /* CarViewModel.swift */,
 				04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */,
+				04918F712948F014007024BC /* EntretienViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -227,7 +242,6 @@
 				04100ECB29293089004E124C /* ImagePickerView.swift */,
 				0444E67F292C12B3000AD700 /* StatistiqueUIView.swift */,
 				0444E679292C0CD3000AD700 /* SwiftUIView.swift */,
-				0444E677292BF9A9000AD700 /* DateEntretienUIView.swift */,
 			);
 			path = OtherInterfaces;
 			sourceTree = "<group>";
@@ -342,6 +356,7 @@
 				04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */,
 				04F1FA022947B74200F2E30C /* DeleteProductView.swift in Sources */,
 				04E20192293FDBB800D92706 /* ProductListUIView.swift in Sources */,
+				04918F702948ED13007024BC /* Entretien.swift in Sources */,
 				0444E67A292C0CD3000AD700 /* SwiftUIView.swift in Sources */,
 				04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */,
 				0414DCE12944ADBD007BB308 /* ChatUIView.swift in Sources */,
@@ -353,6 +368,7 @@
 				04989F9B292030130041FF59 /* ProfileView.swift in Sources */,
 				0431740B29312D7C00BF0ADC /* CartManager.swift in Sources */,
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
+				04918F722948F014007024BC /* EntretienViewModel.swift in Sources */,
 				04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */,
 				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,

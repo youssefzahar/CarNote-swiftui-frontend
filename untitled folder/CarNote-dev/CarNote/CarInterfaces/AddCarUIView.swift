@@ -25,7 +25,7 @@ struct AddCarUIView: View {
     @State private var description=""
     // @State private var ownedBy
     @State private var image=""
-    @State private var age=""
+    @State private var kilometrage=""
     
     //let carburant = [selectioncarburant].self()
     @State private var type = ""
@@ -50,26 +50,30 @@ struct AddCarUIView: View {
                         .ignoresSafeArea(.all)
                     VStackLayout{
                         
-                        Image(systemName: "text.alignleft")
-                            .offset(x:150,y: 0)
-                            .frame(width: 100)
-                            .foregroundColor(.white)
+                       
                         
                         /*  Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100).clipShape(Circle()).padding()*/
-                        Text("Add car").font(.largeTitle).bold().padding()
+                        Text("Add car").font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.white)
                         ScrollView{
-                            TextField("Modele", text: $viewModel.modele)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
                             
-                            TextField("Type", text: $viewModel.type)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                            HStack{
+                                Image(systemName: "car").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("Modele", text: $viewModel.modele)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
+                            
+                            HStack{
+                                Image(systemName: "car").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("Type", text: $viewModel.type)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                          /*   Picker(selection: $type, label: Text("Type")){
                             ForEach(0 ..< selectiontype.count ) {
                                 Text(self.selectiontype[$0]).tag($0)
@@ -77,38 +81,48 @@ struct AddCarUIView: View {
                                 
                             }*/
 
-                            
-                            TextField("Marque", text: $viewModel.marque)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
-                            
+                            HStack{
+                                Image(systemName: "car").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("Marque", text: $viewModel.marque)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                          /*   Picker(selection: $marque, label: Text("Type")){
                             ForEach(0 ..< selectionmarque.count ) {
                                 Text(self.selectionmarque[$0]).tag($0)
                                 }
                                 
                             }*/
+                            HStack{
+                                Image(systemName: "creditcard.fill").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("Immatricule", text: $viewModel.immatricule)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
-                            TextField("Immatricule", text: $viewModel.immatricule)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
                             
-                            TextField("Puissance", value: $viewModel.puissance,format: .number)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
+                            HStack{
+                                Image(systemName: "bolt").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("Puissance", value: $viewModel.puissance,format: .number)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
-                            TextField("carburant", text: $viewModel.carburant)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
                             
+                            HStack{
+                                Image(systemName: "fuelpump.fill").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("carburant", text: $viewModel.carburant)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                          //   Form{
                               //  Section {
                                   /*  Picker(selection: $carburant , label: Text("Carburant")){
@@ -121,19 +135,24 @@ struct AddCarUIView: View {
                          //   }.navigationBarTitle(Text("Carburant"))
                             
                             
+                            HStack{
+                                Image(systemName: "text.justify.trailing").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("description", text: $viewModel.description)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
-                            TextField("description", text: $viewModel.description)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
                             
-                            TextField("age", value: $viewModel.age,format:.number)
-                                .padding()
-                                .frame(width: 300, height: 50)
-                                .background(Color.black.opacity(0.05))
-                                .cornerRadius(10)
-                            
+                            HStack{
+                                Image(systemName: "car").foregroundColor(.blue)
+                                    .foregroundColor(.gray).font(.headline)
+                                TextField("kilometrage", value: $viewModel.kilometrage,format:.number)
+                                    .padding()
+                                    .frame(width: 300, height: 30)}
+                            .padding()
+                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
                             
                             
@@ -152,8 +171,8 @@ struct AddCarUIView: View {
                              .background(Color.black.opacity(0.05))
                              .cornerRadius(10)*/}
                     
-                        NavigationLink(destination:UserProfileView()){
-                            Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, age: viewModel.age) //image:viewModel.image?
+                        NavigationLink(destination:HomeUser()){
+                            Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, kilometrage: viewModel.kilometrage) //image:viewModel.image?
                                 
                             })
                             .foregroundColor(.white)

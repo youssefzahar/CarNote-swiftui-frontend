@@ -34,7 +34,7 @@ struct CarUIView_Previews: PreviewProvider {
 class ObserverCar : ObservableObject {
     @Published var datas = [datatypecar]()
     init(){
-        AF.request("http://172.17.7.174:3000/api/car").responseData {
+        AF.request("http://172.17.1.71:3000/api/car").responseData {
             (data) in
             let json = try! JSON(data: data.data!)
             for i in json ["response"] {
@@ -106,22 +106,6 @@ struct cardcar : View {
         }
         .frame(width: 400, height: 200)
         .shadow(radius: 3)
-        
-        Button{
-            
-            
-        }label: {
-            Image(systemName: "plus")
-                .padding(10)
-                .foregroundColor(.white)
-                .background(.blue)
-                .cornerRadius(50)
-                .padding()
-                .offset(x:300)
-               
-            
-            
-        }
         
     }
     

@@ -40,19 +40,19 @@ struct VerifView: View { @State private var email=""
                
                 
                 
-                
-                Button("Submit", action:{
-                    viewModel.VerifyAccount(emailToken: viewModel.emailToken)
-                })
-                .foregroundColor(.white)
-                .frame(width: 100, height: 50)
-                .background(Color.blue)
-                .cornerRadius(10)
-                
-            
+                NavigationLink(destination:LoginScreenView(isLogin:true)){
+                    Button("Submit", action:{
+                        viewModel.VerifyAccount(emailToken: viewModel.emailToken)
+                    })
+                    .foregroundColor(.white)
+                    .frame(width: 100, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    
+                }
         }
         }
-        }
+        }  .navigationBarHidden(true)
     }
 }
 
