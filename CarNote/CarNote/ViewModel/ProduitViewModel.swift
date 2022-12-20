@@ -21,9 +21,9 @@ public class ProduitViewModel : ObservableObject{
     var stock : Int = 0
     var prix: Int = 0
     var description: String = ""
-
     var image: String = ""
- 
+    var owned_by: String = ""
+
     
     
     
@@ -42,12 +42,13 @@ public class ProduitViewModel : ObservableObject{
         
     }*/
     
-    func AddProduct( title:String, stock:Int, prix:Int, description: String) {
+    func AddProduct( title:String, stock:Int, prix:Int, description: String, owned_by: String) {
         let parametres: [String: Any] = [
             "title": title,
             "stock": stock ,
             "prix":prix,
-            "description": description
+            "description": description,
+            "owned_by": owned_by
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {

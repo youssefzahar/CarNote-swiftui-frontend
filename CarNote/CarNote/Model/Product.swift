@@ -17,7 +17,6 @@ struct Product : Identifiable, Codable {
          self.stock=stock
          self.prix=prix
          self.description=description
-     
          self.image=image
          
      }
@@ -27,7 +26,7 @@ struct Product : Identifiable, Codable {
     var stock: Int?
     var prix: Int?
     var description: String?
-    //var owned_by: String?
+    var owned_by: String?
     var image: String?
     var id: String { title }
     

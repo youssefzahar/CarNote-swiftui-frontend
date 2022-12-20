@@ -15,7 +15,6 @@ class CarViewModel : ObservableObject{
     @Published var ListCars = [Car] ()
 
     
-    
     var _id: String = ""
     var modele: String = ""
     var type: String = ""
@@ -27,7 +26,6 @@ class CarViewModel : ObservableObject{
     var ownedBy: String = ""
     var attribute: String = ""
     var image: String = ""
-    var kilometrage : Int = 0
     
     var url:String = "http://172.17.2.94:3000/api/car/"
 
@@ -46,12 +44,12 @@ class CarViewModel : ObservableObject{
                     print("request failed \(error)")
                 }
             }
-        
+    
 
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String,   kilometrage : Int ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, ownedBy : String ) {
         let parametres: [String: Any] = [
             "modele": modele,
             "immatricule": immatricule,
@@ -60,7 +58,7 @@ class CarViewModel : ObservableObject{
            "puissance": puissance,
             "carburant": carburant,
            "description": description,
-            "kilometrage": kilometrage
+            "owned_by": ownedBy
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {

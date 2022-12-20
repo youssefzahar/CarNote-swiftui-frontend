@@ -54,7 +54,7 @@ class UserViewModel: ObservableObject {
                     let  updatedAt = userResponse.object(forKey: "updatedAt") as? String ?? ""
                     let  _id = userResponse.object(forKey: "_id") as? String ?? ""
 
-                    var currentUser = User(id: _id, first_name: first_name, last_name: last_name, cin: cin, email: email, password: password, role: role, phone_number: phone_number, emailToken: emailToken, isVerified: true, image: image, createdAt : createdAt, updatedAt: updatedAt)
+                    var currentUser = User(_id: _id, first_name: first_name, last_name: last_name, cin: cin, email: email, password: password, role: role, phone_number: phone_number, emailToken: emailToken, isVerified: true, image: image, createdAt : createdAt, updatedAt: updatedAt)
                     
                     print(currentUser)
                     Self.currentUser = currentUser

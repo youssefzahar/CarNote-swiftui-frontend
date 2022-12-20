@@ -175,21 +175,6 @@ struct AddCarUIView: View {
                                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                                 }
                                 
-                                VStack{
-                                    Text("Car kilometrage : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
-                                    HStack{
-                                        Image(systemName: "car").foregroundColor(.blue)
-                                            .foregroundColor(.gray).font(.headline)
-                                        TextField("kilometrage", value: $viewModel.kilometrage,format:.number)
-                                            .padding()
-                                        .frame(width: 300, height: 30)}
-                                    .padding()
-                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                                    
-                                    
-                                }
-                                
-                                
                                 /*     Button("Upload image"){}
                                  .foregroundColor(.blue)
                                  .frame(width: 300, height: 50)
@@ -209,7 +194,7 @@ struct AddCarUIView: View {
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, kilometrage: viewModel.kilometrage) //image:viewModel.image?
+                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, ownedBy: UserViewModel.currentUser?._id ?? "") //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

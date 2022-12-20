@@ -10,7 +10,7 @@ import Foundation
 
 struct User{
   
-    var id: String = ""
+    var _id: String = ""
     var first_name: String = ""
     var last_name: String = ""
     var cin: Int = 0
@@ -25,8 +25,8 @@ struct User{
     var  createdAt: String = ""
     var  updatedAt: String = ""
     
-   init(id: String,first_name: String,last_name: String,cin: Int,email: String,password: String,role: String,phone_number: String,emailToken: String,isVerified: Bool,image: String,createdAt: String,updatedAt: String){
-        self.id=id
+   init(_id: String,first_name: String,last_name: String,cin: Int,email: String,password: String,role: String,phone_number: String,emailToken: String,isVerified: Bool,image: String,createdAt: String,updatedAt: String){
+        self._id=_id
         self.first_name=first_name
         self.last_name=last_name
         self.cin=cin

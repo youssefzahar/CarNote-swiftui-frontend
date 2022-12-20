@@ -16,6 +16,7 @@ struct UserProfileView: View {
     @State var  email:String = UserViewModel.currentUser?.email ?? ""
     @State var  phone_number:String = UserViewModel.currentUser?.phone_number ?? ""
     @State var  role:String = UserViewModel.currentUser?.role ?? ""
+    @State var  _id:String = UserViewModel.currentUser?._id ?? ""
 
 
 
@@ -64,6 +65,7 @@ struct UserProfileView: View {
                         .font(.title)
                         .bold()
                     
+                    
                     Text(last_name)
                         .font(.title)
                         .bold()
@@ -85,6 +87,11 @@ struct UserProfileView: View {
                         Text(phone_number)
                         
                     }
+                    
+                    Text("id :")
+                    Text(_id)
+                        .font(.title)
+                        .bold()
                     
                 }
                 Spacer().frame(height: 150)

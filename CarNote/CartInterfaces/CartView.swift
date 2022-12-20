@@ -52,7 +52,7 @@ struct CartView: View {
                 HStack{
                   
                     Spacer()
-                    Text("\(cartManager.total).00 DT")
+                    Text("\(cartManager.total) DT")
                         .bold()
                 }
                 

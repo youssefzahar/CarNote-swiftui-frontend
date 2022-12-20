@@ -13,10 +13,11 @@ struct RegisterView: View {
             @State private var cin=0
             @State private var password=""
             @State private var email=""
-            @State private var role=""
         @State private var phone_number=""
         //@State private var image=""
     @ObservedObject var viewModel = UserViewModel()
+    var roles = ["User", "Vendeur"]
+    @State private var role="User"
 
         var body: some View {
             NavigationView{
@@ -92,9 +93,17 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
+                                
+                                
+                              /*  Picker("Please choose a color", selection: $viewModel.role) {
+                                                ForEach(roles, id: \.self) {
+                                                    Text($0)
+                                                }
+                                            }*/
                                 TextField("role", text: $viewModel.role)
                                     .padding()
-                                .frame(width: 300, height: 30)} .padding()
+                                .frame(width: 300, height: 30)}
+                            .padding()
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             /*     Button("Upload image"){}
                              .foregroundColor(.blue)
