@@ -13,7 +13,8 @@ class CarViewModel : ObservableObject{
     
     static let sharedInstance = CarViewModel()
     @Published var ListCars = [Car] ()
-
+    
+    
     
     var _id: String = ""
     var modele: String = ""
@@ -26,9 +27,10 @@ class CarViewModel : ObservableObject{
     var ownedBy: String = ""
     var attribute: String = ""
     var image: String = ""
+    var kilometrage : Int = 0
     
-    var url:String = "http://172.17.2.94:3000/api/car/"
-
+    var url:String = "http://172.17.1.254:3000/api/car/"
+    
     
     func DeleteCar(_id: String) {
         let parametres: [String: Any] = [
@@ -44,21 +46,22 @@ class CarViewModel : ObservableObject{
                     print("request failed \(error)")
                 }
             }
-    
+        
 
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, ownedBy : String ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String,   kilometrage : Int , owned_by: String ) {
         let parametres: [String: Any] = [
             "modele": modele,
-            "immatricule": immatricule,
             "type":type,
             "marque": marque,
+            "immatricule": immatricule,
            "puissance": puissance,
             "carburant": carburant,
            "description": description,
-            "owned_by": ownedBy
+            "ownedBy": ownedBy,
+           "kilometrage": kilometrage
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -75,7 +78,66 @@ class CarViewModel : ObservableObject{
     
     
     
-   /*
+    
+    func GetCars(completed: @escaping (Bool,[Car]?) -> Void ){
+        
+        
+        AF.request(url+"userCars/"+UserViewModel.currentUser!._id ?? "", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var cars : [Car]? = []
+                    for singleJsonItem in json["response"]{
+                        cars!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(cars)
+                    completed(true,cars)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+
+    
+    func GetPublicCars(completed: @escaping (Bool,[Car]?) -> Void ){
+        
+        
+        AF.request(url+"showMarketplace", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var cars : [Car]? = []
+                    for singleJsonItem in json["response"]{
+                        cars!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(cars)
+                    completed(true,cars)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+
+    
+    
+    
+    
+    
+   
     func makeItem (jsonItem: JSON) -> Car{
         return Car (
             _id: jsonItem["_id"].stringValue,
@@ -86,22 +148,22 @@ class CarViewModel : ObservableObject{
             puissance: jsonItem["puissance"].intValue,
             carburant: jsonItem["carburant"].stringValue,
             description: jsonItem["description"].stringValue,
-            owned_by: jsonItem["owned_by"].stringValue,
+            ownedBy: jsonItem["ownedBy"].stringValue,
             attribute: jsonItem["attribute"].stringValue,
-            image: jsonItem["image"].stringValue,
-            age: jsonItem["age"].intValue
+            image: jsonItem["image"].stringValue
+           // kilometrage: jsonItem["kilometrage"].intValue
 
 
             
             
         )
     }
-    */
+    
   
     
     
     
-    
+
     
     
     

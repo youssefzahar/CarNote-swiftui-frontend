@@ -27,7 +27,7 @@ public class ProduitViewModel : ObservableObject{
     
     
     
-    var url:String = "http://172.17.2.94:3000/api/product/"
+    var url:String = "http://172.17.1.254:3000/api/product/"
     
  /*  init() {
         
@@ -129,6 +129,36 @@ public class ProduitViewModel : ObservableObject{
                 
             }
     }
+    
+    
+    
+    func GetMyProducts(completed: @escaping (Bool,[Product]?) -> Void){
+        AF.request(url+"usersProducts/"+UserViewModel.currentUser!._id ?? "", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var products : [Product]? = []
+                    for singleJsonItem in json["response"]{
+                        products!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(products)
+                    completed(true,products)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+    
+    
+    
+    
 
     
     

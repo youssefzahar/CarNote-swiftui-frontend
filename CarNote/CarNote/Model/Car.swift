@@ -22,6 +22,8 @@ struct Car : Identifiable  {
        self.ownedBy=ownedBy
        self.attribute=attribute
        self.image=image
+        //self.kilometrage=kilometrage
+
 
          
      }
@@ -41,6 +43,6 @@ struct Car : Identifiable  {
 
 }
 
-var  CarList = [Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo"),
+var  carList = [Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo"),
                 Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo"),
                 Car ( marque : "ford",immatricule :"P1" , description : "NV" ,image : "logo")]
