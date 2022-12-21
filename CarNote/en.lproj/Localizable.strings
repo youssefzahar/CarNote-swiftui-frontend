@@ -1,0 +1,32 @@
+/* 
+  Localizable.strings
+  CarNote
+
+  Created by Apple Esprit on 21/12/2022.
+  
+*/
+////////////////////////UserInterfaces
+
+////LoginScreenView
+"Login" = "Login";
+"Password" = "Password";
+"Forgot Password ?"= "Forgot Password ?";
+"New to NoteCar ?" = "New to NoteCar ?";
+"Register" = "Register";
+
+
+/////ForgotPasswordView
+
+"Enter the email address associated  with your account." = "Enter the email address associated  with your account.";
+"Enter you email address" = "Enter you email address";
+"Submit" = "Submit";
+
+
+/////RegisterView
+
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"Phone Number" = "Phone Number";
+"Already have any account ?" = "Already have any account ?";
+"Sign In" = "Sign In";
+
