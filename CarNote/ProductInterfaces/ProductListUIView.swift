@@ -19,7 +19,7 @@ struct ProductListUIView: View {
     
     private func startCheckout(completion: @escaping (String?) -> Void) {
        
-        let url = URL(string: "http://172.17.2.94:3000/create-payment-intent")!
+        let url = URL(string: "http://172.17.2.129:3000/create-payment-intent")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -43,56 +43,59 @@ struct ProductListUIView: View {
     }
     
     
-        var body: some View {
-            NavigationView{
-                ScrollView{
-                    LazyVGrid(columns: columns, spacing: 20){
-                        ForEach(0 ..< products.count, id:  \ .self ) {
-                            index in ProductUIView(product : products[index])
-                                .environmentObject(cartManager)
-                        }
-                    }
-                    .padding()
+    var body: some View {
+                NavigationView{
+                    ScrollView{
+                        LazyVGrid(columns: columns, spacing: 20){
+                            ForEach(0 ..< products.count, id:  \ .self ) {
+                                index in
+                                NavigationLink(destination: ProductDetailOwnUser(product : products[index])){
+                                    ProductUIView(product : products[index])
 
-                }
-                
-                   .navigationTitle(Text("Product Shop"))
-                 .toolbar{
-                CartButton(numberOfProducts: cartManager.ListProducts.count)
-                 NavigationLink(isActive: $isActive){
-                 CartView()
-                 .environmentObject(cartManager)
-                 } label: {
-                     Button("Checkout") {
-                                             startCheckout { clientSecret in
-                                                 
-                                                 PaymentConfig.shared.paymentIntentClientSecret = clientSecret
-                                                 
-                                                 DispatchQueue.main.async {
-                                                     isActive = true
+                                }
+                                    .environmentObject(cartManager)
+                            }
+                        }
+                        .padding()
+
+                    }
+                    
+                       .navigationTitle(Text("Product Shop"))
+                     .toolbar{
+                    CartButton(numberOfProducts: cartManager.ListProducts.count)
+                     NavigationLink(isActive: $isActive){
+                     CartView()
+                     .environmentObject(cartManager)
+                     } label: {
+                         Button("Checkout") {
+                                                 startCheckout { clientSecret in
+                                                     
+                                                     PaymentConfig.shared.paymentIntentClientSecret = clientSecret
+                                                     
+                                                     DispatchQueue.main.async {
+                                                         isActive = true
+                                                     }
                                                  }
                                              }
-                                         }
-                 
-                 }
-                 }
-                 }
-            .onAppear{
-                productViewModel.GetProducts {success, result in
-                    if success {
-                        self.products = []
-                        self.products.append(contentsOf: result!)
+                     
+                     }
+                     }
+                     }
+                .onAppear{
+                    productViewModel.GetProducts {success, result in
+                        if success {
+                            self.products = []
+                            self.products.append(contentsOf: result!)
+                        }
                     }
                 }
+                     .navigationViewStyle(StackNavigationViewStyle())
+                }
+                
             }
-                 .navigationViewStyle(StackNavigationViewStyle())
+        
+            struct ProductListUIView_Previews: PreviewProvider {
+                static var previews: some View {
+                    ProductUIView(product : productList[0]).environmentObject(CartManager())
+                }
             }
-            
-        }
-    
-        struct ProductListUIView_Previews: PreviewProvider {
-            static var previews: some View {
-                ProductUIView(product : productList[0]).environmentObject(CartManager())
-            }
-        }
-    

@@ -19,10 +19,10 @@ struct carNoteApp: App {
 
     var body: some Scene {
         WindowGroup {
-          //  ProductListUIView()
+            //ProductListUIView()
             //DateEntretienUIView()
             //HomeVendeur()
-           // CarUIView()
+        //    CarListView()
           LoginScreenView(isLogin:false)
            // ModifyView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)

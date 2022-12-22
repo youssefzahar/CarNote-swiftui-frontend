@@ -25,7 +25,7 @@ struct CarListView: View {
                     }
                 }
                     .padding()
-                }
+                } .navigationTitle(Text("My Cars"))
                /* .navigationTitle(Text("Car Shop"))
                 .toolbar{
                     NavigationLink{

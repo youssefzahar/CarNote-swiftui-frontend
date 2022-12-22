@@ -24,7 +24,7 @@ class UserViewModel: ObservableObject {
     var emailToken:String = ""
     var image:String=""
     static var currentUser: User?
-    var url:String = "http://172.17.1.254:3000/api/user/"
+    var url:String = "http://172.17.2.129:3000/api/user/"
    
 
     

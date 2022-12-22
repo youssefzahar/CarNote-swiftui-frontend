@@ -11,7 +11,7 @@ struct HomeUser: View {
     var body: some View {
         TabView {
           //  ContentView()
-            ShopView()  .tabItem{
+            ProductListUIView()  .tabItem{
                     Image(systemName: "cart")
                     Text("Shop")
                 }

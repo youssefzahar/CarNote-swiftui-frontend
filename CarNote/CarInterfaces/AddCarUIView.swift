@@ -177,44 +177,11 @@ struct AddCarUIView: View {
                                 
                                 
                                 
-                                VStack{
-                                    Text("Car kilometrage : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
-                                    HStack{
-                                        Image(systemName: "car").foregroundColor(.blue)
-                                            .foregroundColor(.gray).font(.headline)
-                                        TextField("kilometrage", value: $viewModel.kilometrage,format:.number)
-                                            .padding()
-                                        .frame(width: 300, height: 30)}
-                                    .padding()
-                                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                                    
-                                    
-                                }
-                                
-                                
-                                
-                                
-                                
-                                /*     Button("Upload image"){}
-                                 .foregroundColor(.blue)
-                                 .frame(width: 300, height: 50)
-                                 .background(Color.white)
-                                 .cornerRadius(10)*/
-                                
-                                
-                                /*   TextField("image", text: $viewModel.image)
-                                 .padding()
-                                 .frame(width: 300, height: 50)
-                                 .background(Color.black.opacity(0.05))
-                                 .cornerRadius(10)*/
-                                
-                                
-                                
                                 
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description,kilometrage: viewModel.kilometrage,owned_by: UserViewModel.currentUser?._id ?? "") //image:viewModel.image?
+                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "") //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

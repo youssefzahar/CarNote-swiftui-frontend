@@ -15,7 +15,7 @@ struct HomeVendeur: View {
                     Image(systemName: "cart")
                     Text("Shop")
                 }
-            ModifyProductUIView().tabItem{
+            MyproductView().tabItem{
                 Image(systemName: "gearshape")
                 Text("Gestion")
             }

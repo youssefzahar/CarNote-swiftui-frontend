@@ -9,7 +9,7 @@ import Foundation
 
 struct Car : Identifiable  {
     
-    internal init(_id: String? = nil,modele: String? = nil,type:String? = nil,marque: String? = nil,immatricule: String ,puissance: Int? = nil,carburant:String? = nil,description: String? = nil,ownedBy:String? = nil,attribute: String? = nil, image:String? = nil){
+    internal init(_id: String? = nil,modele: String? = nil,type:String? = nil,marque: String? = nil,immatricule: String ,puissance: Int? = nil,carburant:String? = nil,description: String? = nil,owned_by:String? = nil,attribute: String? = nil, image:String? = nil){
          
         self._id=_id
        self.modele=modele
@@ -19,7 +19,7 @@ struct Car : Identifiable  {
        self.puissance=puissance
        self.carburant=carburant
        self.description = description
-       self.ownedBy=ownedBy
+       self.owned_by=owned_by
        self.attribute=attribute
        self.image=image
         //self.kilometrage=kilometrage
@@ -35,7 +35,7 @@ struct Car : Identifiable  {
     var puissance: Int?
     var carburant: String?
     var description: String?
-    var ownedBy: String?
+    var owned_by: String?
     var attribute: String?
     var image: String?
     var id: String { immatricule }
