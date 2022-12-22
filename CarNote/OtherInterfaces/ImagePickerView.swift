@@ -7,34 +7,46 @@
 import SwiftUI
 import PhotosUI
 
-struct ImagePickerView: View {
+struct ImagePicker: UIViewControllerRepresentable {
     
-    @State private var selectedItem: PhotosPickerItem? = nil
-    @State private var selectedImageData: Data? = nil
-    
-    var body: some View {
+    @Environment(\.presentationMode) private var presentationMode
+        var sourceType: UIImagePickerController.SourceType = .photoLibrary
+        @Binding var selectedImage: UIImage
         
-        PhotosPicker(
-            selection: $selectedItem,
-            matching: .images,
-            photoLibrary: .shared()) {
-                Text("Select a photo")
-            }
-            .onChange(of: selectedItem) { newItem in
-                Task {
-                    // Retrieve selected asset in the form of Data
-                    if let data = try? await newItem?.loadTransferable(type: Data.self) {
-                        selectedImageData = data
-                    }
-                }
-            }
-        
-        if let selectedImageData,
-           let uiImage = UIImage(data: selectedImageData) {
-            Image(uiImage: uiImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 250, height: 250)
+        func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = sourceType
+            imagePicker.delegate = context.coordinator
+            
+            return imagePicker
         }
-    }
+        
+        func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
+            
+        }
+        
+        func makeCoordinator() -> Coordinator {
+            Coordinator(self)
+        }
+        
+        final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+            
+            var parent: ImagePicker
+            
+            init(_ parent: ImagePicker) {
+                self.parent = parent
+            }
+            
+            func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+                
+                if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+                    parent.selectedImage = image
+                }
+                
+                parent.presentationMode.wrappedValue.dismiss()
+            }
+            
+        }
 }
