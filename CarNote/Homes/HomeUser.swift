@@ -11,11 +11,11 @@ struct HomeUser: View {
     var body: some View {
         TabView {
           //  ContentView()
-         ProductListUIView()  .tabItem{
+            ProductListUIView()  .tabItem{
                     Image(systemName: "cart")
                     Text("Shop")
                 }
-            CarUIView().tabItem{
+            CarListView().tabItem{
                 Image(systemName: "car")
                 Text("Car")
             }

@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Product : Identifiable, Codable {
+struct Product : Identifiable, Codable, Hashable {
     
 
-    internal init(_id: String? = nil,title: String ,stock: Int? = nil,prix: Int? = nil,description: String? = nil,image: String? = nil){
+    internal init(_id: String? = nil,title: String ,stock: Int? = nil,prix: Int? = nil,description: String? = nil,image: String? = nil, owned_by: String? = nil){
          
          self._id=_id
          self.title=title
@@ -18,6 +18,8 @@ struct Product : Identifiable, Codable {
          self.prix=prix
          self.description=description
          self.image=image
+        self.owned_by=owned_by
+
          
      }
     

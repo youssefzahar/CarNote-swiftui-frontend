@@ -34,7 +34,7 @@ struct CarUIView_Previews: PreviewProvider {
 class ObserverCar : ObservableObject {
     @Published var datas = [datatypecar]()
     init(){
-        AF.request("http://172.17.1.254:3000/api/car").responseData {
+        AF.request("http://172.17.7.49:3000/api/car").responseData {
             (data) in
             let json = try! JSON(data: data.data!)
             for i in json ["response"] {

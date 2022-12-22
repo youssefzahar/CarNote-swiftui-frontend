@@ -176,24 +176,12 @@ struct AddCarUIView: View {
                                 }
                                 
                                 
-                                Image(uiImage: viewModel.image)
-                                    .resizable()
-                                    .frame(width: 300, height: 200)
-                                    .aspectRatio(contentMode: .fill)
-                                    .onTapGesture {
-                                        viewModel.showFileUpload = true
-                                    }
-                                    .sheet(isPresented: $viewModel.showFileUpload) {
-                                        ImagePickerView(sourceType: .photoLibrary)
-                                        
-                                    }
-                                
                                 
                                 
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, ownedBy: UserViewModel.currentUser?._id ?? "", image:viewModel.image)
+                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "") //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

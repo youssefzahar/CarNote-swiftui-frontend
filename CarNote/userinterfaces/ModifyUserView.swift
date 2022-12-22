@@ -72,7 +72,7 @@ struct ModifyUserView: View {
                         
                         HStack {
                             
-                            NavigationLink(destination:UserProfileView(/*email:$email*/)){ Button("Save Profile", action:{
+                            NavigationLink(destination:UserProfileView()){ Button("Save Profile", action:{
                                 viewModel.UpdateUser(email: viewModel.email,first_name:viewModel.first_name, last_name:viewModel.last_name, phone_number:viewModel.phone_number,
                                                      image:viewModel.image)  //image!)
                             })
@@ -85,23 +85,6 @@ struct ModifyUserView: View {
                             
                         }
                     }
-                
-                 /*    HStack {
-                     Text("Already have any account ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
-                     
-                     NavigationLink(destination:LoginScreenView(isLogin: false)){
-                     
-                     
-                     Text("Sign In")
-                     .foregroundColor(.blue)
-                     .frame(width: 80, height: 40)
-                     .cornerRadius(10)
-                     //.offset(x:-80,y:)
-                     
-                     }
-                     }*/
-                    
-                    
                     
                 }
               

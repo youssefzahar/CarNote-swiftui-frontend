@@ -24,17 +24,17 @@ struct DetailProduct: View {
                         .scaledToFit()
                     
                     
-                    Text("produit")
+                    Text("title")
                         .bold()
                         .offset(x:80, y:-90)
                        
                     
                     
-                    Text("DESCRIPTION")
+                    Text("description")
                         .offset(x:0, y:-50)
                     
 
-                    Text("50  DT")
+                    Text("prix")
                     
                 }
                 .padding()

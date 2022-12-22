@@ -39,13 +39,11 @@
 		04999AD5294743D200773032 /* ProductRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04999AD4294743D200773032 /* ProductRowView.swift */; };
 		04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78B829324F25007FBBC8 /* AddProductUIView.swift */; };
 		04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */; };
-		04DA78C32932600F007FBBC8 /* ModifyProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */; };
 		04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2018F293FD7AB00D92706 /* ProductUIView.swift */; };
 		04E20192293FDBB800D92706 /* ProductListUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E20191293FDBB800D92706 /* ProductListUIView.swift */; };
 		04E20194293FEA8900D92706 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E20193293FEA8900D92706 /* Product.swift */; };
 		04E2019A2940067400D92706 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E201992940067400D92706 /* DetailProduct.swift */; };
 		04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53371292D0CE9008BB882 /* CarViewModel.swift */; };
-		04E53377292D54D4008BB882 /* CarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53376292D54D4008BB882 /* CarUIView.swift */; };
 		04EA300E2951D26F00091511 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = 04EA300D2951D26F00091511 /* Stripe */; };
 		04EA30122951D68A00091511 /* CheckoutIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA30112951D68A00091511 /* CheckoutIntentResponse.swift */; };
 		04EA30142951D6F100091511 /* PaymentConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA30132951D6F100091511 /* PaymentConfig.swift */; };
@@ -56,8 +54,13 @@
 		04F050A729364AD40029331F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 04F050A629364AD40029331F /* SwiftyJSON */; };
 		04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FA2947B49100F2E30C /* ControlLogin.swift */; };
 		04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */; };
-		04F1FA022947B74200F2E30C /* DeleteProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1FA012947B74200F2E30C /* DeleteProductView.swift */; };
-		B08BF1602953285C00CA0A4B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B08BF1622953285C00CA0A4B /* Localizable.strings */; };
+		B096FB0929549854009DD7E7 /* ProductDetailOwnUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0829549854009DD7E7 /* ProductDetailOwnUser.swift */; };
+		B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */; };
+		B0C80D662953309700CE4910 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D652953309700CE4910 /* CarListView.swift */; };
+		B0C80D68295330CA00CE4910 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D67295330CA00CE4910 /* CarView.swift */; };
+		B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D692953543400CE4910 /* CarShopListView.swift */; };
+		B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6B2953577A00CE4910 /* ShopView.swift */; };
+		B0C80D6E29535E8D00CE4910 /* MyproductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6D29535E8D00CE4910 /* MyproductView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,13 +96,11 @@
 		04999AD4294743D200773032 /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
 		04DA78B829324F25007FBBC8 /* AddProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductUIView.swift; sourceTree = "<group>"; };
 		04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProduitViewModel.swift; sourceTree = "<group>"; };
-		04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyProductUIView.swift; sourceTree = "<group>"; };
 		04E2018F293FD7AB00D92706 /* ProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView.swift; sourceTree = "<group>"; };
 		04E20191293FDBB800D92706 /* ProductListUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUIView.swift; sourceTree = "<group>"; };
 		04E20193293FEA8900D92706 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = CarNote/Model/Product.swift; sourceTree = SOURCE_ROOT; };
 		04E201992940067400D92706 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		04E53371292D0CE9008BB882 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
-		04E53376292D54D4008BB882 /* CarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarUIView.swift; sourceTree = "<group>"; };
 		04EA30112951D68A00091511 /* CheckoutIntentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutIntentResponse.swift; sourceTree = "<group>"; };
 		04EA30132951D6F100091511 /* PaymentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfig.swift; sourceTree = "<group>"; };
 		04EA30152951DAB100091511 /* PaymentGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentGateway.swift; sourceTree = "<group>"; };
@@ -107,9 +108,13 @@
 		04EA30192951DC9600091511 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		04F1F9FA2947B49100F2E30C /* ControlLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLogin.swift; sourceTree = "<group>"; };
 		04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVendeur.swift; sourceTree = "<group>"; };
-		04F1FA012947B74200F2E30C /* DeleteProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductView.swift; sourceTree = "<group>"; };
-		B08BF1612953285C00CA0A4B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B08BF1632953286100CA0A4B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B096FB0829549854009DD7E7 /* ProductDetailOwnUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailOwnUser.swift; sourceTree = "<group>"; };
+		B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProduct.swift; sourceTree = "<group>"; };
+		B0C80D652953309700CE4910 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
+		B0C80D67295330CA00CE4910 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		B0C80D692953543400CE4910 /* CarShopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopListView.swift; sourceTree = "<group>"; };
+		B0C80D6B2953577A00CE4910 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
+		B0C80D6D29535E8D00CE4910 /* MyproductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyproductView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +143,10 @@
 		043174002930FCC700BF0ADC /* CarInterfaces */ = {
 			isa = PBXGroup;
 			children = (
-				04E53376292D54D4008BB882 /* CarUIView.swift */,
 				0444E683292C1390000AD700 /* AddCarUIView.swift */,
+				B0C80D652953309700CE4910 /* CarListView.swift */,
+				B0C80D67295330CA00CE4910 /* CarView.swift */,
+				B0C80D692953543400CE4910 /* CarShopListView.swift */,
 			);
 			path = CarInterfaces;
 			sourceTree = "<group>";
@@ -150,6 +157,7 @@
 				04F1F9FA2947B49100F2E30C /* ControlLogin.swift */,
 				04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */,
 				04918F6A2948A8C9007024BC /* HomeUser.swift */,
+				B0C80D6B2953577A00CE4910 /* ShopView.swift */,
 			);
 			path = Homes;
 			sourceTree = "<group>";
@@ -165,10 +173,8 @@
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
-				B08BF1622953285C00CA0A4B /* Localizable.strings */,
 				04918F6C2948CB49007024BC /* Enretien */,
 				04918F692948A899007024BC /* Homes */,
-				04F1F9FE2947B62000F2E30C /* Vendeur */,
 				0414DCDD2944ACCB007BB308 /* Chat */,
 				04D1BD862934C33700044278 /* OtherInterfaces */,
 				04D1BD852934C31700044278 /* CartInterfaces */,
@@ -240,6 +246,9 @@
 				04E20191293FDBB800D92706 /* ProductListUIView.swift */,
 				04DA78B829324F25007FBBC8 /* AddProductUIView.swift */,
 				04E201992940067400D92706 /* DetailProduct.swift */,
+				B0C80D6D29535E8D00CE4910 /* MyproductView.swift */,
+				B096FB0829549854009DD7E7 /* ProductDetailOwnUser.swift */,
+				B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */,
 			);
 			path = ProductInterfaces;
 			sourceTree = "<group>";
@@ -282,15 +291,6 @@
 				046CAF3E294E4776001C1029 /* ModifyUserView.swift */,
 			);
 			path = userinterfaces;
-			sourceTree = "<group>";
-		};
-		04F1F9FE2947B62000F2E30C /* Vendeur */ = {
-			isa = PBXGroup;
-			children = (
-				04DA78C22932600F007FBBC8 /* ModifyProductUIView.swift */,
-				04F1FA012947B74200F2E30C /* DeleteProductView.swift */,
-			);
-			path = Vendeur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -341,7 +341,6 @@
 			knownRegions = (
 				en,
 				Base,
-				fr,
 			);
 			mainGroup = 04989F6B29202E7D0041FF59;
 			packageReferences = (
@@ -365,7 +364,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */,
-				B08BF1602953285C00CA0A4B /* Localizable.strings in Resources */,
 				04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,12 +375,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0C80D6E29535E8D00CE4910 /* MyproductView.swift in Sources */,
 				04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */,
+				B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */,
 				0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */,
 				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
 				04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */,
 				04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */,
-				04F1FA022947B74200F2E30C /* DeleteProductView.swift in Sources */,
 				04E20192293FDBB800D92706 /* ProductListUIView.swift in Sources */,
 				04918F702948ED13007024BC /* Entretien.swift in Sources */,
 				0444E67A292C0CD3000AD700 /* SwiftUIView.swift in Sources */,
@@ -390,6 +389,7 @@
 				0414DCE12944ADBD007BB308 /* ChatUIView.swift in Sources */,
 				0444E686292C1DFF000AD700 /* Car.swift in Sources */,
 				04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */,
+				B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */,
 				04E20194293FEA8900D92706 /* Product.swift in Sources */,
 				04989F9529202FBE0041FF59 /* ForgotPasswordView.swift in Sources */,
 				04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */,
@@ -398,12 +398,16 @@
 				0431740B29312D7C00BF0ADC /* CartManager.swift in Sources */,
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
 				04EA301A2951DC9600091511 /* Utils.swift in Sources */,
+				B0C80D68295330CA00CE4910 /* CarView.swift in Sources */,
+				B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */,
 				04918F722948F014007024BC /* EntretienViewModel.swift in Sources */,
 				04EA30162951DAB100091511 /* PaymentGateway.swift in Sources */,
 				04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */,
 				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
+				B0C80D662953309700CE4910 /* CarListView.swift in Sources */,
 				04EA30182951DB8C00091511 /* Confirmation.swift in Sources */,
+				B096FB0929549854009DD7E7 /* ProductDetailOwnUser.swift in Sources */,
 				0444E676292BEAE0000AD700 /* UserProfileView.swift in Sources */,
 				04918F6B2948A8C9007024BC /* HomeUser.swift in Sources */,
 				04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */,
@@ -412,8 +416,6 @@
 				04999AD5294743D200773032 /* ProductRowView.swift in Sources */,
 				04100ECC29293089004E124C /* ImagePickerView.swift in Sources */,
 				04E2019A2940067400D92706 /* DetailProduct.swift in Sources */,
-				04DA78C32932600F007FBBC8 /* ModifyProductUIView.swift in Sources */,
-				04E53377292D54D4008BB882 /* CarUIView.swift in Sources */,
 				0444E680292C12B3000AD700 /* StatistiqueUIView.swift in Sources */,
 				04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */,
 				04EA30122951D68A00091511 /* CheckoutIntentResponse.swift in Sources */,
@@ -425,18 +427,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		B08BF1622953285C00CA0A4B /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B08BF1612953285C00CA0A4B /* en */,
-				B08BF1632953286100CA0A4B /* fr */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04989F8529202E7E0041FF59 /* Debug */ = {
@@ -495,7 +485,6 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -549,7 +538,6 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

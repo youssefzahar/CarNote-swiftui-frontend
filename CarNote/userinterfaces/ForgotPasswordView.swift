@@ -10,17 +10,6 @@ import SwiftUI
 struct ForgotPasswordView: View {
     @State private var email=""
     @ObservedObject var viewModel = UserViewModel()
-    
-    
-    /// translation
-    let Forgot_Password:LocalizedStringKey = "Forgot Password ?"
-    let enter_email_label:LocalizedStringKey = "Enter the email address associated  with your account."
-    let enter_email_textfield:LocalizedStringKey = "Enter you email address"
-    let Submit:LocalizedStringKey = "Submit"
-
-    
-    
-    
         
         var body: some View {
             ZStack{
@@ -31,7 +20,7 @@ struct ForgotPasswordView: View {
 
             VStack {
                 
-                Text(Forgot_Password).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
+                Text("Forgot Password?").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
                 
              /*   HStack{
                     
@@ -47,7 +36,7 @@ struct ForgotPasswordView: View {
                 
                 HStack{
                     
-                    Text(enter_email_label).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
+                    Text("Enter the email address associated  with your account .").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
 
                     
                 }
@@ -56,7 +45,7 @@ struct ForgotPasswordView: View {
                 HStack{
                     Image(systemName: "envelope").foregroundColor(.blue)
                         .foregroundColor(.gray).font(.headline)
-                    TextField(enter_email_textfield, text: $viewModel.email)
+                    TextField("Enter you email address", text: $viewModel.email)
                         .padding()
                         .frame(width: 300, height: 30)}
                 .padding()
@@ -66,7 +55,7 @@ struct ForgotPasswordView: View {
                 HStack{
                     NavigationLink(destination:LoginScreenView(isLogin: true)){
                         
-                        Button(Submit, action:{
+                        Button("Submit", action:{
                             viewModel.ResetPassword(email: viewModel.email)
                         })
                         .foregroundColor(.white)

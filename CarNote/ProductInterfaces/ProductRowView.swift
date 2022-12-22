@@ -25,6 +25,7 @@ struct ProductRowView: View {
                     .bold()
                 
                 Text("\(product.prix!,format: .number)DT")
+
             }
              Spacer()
             

@@ -27,7 +27,7 @@ public class ProduitViewModel : ObservableObject{
     
     
     
-    var url:String = "http://172.17.1.254:3000/api/product/"
+    var url:String = "http://172.17.2.129:3000/api/product/"
     
  /*  init() {
         
@@ -66,9 +66,9 @@ public class ProduitViewModel : ObservableObject{
     
     func DeleteProduit(_id: String) {
         let parametres: [String: Any] = [
-            "produitId": _id
+            "productID": _id
         ]
-        AF.request(url+"delete" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"delete" , method: .delete,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -83,15 +83,13 @@ public class ProduitViewModel : ObservableObject{
     }
     
     
-    func UpdateProduit( title:String, stock:Int, prix:Int, description: String) {
+    func UpdateProduit( _id:String, stock:Int, prix:Int, description: String) {
      let parametres: [String: Any] = [
-        
-        "title":title,
+        "productID":_id,
         "stock": stock,
         "prix": prix,
-       "description": description
-        
-    
+        "description": description
+
           ]
      AF.request(url+"update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
          .responseJSON {
@@ -129,6 +127,36 @@ public class ProduitViewModel : ObservableObject{
                 
             }
     }
+    
+    
+    
+    func GetMyProducts(completed: @escaping (Bool,[Product]?) -> Void){
+        AF.request(url+"usersProducts/"+UserViewModel.currentUser!._id ?? "", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var products : [Product]? = []
+                    for singleJsonItem in json["response"]{
+                        products!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(products)
+                    completed(true,products)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+    
+    
+    
+    
 
     
     
@@ -139,8 +167,8 @@ public class ProduitViewModel : ObservableObject{
             stock: jsonItem["stock"].intValue,
             prix: jsonItem["prix"].intValue,
             description: jsonItem["description"].stringValue,
-          //  owned_by: jsonItem["owned_by"].stringValue,
-            image: jsonItem["image"].stringValue
+            image: jsonItem["image"].stringValue,
+            owned_by: jsonItem["owned_by"].stringValue
 
             
             

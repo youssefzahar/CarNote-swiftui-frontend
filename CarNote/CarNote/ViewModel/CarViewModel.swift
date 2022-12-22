@@ -8,13 +8,13 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
-import UIKit
 
 class CarViewModel : ObservableObject{
     
     static let sharedInstance = CarViewModel()
     @Published var ListCars = [Car] ()
-
+    
+    
     
     var _id: String = ""
     var modele: String = ""
@@ -24,17 +24,17 @@ class CarViewModel : ObservableObject{
     var puissance: Int = 0
     var carburant: String = ""
     var description: String = ""
-    var ownedBy: String = ""
+    var owned_by: String = ""
     var attribute: String = ""
-    var image: UIImage = UIImage.init(named:"empty") ?? UIImage()
-    var showFileUpload = false
+    var image: String = ""
+    var kilometrage : Int = 0
     
-    var url:String = "http://172.17.1.254:3000/api/car/"
-
+    var url:String = "http://172.17.2.129:3000/api/car/"
+    
     
     func DeleteCar(_id: String) {
         let parametres: [String: Any] = [
-            "carId": _id
+            "carID": _id
         ]
         AF.request(url+"delete" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -46,22 +46,21 @@ class CarViewModel : ObservableObject{
                     print("request failed \(error)")
                 }
             }
-    
+        
 
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, ownedBy : String, image : UIImage ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, owned_by: String ) {
         let parametres: [String: Any] = [
             "modele": modele,
-            "immatricule": immatricule,
             "type":type,
             "marque": marque,
+            "immatricule": immatricule,
            "puissance": puissance,
             "carburant": carburant,
            "description": description,
-            "owned_by": ownedBy,
-            "image": image
+            "owned_by": owned_by,
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -78,7 +77,66 @@ class CarViewModel : ObservableObject{
     
     
     
-   /*
+    
+    func GetCars(completed: @escaping (Bool,[Car]?) -> Void ){
+        
+        
+        AF.request(url+"userCars/"+UserViewModel.currentUser!._id ?? "", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var cars : [Car]? = []
+                    for singleJsonItem in json["response"]{
+                        cars!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(cars)
+                    completed(true,cars)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+
+    
+    func GetPublicCars(completed: @escaping (Bool,[Car]?) -> Void ){
+        
+        
+        AF.request(url+"showMarketplace", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var cars : [Car]? = []
+                    for singleJsonItem in json["response"]{
+                        cars!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(cars)
+                    completed(true,cars)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+
+    
+    
+    
+    
+    
+   
     func makeItem (jsonItem: JSON) -> Car{
         return Car (
             _id: jsonItem["_id"].stringValue,
@@ -91,20 +149,20 @@ class CarViewModel : ObservableObject{
             description: jsonItem["description"].stringValue,
             owned_by: jsonItem["owned_by"].stringValue,
             attribute: jsonItem["attribute"].stringValue,
-            image: jsonItem["image"].stringValue,
-            age: jsonItem["age"].intValue
+            image: jsonItem["image"].stringValue
+           // kilometrage: jsonItem["kilometrage"].intValue
 
 
             
             
         )
     }
-    */
+    
   
     
     
     
-    
+
     
     
     

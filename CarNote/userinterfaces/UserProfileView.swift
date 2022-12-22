@@ -87,11 +87,7 @@ struct UserProfileView: View {
                         Text(phone_number)
                         
                     }
-                    
-                    Text("id :")
-                    Text(_id)
-                        .font(.title)
-                        .bold()
+
                     
                 }
                 Spacer().frame(height: 150)

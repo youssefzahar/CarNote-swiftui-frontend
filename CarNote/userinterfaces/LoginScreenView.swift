@@ -12,15 +12,6 @@ struct LoginScreenView: View {
         @State private var password=""
     @State var isLogin :Bool
         @ObservedObject var viewModel = UserViewModel()
-    
-    /// translation
-    let Login:LocalizedStringKey = "Login"
-    let Password:LocalizedStringKey = "Password"
-    let Forgot_Password:LocalizedStringKey = "Forgot Password ?"
-    let New_to_NoteCar:LocalizedStringKey = "New to NoteCar ?"
-    let Register:LocalizedStringKey = "Register"
-    
-    
         var body: some View {
             NavigationView{
                 ZStack{
@@ -29,7 +20,7 @@ struct LoginScreenView: View {
                     Circle().scale(1.50).foregroundColor(.white)
                     VStack{
                         Image("logo").resizable().aspectRatio(contentMode: .fill).frame(width: 180, height: 200).clipShape(Circle())
-                        Text(Login).font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
+                        Text("Login").font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
                         
                         HStack{
                             Image(systemName: "envelope").foregroundColor(.blue)
@@ -48,7 +39,7 @@ struct LoginScreenView: View {
                         HStack{
                             Image(systemName: "lock.circle").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            SecureField(Password, text: $viewModel.password)
+                            SecureField("Password", text: $viewModel.password)
                                 .padding()
                                 .frame(width: 275, height: 30)                                //.background(Color.black.opacity(0.05))
                             Image(systemName: "eye.slash")
@@ -97,7 +88,7 @@ struct LoginScreenView: View {
                             
                         }
                         NavigationLink(destination:ForgotPasswordView()){
-                            Text(Forgot_Password)
+                            Text("Forgot Password ?")
                                 .foregroundColor(.blue)
                                 .frame(width: 180, height: 40)
                                 .background(Color.white)
@@ -115,12 +106,12 @@ struct LoginScreenView: View {
                          
                          }*/
                         HStack{
-                            Text(New_to_NoteCar).font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
+                            Text("New to NoteCar ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
                             
                             NavigationLink(destination:RegisterView()){
                                 
                                 
-                                Text(Register)                .foregroundColor(.blue)
+                                Text("Register")                .foregroundColor(.blue)
                                     .frame(width: 80, height: 40)
                                     
                                     .cornerRadius(10)
