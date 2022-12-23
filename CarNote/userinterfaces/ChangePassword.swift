@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChangePassword: View {
     @State private var password=""
+    @State private var confirmedPassword=""
     @ObservedObject var viewModel = UserViewModel()
     var body: some View {
         NavigationView{
@@ -17,58 +18,42 @@ struct ChangePassword: View {
                 VStack  (alignment: .leading, spacing: 10){
                     
                     VStack {
-                        Text("Last Name  : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                        Text(" New Password : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
                         HStack{
-                            Image(systemName: "person").foregroundColor(.blue)
+                            Image(systemName: "lock.doc").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
                             
-                            TextField("Last Name", text: $viewModel.last_name)
+                            TextField("New Password", text: $viewModel.password)
                                 .padding()
                             .frame(width: 300, height: 30)}
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                         
                     }
-                    
-                    
-                    
-                  
-                    VStack{
-                        Text("Phone Number : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                    VStack {
+                        Text(" Confirme New Password : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-68)
                         HStack{
-                            Image(systemName: "phone").foregroundColor(.blue)
+                            Image(systemName: "lock.doc.fill").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("Phone Number", text: $viewModel.phone_number)
-                                .padding()
-                            .frame(width: 300, height: 30)} .padding()
-                            .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                        
-                    }
-                    
-                    
-                    VStack{
-                        
-                        HStack {
                             
-                            NavigationLink(destination:UserProfileView()){ Button("Save Profile", action:{
-                                viewModel.UpdateUser(email: viewModel.email,first_name:viewModel.first_name, last_name:viewModel.last_name, phone_number:viewModel.phone_number,
-                                                     image:viewModel.image)  //image!)
+                            TextField("Confirme New Password", text: $viewModel.confirmedPassword)
+                                .padding()
+                            .frame(width: 300, height: 30)}
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
+
+                    }
+                        HStack {
+                            Spacer().frame(width: 30)
+                            Button("Save Profile", action:{
+                                viewModel.ChangePassword(_id: UserViewModel.currentUser?._id ?? "", password: viewModel.password, confirmedPassword: viewModel.confirmedPassword)
                             })
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             .background(Color.blue)
                             .cornerRadius(10)
-                                
-                            }
-                            
                         }
-                    }
-                    
                 }
-              
-            
-               
-
             }
         }
         .navigationBarHidden(true)

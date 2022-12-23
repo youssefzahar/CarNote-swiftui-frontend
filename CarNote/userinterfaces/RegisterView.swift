@@ -10,7 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     @State private var first_name=""
             @State private var last_name=""
-            @State private var cin=0
+            @State private var user_name=""
             @State private var password=""
             @State private var email=""
         @State private var phone_number=""
@@ -53,7 +53,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("Cin", text: $viewModel.cin)
+                                TextField("User Name", text: $viewModel.user_name)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -119,7 +119,7 @@ struct RegisterView: View {
                             
                             HStack {
                                 NavigationLink(destination:VerifView()){
-                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, cin:Int(viewModel.cin) ?? 0, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role, image:viewModel.image) //image:viewModel.image?
+                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role, image:viewModel.image) //image:viewModel.image?
                                         
                                     })
                                     .foregroundColor(.white)

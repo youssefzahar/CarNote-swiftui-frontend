@@ -17,20 +17,21 @@ class UserViewModel: ObservableObject {
     var password:String = ""
     var first_name:String = ""
     var last_name:String = ""
-    var cin:String = ""
+    var user_name:String = ""
     var role:String = ""
     var phone_number:String = ""
- 
+    var _id:String = ""
     var emailToken:String = ""
     var image:String=""
+    var confirmedPassword:String=""
     static var currentUser: User?
     var url:String = "http://172.17.1.91:3000/api/user/"
    
 
     
-    func LogIn(email: String,password: String , complited: @escaping(User?)-> Void) {
+    func LogIn(user_name: String,password: String , complited: @escaping(User?)-> Void) {
         let parametres: [String: Any] = [
-            "username": email,
+            "username": user_name,
             "password": password
         ]
         AF.request(url+"login" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
@@ -44,7 +45,7 @@ class UserViewModel: ObservableObject {
                     let  first_name = userResponse .object(forKey: "first_name") as? String ?? ""
                     let  last_name = userResponse .object(forKey: "last_name") as? String ?? ""
                     let  phone_number = userResponse .object(forKey: "phone_number") as? String ?? ""
-                    let   cin = userResponse .object(forKey: "cin") as? Int ?? 0
+                    let   user_name = userResponse .object(forKey: "user_name") as? String ?? ""
                     let  password = userResponse.object(forKey: "password") as? String ?? ""
                     let  role = userResponse.object(forKey: "role") as? String ?? ""
                     let  emailToken = userResponse.object(forKey: "emailToken") as? String ?? ""
@@ -54,7 +55,7 @@ class UserViewModel: ObservableObject {
                     let  updatedAt = userResponse.object(forKey: "updatedAt") as? String ?? ""
                     let  _id = userResponse.object(forKey: "_id") as? String ?? ""
 
-                    var currentUser = User(_id: _id, first_name: first_name, last_name: last_name, cin: cin, email: email, password: password, role: role, phone_number: phone_number, emailToken: emailToken, isVerified: true, image: image, createdAt : createdAt, updatedAt: updatedAt)
+                    var currentUser = User(_id: _id, first_name: first_name, last_name: last_name, user_name: user_name, email: email, password: password, role: role, phone_number: phone_number, emailToken: emailToken, isVerified: true, image: image, createdAt : createdAt, updatedAt: updatedAt)
                     
                     print(currentUser)
                     Self.currentUser = currentUser
@@ -76,11 +77,11 @@ class UserViewModel: ObservableObject {
             
     }
     
-    func Register( first_name:String, last_name:String, cin:Int, email: String, password: String, phone_number:String, role:String,  image:String) {
+    func Register( first_name:String, last_name:String, user_name:String, email: String, password: String, phone_number:String, role:String,  image:String) {
         let parametres: [String: Any] = [
             "first_name": first_name,
             "last_name": last_name,
-            "cin":cin,
+            "user_name":user_name,
             "email": email,
             "password":password,
             "phone_number":phone_number,
@@ -88,6 +89,25 @@ class UserViewModel: ObservableObject {
             "image":image
         ]
         AF.request(url+"register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
+            .responseJSON {
+                (response) in
+                switch response.result {
+                case .success(let JSON):
+                    print("success \(JSON)")
+                case .failure(let error):
+                    print("request failed \(error)")
+                }
+            }
+            
+    }
+    
+    func ChangePassword(_id: String ,password: String, confirmedPassword:String) {
+        let parametres: [String: Any] = [
+            "userID":_id,
+            "newPassword":password,
+            "confirmedpassword":confirmedPassword,
+        ]
+        AF.request(url+"changePassword" , method: .patch ,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -156,15 +176,11 @@ class UserViewModel: ObservableObject {
     }
     
     
-       func UpdateUser(email: String ,first_name:String, last_name:String, phone_number:String,image:String) {
+    func UpdateUser(_id:String ,email: String, phone_number:String) {
         let parametres: [String: Any] = [
-            "userId": email,
-            "first_name": first_name,
-            "last_name": last_name,
+            "userID": _id,
+            "email": email,
             "phone_number":phone_number,
-            "image":image
-
-       
              ]
         AF.request(url+"update" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -183,9 +199,6 @@ class UserViewModel: ObservableObject {
      let parametres: [String: Any] = [
          "userId": email,
           ]
-        
-        
-
      AF.request(url+"show" , method: .get,parameters: parametres,encoding: JSONEncoding.default)
          .responseJSON {
              (response) in

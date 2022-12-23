@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginScreenView: View {
-    @State private var email=""
+    @State private var user_name=""
         @State private var password=""
     @State var isLogin :Bool
         @ObservedObject var viewModel = UserViewModel()
@@ -25,7 +25,7 @@ struct LoginScreenView: View {
                         HStack{
                             Image(systemName: "envelope").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("email", text: $viewModel.email)
+                            TextField("User Name", text: $viewModel.user_name)
                                 .padding()
                                 .frame(width: 300, height: 30)
                             // .background(Color.black.opacity(0.05))
@@ -55,7 +55,7 @@ struct LoginScreenView: View {
                             
                             Button("Login", action: {
                                 
-                                viewModel.LogIn(email: viewModel.email, password: viewModel.password,complited: {(user ) in
+                                viewModel.LogIn(user_name: viewModel.user_name, password: viewModel.password,complited: {(user ) in
                                     
                                     if let  _ = user {
                                         

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct ModifyUserView: View {
-    @State private var first_name=""
-            @State private var last_name=""
-   // @State public var image: UIImage
+    @State private var email=""
     @State private var phone_number=""
     //@Binding public var email :String
    // @State private var selectedItem: PhotosPickerItem? = nil
@@ -21,42 +19,22 @@ struct ModifyUserView: View {
         NavigationView{
             ZStack{
                 Text("Modify Your Profile !").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-300)
-                VStack  (alignment: .leading, spacing: 10){
-                    /*  Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100).clipShape(Circle()).padding()*/
-                    
+                VStack  (alignment: .leading, spacing: 10){                    
                     VStack{
                         
-                        Text("First Name  : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                        Text("Email : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
                         
                         HStack{
                             Image(systemName: "person").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("First Name", text: $viewModel.first_name)
+                            TextField("First Name", text: $viewModel.email)
                                 .padding()
                             .frame(width: 300, height: 30)}
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                     }
-                    
-                    VStack {
-                        Text("Last Name  : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
-                        HStack{
-                            Image(systemName: "person").foregroundColor(.blue)
-                                .foregroundColor(.gray).font(.headline)
-                            
-                            TextField("Last Name", text: $viewModel.last_name)
-                                .padding()
-                            .frame(width: 300, height: 30)}
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                        
-                    }
-                    
-                    
-                    
-                  
                     VStack{
-                        Text("Phone Number : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                        Text("Phone Number : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-70)
                         HStack{
                             Image(systemName: "phone").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
@@ -68,32 +46,21 @@ struct ModifyUserView: View {
                     }
                     
                     
-                    VStack{
                         
                         HStack {
-                            
-                            NavigationLink(destination:UserProfileView()){ Button("Save Profile", action:{
-                                viewModel.UpdateUser(email: viewModel.email,first_name:viewModel.first_name, last_name:viewModel.last_name, phone_number:viewModel.phone_number,
-                                                     image:viewModel.image)  //image!)
+                            Spacer().frame(width: 30)
+                            Button("Save Profile", action:{
+                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
                             })
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             .background(Color.blue)
-                            .cornerRadius(10)
-                                
-                            }
-                            
+                            .cornerRadius(10)                                                                    
                         }
-                    }
-                    
                 }
-              
-            
-               
-
             }
         }
-        .navigationBarHidden(true)
+        .navigationBarHidden(false)
         
     }
 }
