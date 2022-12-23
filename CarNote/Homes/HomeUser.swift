@@ -17,11 +17,15 @@ struct HomeUser: View {
                 }
             CarListView().tabItem{
                 Image(systemName: "car")
-                Text("Car")
+                Text("My Cars")
             }
             AddCarUIView() .tabItem{
                 Image(systemName: "plus.circle.fill")
                 Text("Add")
+            }
+            CarShopListView().tabItem{
+                Image(systemName: "car.side.fill")
+                Text("Car Shop")
             }
             ChatUIView()  .tabItem{
                 Image(systemName: "bolt.horizontal.circle.fill")

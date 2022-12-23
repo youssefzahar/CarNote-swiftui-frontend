@@ -93,15 +93,13 @@ struct UserProfileView: View {
                 Spacer().frame(height: 150)
                 
                 
-                NavigationLink(destination:ModifyUserView()){ Button("Update profile", action:{
-                })
-                .bold()
-                .frame(width: 120, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(12)
-                    
-                }
+                
+                NavigationLink(destination: ModifyUserView(), label: {Text("Change Password")})
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
                 
                 
                 Button{

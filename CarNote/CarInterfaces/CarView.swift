@@ -18,8 +18,23 @@ struct CarView: View {
                 .frame(width: 180)
                 .scaledToFit()
             VStack(alignment: .leading){
-                Text(car.immatricule)
-                    .bold()
+                HStack{
+                    Text("Modele: ")
+                    Text(car.modele!)
+                        .bold()
+                }
+                HStack{
+                    Text("Marque: ")
+                    Text(car.marque!).bold()
+
+                }
+                HStack{
+                    Text("Type: ")
+                    Text(car.type!).bold()
+
+                }
+                
+
               /*  Text("\(car.kilometrage!,format: .number)km")
                     .font(.caption)*/
             }
@@ -30,12 +45,6 @@ struct CarView: View {
         }
         .frame(width: 180, height: 250)
         .shadow(radius: 3)
-        
-       
-        
-        
-       
-
         
     }}}
 struct CarView_Previews: PreviewProvider {

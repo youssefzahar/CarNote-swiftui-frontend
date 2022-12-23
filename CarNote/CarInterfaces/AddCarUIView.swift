@@ -177,6 +177,19 @@ struct AddCarUIView: View {
                                 
                                 
                                 
+                                Image(uiImage: viewModel.image)
+                                    .resizable()
+                                    .frame(width: 300, height: 200)
+                                    .aspectRatio(contentMode: .fill)
+                                    .onTapGesture {
+                                        viewModel.showFileUpload = true
+                                    }
+                                    .sheet(isPresented: $viewModel.showFileUpload) {
+                                        ImagePicker(sourceType: .photoLibrary, selectedImage: $viewModel.image)
+                                    }
+                                
+                                
+                                
                                 
                             }
                             

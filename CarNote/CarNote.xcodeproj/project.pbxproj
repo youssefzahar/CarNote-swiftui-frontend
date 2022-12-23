@@ -31,8 +31,6 @@
 		04989F9329202F940041FF59 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9229202F940041FF59 /* UserViewModel.swift */; };
 		04989F9529202FBE0041FF59 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */; };
 		04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9629202FE20041FF59 /* LoginScreenView.swift */; };
-		04989F9929202FFC0041FF59 /* ModifyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9829202FFC0041FF59 /* ModifyView.swift */; };
-		04989F9B292030130041FF59 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9A292030130041FF59 /* ProfileView.swift */; };
 		04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9C2920302C0041FF59 /* RegisterView.swift */; };
 		04989F9F2920305F0041FF59 /* VerifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04989F9E2920305F0041FF59 /* VerifView.swift */; };
 		04989FA2292030F70041FF59 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 04989FA1292030F70041FF59 /* Alamofire */; };
@@ -42,7 +40,6 @@
 		04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E2018F293FD7AB00D92706 /* ProductUIView.swift */; };
 		04E20192293FDBB800D92706 /* ProductListUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E20191293FDBB800D92706 /* ProductListUIView.swift */; };
 		04E20194293FEA8900D92706 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E20193293FEA8900D92706 /* Product.swift */; };
-		04E2019A2940067400D92706 /* DetailProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E201992940067400D92706 /* DetailProduct.swift */; };
 		04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E53371292D0CE9008BB882 /* CarViewModel.swift */; };
 		04EA300E2951D26F00091511 /* Stripe in Frameworks */ = {isa = PBXBuildFile; productRef = 04EA300D2951D26F00091511 /* Stripe */; };
 		04EA30122951D68A00091511 /* CheckoutIntentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EA30112951D68A00091511 /* CheckoutIntentResponse.swift */; };
@@ -61,6 +58,9 @@
 		B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D692953543400CE4910 /* CarShopListView.swift */; };
 		B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6B2953577A00CE4910 /* ShopView.swift */; };
 		B0C80D6E29535E8D00CE4910 /* MyproductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6D29535E8D00CE4910 /* MyproductView.swift */; };
+		B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */; };
+		B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD142955E73A001BE6AD /* CarDetails.swift */; };
+		B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD16295601C2001BE6AD /* ChangePassword.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +89,6 @@
 		04989F9229202F940041FF59 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		04989F9629202FE20041FF59 /* LoginScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenView.swift; sourceTree = "<group>"; };
-		04989F9829202FFC0041FF59 /* ModifyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifyView.swift; sourceTree = "<group>"; };
-		04989F9A292030130041FF59 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		04989F9C2920302C0041FF59 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		04989F9E2920305F0041FF59 /* VerifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifView.swift; sourceTree = "<group>"; };
 		04999AD4294743D200773032 /* ProductRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRowView.swift; sourceTree = "<group>"; };
@@ -99,7 +97,6 @@
 		04E2018F293FD7AB00D92706 /* ProductUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView.swift; sourceTree = "<group>"; };
 		04E20191293FDBB800D92706 /* ProductListUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListUIView.swift; sourceTree = "<group>"; };
 		04E20193293FEA8900D92706 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Product.swift; path = CarNote/Model/Product.swift; sourceTree = SOURCE_ROOT; };
-		04E201992940067400D92706 /* DetailProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProduct.swift; sourceTree = "<group>"; };
 		04E53371292D0CE9008BB882 /* CarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		04EA30112951D68A00091511 /* CheckoutIntentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutIntentResponse.swift; sourceTree = "<group>"; };
 		04EA30132951D6F100091511 /* PaymentConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentConfig.swift; sourceTree = "<group>"; };
@@ -115,6 +112,9 @@
 		B0C80D692953543400CE4910 /* CarShopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopListView.swift; sourceTree = "<group>"; };
 		B0C80D6B2953577A00CE4910 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B0C80D6D29535E8D00CE4910 /* MyproductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyproductView.swift; sourceTree = "<group>"; };
+		B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView2.swift; sourceTree = "<group>"; };
+		B0EBAD142955E73A001BE6AD /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
+		B0EBAD16295601C2001BE6AD /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +147,7 @@
 				B0C80D652953309700CE4910 /* CarListView.swift */,
 				B0C80D67295330CA00CE4910 /* CarView.swift */,
 				B0C80D692953543400CE4910 /* CarShopListView.swift */,
+				B0EBAD142955E73A001BE6AD /* CarDetails.swift */,
 			);
 			path = CarInterfaces;
 			sourceTree = "<group>";
@@ -245,10 +246,10 @@
 				04E2018F293FD7AB00D92706 /* ProductUIView.swift */,
 				04E20191293FDBB800D92706 /* ProductListUIView.swift */,
 				04DA78B829324F25007FBBC8 /* AddProductUIView.swift */,
-				04E201992940067400D92706 /* DetailProduct.swift */,
 				B0C80D6D29535E8D00CE4910 /* MyproductView.swift */,
 				B096FB0829549854009DD7E7 /* ProductDetailOwnUser.swift */,
 				B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */,
+				B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */,
 			);
 			path = ProductInterfaces;
 			sourceTree = "<group>";
@@ -283,12 +284,11 @@
 			children = (
 				0444E675292BEAE0000AD700 /* UserProfileView.swift */,
 				04989F9629202FE20041FF59 /* LoginScreenView.swift */,
-				04989F9829202FFC0041FF59 /* ModifyView.swift */,
-				04989F9A292030130041FF59 /* ProfileView.swift */,
 				04989F9C2920302C0041FF59 /* RegisterView.swift */,
 				04989F9E2920305F0041FF59 /* VerifView.swift */,
 				04989F9429202FBE0041FF59 /* ForgotPasswordView.swift */,
 				046CAF3E294E4776001C1029 /* ModifyUserView.swift */,
+				B0EBAD16295601C2001BE6AD /* ChangePassword.swift */,
 			);
 			path = userinterfaces;
 			sourceTree = "<group>";
@@ -391,10 +391,11 @@
 				04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */,
 				B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */,
 				04E20194293FEA8900D92706 /* Product.swift in Sources */,
+				B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */,
 				04989F9529202FBE0041FF59 /* ForgotPasswordView.swift in Sources */,
+				B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */,
 				04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */,
 				04EA30142951D6F100091511 /* PaymentConfig.swift in Sources */,
-				04989F9B292030130041FF59 /* ProfileView.swift in Sources */,
 				0431740B29312D7C00BF0ADC /* CartManager.swift in Sources */,
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
 				04EA301A2951DC9600091511 /* Utils.swift in Sources */,
@@ -412,10 +413,9 @@
 				04918F6B2948A8C9007024BC /* HomeUser.swift in Sources */,
 				04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */,
 				043174072931279900BF0ADC /* CartButton.swift in Sources */,
-				04989F9929202FFC0041FF59 /* ModifyView.swift in Sources */,
 				04999AD5294743D200773032 /* ProductRowView.swift in Sources */,
 				04100ECC29293089004E124C /* ImagePickerView.swift in Sources */,
-				04E2019A2940067400D92706 /* DetailProduct.swift in Sources */,
+				B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */,
 				0444E680292C12B3000AD700 /* StatistiqueUIView.swift in Sources */,
 				04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */,
 				04EA30122951D68A00091511 /* CheckoutIntentResponse.swift in Sources */,
