@@ -18,11 +18,12 @@ public class EntretienViewModel : ObservableObject {
     var title : String = ""
     var description: String = ""
     var date: Date = Date()
+    var owned_by: String = ""
     
     
     
     
-    var url:String = "http://172.17.2.129:3000/api/entretien/"
+    var url:String = "http://172.17.1.91:3000/api/entretien/"
     
     /*  init() {
      
@@ -37,13 +38,14 @@ public class EntretienViewModel : ObservableObject {
      
      }*/
     
-    func AddEntretien( title:String, description:String, date:Date) {
+    func AddEntretien( title:String, description:String, date:Date, owned_by: String) {
         let dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let parametres: [String: Any] = [
             "title": title,
             "description": description ,
             "date" : dateFormatter.string(from : date),
+            "owned_by": owned_by
             
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)

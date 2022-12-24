@@ -194,7 +194,7 @@ struct AddCarUIView: View {
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "") //image:viewModel.image?
+                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

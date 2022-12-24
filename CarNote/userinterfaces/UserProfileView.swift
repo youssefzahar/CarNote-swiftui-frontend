@@ -17,11 +17,7 @@ struct UserProfileView: View {
     @State var  phone_number:String = UserViewModel.currentUser?.phone_number ?? ""
     @State var  role:String = UserViewModel.currentUser?.role ?? ""
     @State var  _id:String = UserViewModel.currentUser?._id ?? ""
-
-
-
-    
-    
+    @State var  user_name:String = UserViewModel.currentUser?.user_name ?? ""
     
     var body: some View {
         NavigationView{
@@ -47,7 +43,7 @@ struct UserProfileView: View {
                     
                     
                     HStack{
-                        NavigationLink(destination:LoginScreenView(isLogin: true)){
+                        NavigationLink(destination:LoginScreenView(isLogin: false)){
                             Text("Logout")
                             .foregroundColor(.blue)
                             .frame(width: 200, height: 50)
@@ -60,15 +56,13 @@ struct UserProfileView: View {
                         .frame(width: 120, height: 120)
                         .clipShape(Circle())
                     
+                    HStack{
+                        Image(systemName: "persone")
+                        Text(user_name)
+                            .font(.title)
+                            .bold()
+                    }
                     
-                    Text(first_name)
-                        .font(.title)
-                        .bold()
-                    
-                    
-                    Text(last_name)
-                        .font(.title)
-                        .bold()
                 }
                 
                 Spacer().frame(height: 30)
@@ -90,19 +84,23 @@ struct UserProfileView: View {
 
                     
                 }
-                Spacer().frame(height: 150)
                 
                 
-                NavigationLink(destination:ModifyUserView()){ Button("Update profile", action:{
-                })
-                .bold()
-                .frame(width: 120, height: 50)
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(12)
-                    
-                }
+                NavigationLink(destination: ModifyUserView(), label: {Text("Update Account")})
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
                 
+                
+                NavigationLink(destination: ChangePassword(), label: {Text("Change Password")})
+                    .padding()
+                    .background(.blue)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .cornerRadius(10)
+ 
                 
                 Button{
                     isShowingAlert = true

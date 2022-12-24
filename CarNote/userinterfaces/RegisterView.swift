@@ -10,17 +10,17 @@ import SwiftUI
 struct RegisterView: View {
     @State private var first_name=""
             @State private var last_name=""
-            @State private var cin=0
+            @State private var user_name=""
             @State private var password=""
             @State private var email=""
         @State private var phone_number=""
         //@State private var image=""
     @ObservedObject var viewModel = UserViewModel()
     var roles = ["User", "Vendeur"]
-    @State private var role="User"
+    @State private var role=""
 
         var body: some View {
-            NavigationView{
+           // NavigationView{
                 ZStack{
                     ScrollView{
                     VStack  (alignment: .leading, spacing: 30){
@@ -53,7 +53,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("Cin", text: $viewModel.cin)
+                                TextField("User Name", text: $viewModel.user_name)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -95,38 +95,28 @@ struct RegisterView: View {
                                     .foregroundColor(.gray).font(.headline)
                                 
                                 
-                              /*  Picker("Please choose a color", selection: $viewModel.role) {
+                                Picker("Please choose a color", selection: $role) {
                                                 ForEach(roles, id: \.self) {
                                                     Text($0)
                                                 }
-                                            }*/
-                                TextField("role", text: $viewModel.role)
-                                    .padding()
+                                            }
+                               /* TextField("role", text: $viewModel.role)
+                                    .padding()*/
                                 .frame(width: 300, height: 30)}
                             .padding()
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                            /*     Button("Upload image"){}
-                             .foregroundColor(.blue)
-                             .frame(width: 300, height: 50)
-                             .background(Color.white)
-                             .cornerRadius(10)*/
-                            /*    TextField("image", text: $viewModel.image)
-                             .padding()
-                             .frame(width: 300, height: 50)
-                             .background(Color.black.opacity(0.05))
-                             .cornerRadius(10)*/
                             
                             
                             HStack {
+                                Spacer().frame(width: 55)
                                 NavigationLink(destination:VerifView()){
-                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, cin:Int(viewModel.cin) ?? 0, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role, image:viewModel.image) //image:viewModel.image?
+                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:role, image:viewModel.image) //image:viewModel.image?
                                         
                                     })
                                     .foregroundColor(.white)
-                                    .frame(width: 100, height: 50)
+                                    .frame(width: 250, height: 50)
                                     .background(Color.blue)
                                     .cornerRadius(10)
-                                    //.offset(x:0,y:300)
                                     
                                     
                                     
@@ -135,7 +125,7 @@ struct RegisterView: View {
                             
                             HStack {
                                 Text("Already have any account ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
-                                
+                                Spacer().frame(width: 100)
                                 NavigationLink(destination:LoginScreenView(isLogin: false)){
                                     
                                     
@@ -157,8 +147,8 @@ struct RegisterView: View {
                    
 
                 }
-            }
-            .navigationBarHidden(true)
+           // }
+          //  .navigationBarHidden(true)
             
         }
     }

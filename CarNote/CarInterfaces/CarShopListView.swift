@@ -22,7 +22,12 @@ struct CarShopListView: View {
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 20){
                     ForEach(0 ..< cars.count, id:  \ .self ) {
-                        index in CarView(car : cars[index])
+                        index in
+                        NavigationLink(destination: CarDetails(car : cars[index])){
+                            CarView(car : cars[index])
+
+                        }
+
                         
                     }
                 }

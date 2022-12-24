@@ -19,7 +19,7 @@ struct ProductListUIView: View {
     
     private func startCheckout(completion: @escaping (String?) -> Void) {
        
-        let url = URL(string: "http://172.17.2.129:3000/create-payment-intent")!
+        let url = URL(string: "http://172.17.1.91:3000/create-payment-intent")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -49,7 +49,7 @@ struct ProductListUIView: View {
                         LazyVGrid(columns: columns, spacing: 20){
                             ForEach(0 ..< products.count, id:  \ .self ) {
                                 index in
-                                NavigationLink(destination: ProductDetailOwnUser(product : products[index])){
+                                NavigationLink(destination: ProductDetail(product : products[index])){
                                     ProductUIView(product : products[index])
 
                                 }

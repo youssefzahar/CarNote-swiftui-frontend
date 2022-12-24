@@ -9,12 +9,14 @@ import Foundation
 
 struct Entretien : Identifiable  {
     
-    internal init(_id: String? = nil, title: String  ,description:String? = nil ,date:Date? = nil){
+    internal init(_id: String? = nil, title: String  ,description:String? = nil ,date:Date? = nil, owned_by: String? = nil){
          
         self._id=_id
         self.title = title
        self.description=description
        self.date=date
+        self.owned_by=owned_by
+
      }
     
     var _id: String?
@@ -22,6 +24,8 @@ struct Entretien : Identifiable  {
     var description: String?
     var date: Date?
     var id: String { title }
+    var owned_by: String?
+
 
 
 }

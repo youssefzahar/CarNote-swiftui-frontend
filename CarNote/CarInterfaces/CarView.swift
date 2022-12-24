@@ -12,14 +12,36 @@ struct CarView: View {
     var body: some View
     {  ZStack(alignment: .topLeading){
         ZStack(alignment: .bottom){
-            Image("P4")
-                .resizable()
-                .cornerRadius(20)
-                .frame(width: 180)
-                .scaledToFit()
+            AsyncImage(url: URL(string: "http://172.17.1.91:3000/uploads/"+car.image!),
+                                                                   content:{ image in
+                                                            image
+                    .resizable()
+                    .cornerRadius(20)
+                    .frame(width: 180)
+                    .scaledToFit()
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        },placeholder: { })
             VStack(alignment: .leading){
-                Text(car.immatricule)
-                    .bold()
+                HStack{
+                    Text("Modele: ")
+                    Text(car.modele!)
+                        .bold()
+                }
+                HStack{
+                    Text("Marque: ")
+                    Text(car.marque!).bold()
+
+                }
+                HStack{
+                    Text("Type: ")
+                    Text(car.type!).bold()
+
+                }
+                
+
               /*  Text("\(car.kilometrage!,format: .number)km")
                     .font(.caption)*/
             }
@@ -30,12 +52,6 @@ struct CarView: View {
         }
         .frame(width: 180, height: 250)
         .shadow(radius: 3)
-        
-       
-        
-        
-       
-
         
     }}}
 struct CarView_Previews: PreviewProvider {

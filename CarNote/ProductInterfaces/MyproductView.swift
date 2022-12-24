@@ -13,29 +13,21 @@ struct MyproductView: View {
 
         var columns = [GridItem(.adaptive(minimum: 150), spacing: 30)]
         @StateObject var  productViewModel = ProduitViewModel()
-        @StateObject var cartManager = CartManager()
     @State var products : [Product] = []
         var body: some View {
             NavigationView{
                 ScrollView{
                     LazyVGrid(columns: columns, spacing: 20){
                         ForEach(0 ..< products.count, id:  \ .self ) {
-                            index in ProductUIView(product : products[index])
-                                .environmentObject(cartManager)
-                        }
+                            index in
+                            NavigationLink(destination: ProductDetail(product : products[index])){
+                                ProductUIView2(product : products[index])
+
+                            }                        }
                     }
                     .padding()
                 }
                    .navigationTitle(Text("Product Shop"))
-                 .toolbar{
-                 NavigationLink{
-                 CartView()
-                 .environmentObject(cartManager)
-                 } label: {
-                 CartButton(numberOfProducts: cartManager.ListProducts.count)
-
-                 }
-                 }
                  }
             .onAppear{
                 productViewModel.GetMyProducts {success, result in
@@ -52,6 +44,6 @@ struct MyproductView: View {
 
         struct MyproductView_Previews: PreviewProvider {
             static var previews: some View {
-                ProductUIView(product : productList[0]).environmentObject(CartManager())
+                ProductUIView(product : productList[0])
             }
         }

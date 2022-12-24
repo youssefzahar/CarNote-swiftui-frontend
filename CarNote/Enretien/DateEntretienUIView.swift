@@ -51,20 +51,12 @@ struct DateEntretienUIView: View {
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                 
-               // NavigationLink(destination:HomeUser()){
-                    Button("Add Entretien",action:{viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date)
-                        
-                    })
-                    .foregroundColor(.white)
-                    .frame(width: 100, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    
-                    
-                //}
                 
-                
-                
+                NavigationLink(destination: CarListView()){
+                    Text("Add Entretien").foregroundColor(.blue)
+                }.simultaneousGesture(TapGesture().onEnded{
+                    viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
+                })
                 
             }}}}
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Car : Identifiable  {
+struct Car : Identifiable, Hashable  {
     
     internal init(_id: String? = nil,modele: String? = nil,type:String? = nil,marque: String? = nil,immatricule: String ,puissance: Int? = nil, carburant:String? = nil, description: String? = nil,owned_by:String? = nil,attribute: String? = nil, image:String? = nil){
          
