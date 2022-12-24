@@ -11,85 +11,86 @@ struct CarDetails: View {
     var car: Car
     @ObservedObject var viewModel = CarViewModel()
     var body: some View {
-           ZStack(alignment: .topLeading){
-            ZStack(alignment: .bottom){
-                Image("P4")
-                    .resizable()
-                    .cornerRadius(20)
-                    .frame(width: 180)
-                    .scaledToFit()
-                VStack(alignment: .leading){
+        
+        VStack (alignment: .leading) {
+            
+            Image("logo")
+                .resizable()
+                .aspectRatio(1,contentMode: .fit)
+                .edgesIgnoringSafeArea(.top)
+            
+            
+            HStack{
+                Text(car.marque!)
+                    .font(.title)
+                    .fontWeight(.bold)
+                Text(car.modele!)
+                    .font(.title)
+                    .fontWeight(.bold)
+            }
+            
+            //                Rating
+            
+            Text("Description :")
+                .fontWeight(.medium)
+                .padding(.vertical, 8)
+            Text(car.description!)
+                .lineSpacing(8.0)
+                .opacity(0.6)
+            
+            //                Info
+            HStack (alignment: .top) {
+                VStack (alignment: .leading) {
+                    Text("Specifications")
+                        .font(.system(size: 16))
+                        .fontWeight(.semibold)
                     HStack{
-                        Text("Modele: ")
-                        Text(car.modele!)
-                            .bold()
+                        Text("Type :")
+                            .opacity(0.6)
+                        Text(car.type!)
+                            .opacity(0.6)
                     }
                     HStack{
-                        Text("Marque: ")
-                        Text(car.marque!).bold()
-
+                        Text("Puissance :")
+                            .opacity(0.6)
+                        Text("\(car.puissance!,format: .number) Chevaux").opacity(0.6)
                     }
                     HStack{
-                        Text("Type: ")
-                        Text(car.type!).bold()
-
+                        Text("Carburant :")
+                            .opacity(0.6)
+                        Text(car.carburant!)
+                            .opacity(0.6)
                     }
-                    
-                    HStack{
-                        Text("Imatricule: ")
-                        Text(car.immatricule).bold()
-
-                    }
-                    HStack{
-                        Text("Puissance: ")
-                        Text("\(car.puissance!,format: .number) Chevaux").bold()
-
-                    }
-                    HStack{
-                        Text("Carburant: ")
-                        Text(car.carburant!).bold()
-
-                    }
-                    HStack{
-                        Text("Owner: ")
-                        Text(car.owned_by!).bold()
-
-                    }
-                    HStack{
-                        Text("Description: ")
-                        Text(car.description!).bold()
-
-                    }
-    
-                    
+                    Spacer().frame(width: 30)
                     if car.owned_by! == UserViewModel.currentUser?._id ?? ""
 
-                    {
-                        NavigationLink(destination: CarListView()){
-                            Text("Delete").foregroundColor(.red)
-                        }.simultaneousGesture(TapGesture().onEnded{
-                            viewModel.DeleteCar(_id: car._id!)
-                        })
-                        
-                        NavigationLink(destination: CarListView()){
-                            Text("Put For Sale").foregroundColor(.green)
-                        }.simultaneousGesture(TapGesture().onEnded{
-                            viewModel.MakeCarPublic(_id: car._id!)
-                        })
-                        
-                    }
-                    
-                    
+                                        {
+                                            NavigationLink(destination: CarListView()){
+                                                Text("Delete").foregroundColor(.red)
+                                            }.simultaneousGesture(TapGesture().onEnded{
+                                                viewModel.DeleteCar(_id: car._id!)
+                                            })
+                                            
+                                            NavigationLink(destination: CarListView()){
+                                                Text("Put For Sale").foregroundColor(.green)
+                                            }.simultaneousGesture(TapGesture().onEnded{
+                                                viewModel.MakeCarPublic(_id: car._id!)
+                                            })
+                                            
+                                        }
+
                 }
-                .padding()
-                .frame(width: 180 , alignment: .leading)
-                .background(.ultraThinMaterial)
-                .cornerRadius(20)
+                
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
-            .frame(width: 180, height: 250)
-            .shadow(radius: 3)
-            
-        }}
+            .padding(.vertical)
+        }
+        .padding()
+        .padding(.top)
+        .background(Color("Bg"))
+        .cornerRadius(30, corners: [.topLeft, .topRight])
+        .offset(x: 0, y: -30.0)
+    }
 }
 
 struct CarDetails_Previews: PreviewProvider {

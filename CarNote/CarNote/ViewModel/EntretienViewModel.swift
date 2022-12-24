@@ -18,6 +18,7 @@ public class EntretienViewModel : ObservableObject {
     var title : String = ""
     var description: String = ""
     var date: Date = Date()
+    var owned_by: String = ""
     
     
     
@@ -37,13 +38,14 @@ public class EntretienViewModel : ObservableObject {
      
      }*/
     
-    func AddEntretien( title:String, description:String, date:Date) {
+    func AddEntretien( title:String, description:String, date:Date, owned_by: String) {
         let dateFormatter = DateFormatter();
         dateFormatter.dateFormat = "yyyy-MM-dd"
         let parametres: [String: Any] = [
             "title": title,
             "description": description ,
             "date" : dateFormatter.string(from : date),
+            "owned_by": owned_by
             
         ]
         AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)

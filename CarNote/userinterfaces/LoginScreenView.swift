@@ -97,7 +97,7 @@ struct LoginScreenView: View {
                         
                         /*
                          NavigationLink(destination:HomeView(/*email:$email*/)){ Button("Login", action:{
-                         viewModel.LogIn(email: viewModel.email, password: viewModel.password, complited: <#(User?) -> Void#>)
+                         viewModel.LogIn(email: viewModel.email, password: viewModel.password, complited: (User?) -> Void)
                          })
                          .foregroundColor(.white)
                          .frame(width: 100, height: 50)

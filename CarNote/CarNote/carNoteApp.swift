@@ -24,6 +24,7 @@ struct carNoteApp: App {
             //HomeVendeur()
         //    CarListView()
          //   ModifyUserView()
+        //    DetailScreen()
           LoginScreenView(isLogin:false)
            // ModifyView()
            // AddCarUIView()

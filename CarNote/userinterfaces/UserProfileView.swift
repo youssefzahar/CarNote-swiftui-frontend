@@ -43,7 +43,7 @@ struct UserProfileView: View {
                     
                     
                     HStack{
-                        NavigationLink(destination:LoginScreenView(isLogin: true)){
+                        NavigationLink(destination:LoginScreenView(isLogin: false)){
                             Text("Logout")
                             .foregroundColor(.blue)
                             .frame(width: 200, height: 50)

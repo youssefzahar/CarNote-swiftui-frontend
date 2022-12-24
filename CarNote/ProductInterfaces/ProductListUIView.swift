@@ -49,7 +49,7 @@ struct ProductListUIView: View {
                         LazyVGrid(columns: columns, spacing: 20){
                             ForEach(0 ..< products.count, id:  \ .self ) {
                                 index in
-                                NavigationLink(destination: ProductDetailOwnUser(product : products[index])){
+                                NavigationLink(destination: ProductDetail(product : products[index])){
                                     ProductUIView(product : products[index])
 
                                 }
