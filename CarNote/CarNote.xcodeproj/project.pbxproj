@@ -52,6 +52,9 @@
 		04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FA2947B49100F2E30C /* ControlLogin.swift */; };
 		04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */; };
 		B008A1F3295737E200014884 /* exemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008A1F2295737E200014884 /* exemple.swift */; };
+		B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A5295745D900509EE0 /* EntretienView.swift */; };
+		B044D9AA29575C5B00509EE0 /* EntretienUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A929575C5B00509EE0 /* EntretienUIView.swift */; };
+		B044D9AC29575D7C00509EE0 /* EntretienDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */; };
 		B096FB0929549854009DD7E7 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0829549854009DD7E7 /* ProductDetail.swift */; };
 		B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */; };
 		B0C80D662953309700CE4910 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D652953309700CE4910 /* CarListView.swift */; };
@@ -107,6 +110,9 @@
 		04F1F9FA2947B49100F2E30C /* ControlLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLogin.swift; sourceTree = "<group>"; };
 		04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVendeur.swift; sourceTree = "<group>"; };
 		B008A1F2295737E200014884 /* exemple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exemple.swift; sourceTree = "<group>"; };
+		B044D9A5295745D900509EE0 /* EntretienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienView.swift; sourceTree = "<group>"; };
+		B044D9A929575C5B00509EE0 /* EntretienUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienUIView.swift; sourceTree = "<group>"; };
+		B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienDetail.swift; sourceTree = "<group>"; };
 		B096FB0829549854009DD7E7 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProduct.swift; sourceTree = "<group>"; };
 		B0C80D652953309700CE4910 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
@@ -169,6 +175,9 @@
 			isa = PBXGroup;
 			children = (
 				0444E677292BF9A9000AD700 /* DateEntretienUIView.swift */,
+				B044D9A5295745D900509EE0 /* EntretienView.swift */,
+				B044D9A929575C5B00509EE0 /* EntretienUIView.swift */,
+				B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */,
 			);
 			path = Enretien;
 			sourceTree = "<group>";
@@ -389,6 +398,7 @@
 				04918F702948ED13007024BC /* Entretien.swift in Sources */,
 				0444E67A292C0CD3000AD700 /* SwiftUIView.swift in Sources */,
 				04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */,
+				B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */,
 				0414DCE12944ADBD007BB308 /* ChatUIView.swift in Sources */,
 				0444E686292C1DFF000AD700 /* Car.swift in Sources */,
 				04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */,
@@ -419,12 +429,14 @@
 				04999AD5294743D200773032 /* ProductRowView.swift in Sources */,
 				04100ECC29293089004E124C /* ImagePickerView.swift in Sources */,
 				B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */,
+				B044D9AA29575C5B00509EE0 /* EntretienUIView.swift in Sources */,
 				0444E680292C12B3000AD700 /* StatistiqueUIView.swift in Sources */,
 				04DA78B929324F25007FBBC8 /* AddProductUIView.swift in Sources */,
 				04EA30122951D68A00091511 /* CheckoutIntentResponse.swift in Sources */,
 				04989F9129202F6A0041FF59 /* User.swift in Sources */,
 				0444E678292BF9A9000AD700 /* DateEntretienUIView.swift in Sources */,
 				B008A1F3295737E200014884 /* exemple.swift in Sources */,
+				B044D9AC29575D7C00509EE0 /* EntretienDetail.swift in Sources */,
 				046CAF3F294E4776001C1029 /* ModifyUserView.swift in Sources */,
 				04989F7829202E7D0041FF59 /* carNoteApp.swift in Sources */,
 			);

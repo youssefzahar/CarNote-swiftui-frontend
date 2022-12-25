@@ -62,16 +62,47 @@ public class EntretienViewModel : ObservableObject {
     }
     
     
-  /*  func makeItem (jsonItem: JSON) -> Product{
-        return Product (
+    
+    
+    func GetMyEntretiens(completed: @escaping (Bool,[Entretien]?) -> Void){
+        AF.request(url+"usersEntretien/"+UserViewModel.currentUser!._id ?? "", method: .get)
+            .validate(statusCode: 200..<300)
+           // .validate(contentType: ["application/json"] )
+            .responseData{ response in
+                switch response.result {
+                case.success(let data):
+                    let json = JSON(data)
+                    print(json)
+                    var entretiens : [Entretien]? = []
+                    for singleJsonItem in json["response"]{
+                        entretiens!.append(self.makeItem(jsonItem: singleJsonItem.1))
+                    
+                    }
+                    print(entretiens)
+                    completed(true,entretiens)
+                case let .failure(error):
+                    debugPrint(error)
+                   completed(false, nil)
+                }
+                
+            }
+    }
+    
+    
+    
+    func makeItem (jsonItem: JSON) -> Entretien{
+        return Entretien (
             _id: jsonItem["_id"].stringValue,
             title: jsonItem["title"].stringValue,
             description: jsonItem["description"].stringValue,
-            date: jsonItem["date"].DateFormatter.string(from: date)
-            
-        )
+           // date: jsonItem["date"].encode(to: Date(from: date as! Decoder))
+           // date:DateUtils.formatFromString(string: jsonItem["date"].stringValue),
+            date: jsonItem["date"].rawValue as? Date
+         )
+        
     }
-*/
+
+    
     
     
 }
