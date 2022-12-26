@@ -17,7 +17,7 @@ struct RegisterView: View {
         //@State private var image=""
     @ObservedObject var viewModel = UserViewModel()
     var roles = ["User", "Vendeur"]
-    @State private var role="User"
+    @State private var role=""
 
         var body: some View {
            // NavigationView{
@@ -95,7 +95,7 @@ struct RegisterView: View {
                                     .foregroundColor(.gray).font(.headline)
                                 
                                 
-                                Picker("Please choose a color", selection: $viewModel.role) {
+                                Picker("Please choose a color", selection: $role) {
                                                 ForEach(roles, id: \.self) {
                                                     Text($0)
                                                 }
@@ -110,7 +110,7 @@ struct RegisterView: View {
                             HStack {
                                 Spacer().frame(width: 55)
                                 NavigationLink(destination:VerifView()){
-                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role, image:viewModel.image) //image:viewModel.image?
+                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:role, image:viewModel.image) //image:viewModel.image?
                                         
                                     })
                                     .foregroundColor(.white)

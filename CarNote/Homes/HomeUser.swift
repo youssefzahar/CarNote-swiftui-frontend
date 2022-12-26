@@ -38,13 +38,6 @@ struct HomeUser: View {
             }
             
             
-            EntretienView()
-                .tabItem{
-                Image(systemName: "date")
-                Text("Entretien")
-            }
-            
-            
         }
     }
 }

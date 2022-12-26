@@ -73,27 +73,36 @@ class CarViewModel : ObservableObject{
     }
     
     
-    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, owned_by: String ) {
+    func AddCar( modele:String, type:String, marque:String, immatricule: String,  puissance: Int, carburant:String, description:String, owned_by: String, image: UIImage  ) {
         let parametres: [String: Any] = [
             "modele": modele,
             "type":type,
             "marque": marque,
             "immatricule": immatricule,
-           "puissance": puissance,
+            "puissance": String( puissance),
             "carburant": carburant,
            "description": description,
             "owned_by": owned_by,
         ]
-        AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
-            .responseJSON {
-                (response) in
-                switch response.result {
-                case .success(let JSON):
-                    print("success \(JSON)")
-                case .failure(let error):
-                    print("request failed \(error)")
-                }
-            }
+        
+        let imgData = image.jpegData(compressionQuality: 0.2)!       
+        AF.upload(multipartFormData: { multipartFormData in
+                   multipartFormData.append(imgData, withName: "image",fileName: "file.jpg", mimeType: "image/jpg")
+                   for ( key,value) in parametres {
+                       
+                       multipartFormData.append(  (value as! String).data(using: .utf8)!, withName: key)
+                   } //Optional for extra parameters
+               },
+                         to:url+"add").responseData(completionHandler: { response in
+                   switch response.result {
+                   case .success:
+                       
+                       print("success image")
+                       
+                   case .failure(let encodingError):
+                       print(encodingError)
+                   }
+               })
             
     }
     
