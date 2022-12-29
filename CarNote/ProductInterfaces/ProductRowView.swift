@@ -44,13 +44,16 @@ struct ProductRowView: View {
             
             
             
-            
-            
-            Image(systemName: "trash")
-                .foregroundColor(Color(hue:  1.0, saturation: 0.89, brightness : 0.835))
-                .onTapGesture {
-                    //cartManager.removeFromCart(product: product)
-                }
+            Button{
+                cartManager.removeFromCart( product : product)
+            }label: {
+             Image(systemName: "trash")
+                    .padding(10)
+                    .foregroundColor(.white)
+                    .background(.blue)
+                    .cornerRadius(50)
+                    .padding()
+            }
             
         }
         .padding(.horizontal)

@@ -74,6 +74,7 @@
 		B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */; };
 		B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD142955E73A001BE6AD /* CarDetails.swift */; };
 		B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD16295601C2001BE6AD /* ChangePassword.swift */; };
+		B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F60B2D295DD560008A4E30 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -140,6 +141,8 @@
 		B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView2.swift; sourceTree = "<group>"; };
 		B0EBAD142955E73A001BE6AD /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
 		B0EBAD16295601C2001BE6AD /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		B0F60B2E295DD560008A4E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../test/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B0F60B30295DD563008A4E30 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../../test/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,7 @@
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
+				B0F60B2D295DD560008A4E30 /* Localizable.strings */,
 				04918F6C2948CB49007024BC /* Enretien */,
 				04918F692948A899007024BC /* Homes */,
 				0414DCDD2944ACCB007BB308 /* Chat */,
@@ -380,6 +384,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 04989F6B29202E7D0041FF59;
 			packageReferences = (
@@ -404,6 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */,
+				B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */,
 				04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -480,6 +486,18 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		B0F60B2D295DD560008A4E30 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F60B2E295DD560008A4E30 /* en */,
+				B0F60B30295DD563008A4E30 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		04989F8529202E7E0041FF59 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -537,6 +555,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -590,6 +609,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};

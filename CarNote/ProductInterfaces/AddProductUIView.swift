@@ -111,7 +111,6 @@ struct AddProductUIView: View
                                 
                                 
                                 
-                                NavigationLink(destination:UserProfileView()){
                                     Button("Add",action:{viewModel.AddProduct(title:viewModel.title, stock:viewModel.stock, prix:viewModel.prix, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image)
                                         
                                     })
@@ -121,7 +120,7 @@ struct AddProductUIView: View
                                     .cornerRadius(10)
                                     
                                     
-                                }
+                                
                                 
                             }
                             
