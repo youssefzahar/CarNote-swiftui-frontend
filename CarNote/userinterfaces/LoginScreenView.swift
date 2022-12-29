@@ -12,6 +12,11 @@ struct LoginScreenView: View {
         @State private var password=""
     @State var isLogin :Bool
         @ObservedObject var viewModel = UserViewModel()
+    
+    //translation
+    let Login : LocalizedStringKey = "Login"
+    
+    
         var body: some View {
             NavigationView{
                 ZStack{
@@ -20,7 +25,7 @@ struct LoginScreenView: View {
                     Circle().scale(1.50).foregroundColor(.white)
                     VStack{
                         Image("logo").resizable().aspectRatio(contentMode: .fill).frame(width: 180, height: 200).clipShape(Circle())
-                        Text("Login").font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
+                        Text(Login).font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
                         
                         HStack{
                             Image(systemName: "envelope").foregroundColor(.blue)

@@ -18,7 +18,8 @@ struct CarShopListView: View {
     
     
     var body: some View {
-        NavigationView{
+      //  NavigationView{
+        Text("")
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 20){
                     ForEach(0 ..< cars.count, id:  \ .self ) {
@@ -32,7 +33,7 @@ struct CarShopListView: View {
                     }
                 }
                     .padding()
-                } .navigationTitle(Text("Cars For Sale"))
+            } .navigationTitle(Text("Cars For Sale").foregroundColor(.blue))
                /* .navigationTitle(Text("Car Shop"))
                 .toolbar{
                     NavigationLink{
@@ -43,7 +44,7 @@ struct CarShopListView: View {
                         
                     }
                 }*/
-            }
+           // }
             .onAppear{
                 carViewModel.GetPublicCars() {success, result in
                     if success {

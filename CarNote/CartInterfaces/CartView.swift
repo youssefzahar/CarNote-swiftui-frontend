@@ -14,6 +14,8 @@ struct CartView: View {
     @State private var message: String = ""
     @State private var isSuccess: Bool = false
     @State private var paymentMethodParams: STPPaymentMethodParams?
+    @State private var ListProducts : [Product] = []
+
     let paymentGateway = PaymentGateway()
     
     private func pay() {
@@ -34,6 +36,7 @@ struct CartView: View {
                     message = "Cancelled"
                 case .succeeded:
                     message = "Your payment has been successfully completed!"
+                //cartManager.emptyCart()
             }
             
         }

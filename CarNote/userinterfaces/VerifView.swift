@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct VerifView: View { @State private var email=""
+struct VerifView: View {
+    @State private var email=""
     @State private var emailToken=""
 @ObservedObject var viewModel = UserViewModel()
     var body: some View {

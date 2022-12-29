@@ -27,14 +27,18 @@ struct HomeUser: View {
                 Image(systemName: "car.side.fill")
                 Text("Car Shop")
             }
-            ChatUIView()  .tabItem{
-                Image(systemName: "bolt.horizontal.circle.fill")
-                Text("Chat")
-            }
+           
             UserProfileView()
                 .tabItem{
                 Image(systemName: "person")
                 Text("Account")
+            }
+            
+            
+            EntretienView()
+                .tabItem{
+                Image(systemName: "date")
+                Text("Entretien")
             }
             
             

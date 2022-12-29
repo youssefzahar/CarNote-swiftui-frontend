@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 import  PhotosUI
+import SwiftyJSON
+
 
 
 class UserViewModel: ObservableObject {
@@ -25,7 +27,7 @@ class UserViewModel: ObservableObject {
     var image:String=""
     var confirmedPassword:String=""
     static var currentUser: User?
-    var url:String = "http://172.17.1.91:3000/api/user/"
+    var url:String = "http://172.17.1.0:3000/api/user/"
    
 
     
@@ -211,6 +213,32 @@ class UserViewModel: ObservableObject {
          }
  }
     
+    
+    
+    
+    
+    func makeItem (jsonItem: JSON) -> User
+    {
+        return User (
+            _id: jsonItem["_id"].stringValue,
+            first_name: jsonItem["first_name"].stringValue,
+            last_name: jsonItem["last_name"].stringValue,
+            user_name: jsonItem["user_name"].stringValue,
+            email: jsonItem["email"].stringValue,
+            password: jsonItem["password"].stringValue,
+            role: jsonItem["role"].stringValue,
+            phone_number: jsonItem["phone_number"].stringValue,
+            emailToken: jsonItem["emailToken"].stringValue,
+            isVerified: jsonItem["isVerified"].boolValue,
+            image: jsonItem["image"].stringValue,
+            createdAt: jsonItem["createdAt"].stringValue,
+
+            updatedAt: jsonItem["updatedAt"].stringValue
+           
+            
+            
+        )
+    }
     
     
     

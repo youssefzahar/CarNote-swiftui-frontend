@@ -28,13 +28,11 @@ struct AddCarUIView: View {
     @State private var kilometrage=""
     
     //let carburant = [selectioncarburant].self()
-    @State private var type = ""
     @State private var marque = ""
-
-    
- //   @State var selectioncarburant = ["Essence","Gasoil"]
- //   @State var selectiontype = ["Voiture","Moto","Bus"]
- //   @State var selectionmarque = ["Ford","Hyndai","BMW","Volswagen","Mercedes"]
+    var types = ["Voiture", "Moto","Camillon"]
+    @State private var type="Voiture"
+    var carburants = ["Essence", "Gazoil", "Premium"]
+    @State private var carburant="Essence"
 
 
     
@@ -82,8 +80,11 @@ struct AddCarUIView: View {
                                     HStack{
                                         Image(systemName: "car").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Type", text: $viewModel.type)
-                                            .padding()
+                                        Picker("Role", selection: $type) {
+                                                        ForEach(types, id: \.self) {
+                                                            Text($0)
+                                                        }
+                                                    }
                                         .frame(width: 300, height: 30)}
                                     .padding()
                                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
@@ -146,8 +147,11 @@ struct AddCarUIView: View {
                                     HStack{
                                         Image(systemName: "fuelpump.fill").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("carburant", text: $viewModel.carburant)
-                                            .padding()
+                                        Picker("Role", selection: $carburant) {
+                                                        ForEach(carburants, id: \.self) {
+                                                            Text($0)
+                                                        }
+                                                    }
                                         .frame(width: 300, height: 30)}
                                     .padding()
                                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
@@ -194,7 +198,7 @@ struct AddCarUIView: View {
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:viewModel.type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:viewModel.carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
+                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

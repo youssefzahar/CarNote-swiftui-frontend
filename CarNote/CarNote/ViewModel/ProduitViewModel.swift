@@ -8,6 +8,8 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import UIKit
+
 
 
 
@@ -21,13 +23,13 @@ public class ProduitViewModel : ObservableObject{
     var stock : Int = 0
     var prix: Int = 0
     var description: String = ""
-    var image: String = ""
     var owned_by: String = ""
-
+    @Published var image: UIImage = UIImage.init(named: "empty") ?? UIImage()
+    @Published var showFileUpload = false
     
     
     
-    var url:String = "http://172.17.1.91:3000/api/product/"
+    var url:String = "http://172.17.1.0:3000/api/product/"
     
  /*  init() {
         
@@ -42,7 +44,7 @@ public class ProduitViewModel : ObservableObject{
         
     }*/
     
-    func AddProduct( title:String, stock:Int, prix:Int, description: String, owned_by: String) {
+    /*func AddProduct( title:String, stock:Int, prix:Int, description: String, owned_by: String) {
         let parametres: [String: Any] = [
             "title": title,
             "stock": stock ,
@@ -60,6 +62,38 @@ public class ProduitViewModel : ObservableObject{
                     print("request failed \(error)")
                 }
             }
+            
+    }*/
+    
+    
+    
+    func AddProduct( title:String, stock:Int, prix:Int, description: String, owned_by: String, image: UIImage) {
+        let parametres: [String: Any] = [
+            "title": title,
+            "stock": String(stock) ,
+            "prix": String(prix),
+            "description": description,
+            "owned_by": owned_by
+        ]
+        
+        let imgData = image.jpegData(compressionQuality: 0.2)!
+        AF.upload(multipartFormData: { multipartFormData in
+                   multipartFormData.append(imgData, withName: "image",fileName: "file.jpg", mimeType: "image/jpg")
+                   for ( key,value) in parametres {
+                       
+                       multipartFormData.append(  (value as! String).data(using: .utf8)!, withName: key)
+                   } //Optional for extra parameters
+               },
+                         to:url+"add").responseData(completionHandler: { response in
+                   switch response.result {
+                   case .success:
+                       
+                       print("success image")
+                       
+                   case .failure(let encodingError):
+                       print(encodingError)
+                   }
+               })
             
     }
     

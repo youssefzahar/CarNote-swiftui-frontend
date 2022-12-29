@@ -14,10 +14,18 @@ struct ProductDetail: View {
     var body: some View {
             VStack (alignment: .leading) {
                 
-                Image("logo")
-                    .resizable()
-                    .aspectRatio(1,contentMode: .fit)
-                    .edgesIgnoringSafeArea(.top)
+                AsyncImage(url: URL(string: "http://172.17.1.0:3000/uploads/"+product.image!),
+                                                                       content:{ image in
+                                                                image
+                        .resizable()
+                        .cornerRadius(20)
+                        .frame(width: 180)
+                        .scaledToFit()
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            },placeholder: { })
                 
                 
                 HStack{

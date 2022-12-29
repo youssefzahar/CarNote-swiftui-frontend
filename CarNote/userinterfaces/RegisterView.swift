@@ -17,7 +17,7 @@ struct RegisterView: View {
         //@State private var image=""
     @ObservedObject var viewModel = UserViewModel()
     var roles = ["User", "Vendeur"]
-    @State private var role=""
+    @State private var role="User"
 
         var body: some View {
            // NavigationView{
@@ -95,7 +95,7 @@ struct RegisterView: View {
                                     .foregroundColor(.gray).font(.headline)
                                 
                                 
-                                Picker("Please choose a color", selection: $role) {
+                                Picker("Role", selection: $role) {
                                                 ForEach(roles, id: \.self) {
                                                     Text($0)
                                                 }

@@ -14,10 +14,18 @@ struct CarDetails: View {
         
         VStack (alignment: .leading) {
             
-            Image("logo")
-                .resizable()
-                .aspectRatio(1,contentMode: .fit)
-                .edgesIgnoringSafeArea(.top)
+            AsyncImage(url: URL(string: "http://172.17.1.0:3000/uploads/"+car.image!),
+                                                                   content:{ image in
+                                                            image
+                    .resizable()
+                    .cornerRadius(20)
+                    .frame(width: 180)
+                    .scaledToFit()
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        },placeholder: { })
             
             
             HStack{

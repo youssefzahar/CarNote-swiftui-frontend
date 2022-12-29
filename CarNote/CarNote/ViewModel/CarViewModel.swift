@@ -32,7 +32,7 @@ class CarViewModel : ObservableObject{
     var kilometrage : Int = 0
     @Published var showFileUpload = false
     
-    var url:String = "http://172.17.1.91:3000/api/car/"
+    var url:String = "http://172.17.1.0:3000/api/car/"
     
     
     func DeleteCar(_id: String) {
@@ -86,9 +86,6 @@ class CarViewModel : ObservableObject{
         ]
         
         let imgData = image.jpegData(compressionQuality: 0.2)!
-               
-               
-               
         AF.upload(multipartFormData: { multipartFormData in
                    multipartFormData.append(imgData, withName: "image",fileName: "file.jpg", mimeType: "image/jpg")
                    for ( key,value) in parametres {
@@ -106,17 +103,6 @@ class CarViewModel : ObservableObject{
                        print(encodingError)
                    }
                })
-        
-        /*AF.request(url+"add" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
-            .responseJSON {
-                (response) in
-                switch response.result {
-                case .success(let JSON):
-                    print("success \(JSON)")
-                case .failure(let error):
-                    print("request failed \(error)")
-                }
-            }*/
             
     }
     
