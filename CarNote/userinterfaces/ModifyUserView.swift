@@ -27,7 +27,7 @@ struct ModifyUserView: View {
                         HStack{
                             Image(systemName: "person").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("First Name", text: $viewModel.email)
+                            TextField(UserViewModel.currentUser?.email ?? "", text: $viewModel.email)
                                 .padding()
                             .frame(width: 300, height: 30)}
                         .padding()
@@ -38,7 +38,7 @@ struct ModifyUserView: View {
                         HStack{
                             Image(systemName: "phone").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("Phone Number", text: $viewModel.phone_number)
+                            TextField(UserViewModel.currentUser?.phone_number ?? "", text: $viewModel.phone_number)
                                 .padding()
                             .frame(width: 300, height: 30)} .padding()
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))

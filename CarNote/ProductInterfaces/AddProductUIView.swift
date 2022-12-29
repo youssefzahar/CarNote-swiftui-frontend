@@ -89,9 +89,22 @@ struct AddProductUIView: View
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             }
                             
+                            
+                            Image(uiImage: viewModel.image)
+                                .resizable()
+                                .frame(width: 300, height: 200)
+                                .aspectRatio(contentMode: .fill)
+                                .onTapGesture {
+                                    viewModel.showFileUpload = true
+                                }
+                                .sheet(isPresented: $viewModel.showFileUpload) {
+                                    ImagePicker(sourceType: .photoLibrary, selectedImage: $viewModel.image)
+                                }
+                            
+                            
                             Spacer()
                             
-                        
+                    
                         
                             HStack{
                                 
@@ -99,7 +112,7 @@ struct AddProductUIView: View
                                 
                                 
                                 NavigationLink(destination:UserProfileView()){
-                                    Button("Add",action:{viewModel.AddProduct(title:viewModel.title, stock:viewModel.stock, prix:viewModel.prix, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "")
+                                    Button("Add",action:{viewModel.AddProduct(title:viewModel.title, stock:viewModel.stock, prix:viewModel.prix, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image)
                                         
                                     })
                                     .foregroundColor(.white)

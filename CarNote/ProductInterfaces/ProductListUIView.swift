@@ -19,7 +19,7 @@ struct ProductListUIView: View {
     
     private func startCheckout(completion: @escaping (String?) -> Void) {
        
-        let url = URL(string: "http://172.17.1.180:3000/create-payment-intent")!
+        let url = URL(string: "http://172.17.1.0:3000/create-payment-intent")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"

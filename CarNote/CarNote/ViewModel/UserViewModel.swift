@@ -27,7 +27,7 @@ class UserViewModel: ObservableObject {
     var image:String=""
     var confirmedPassword:String=""
     static var currentUser: User?
-    var url:String = "http://172.17.1.180:3000/api/user/"
+    var url:String = "http://172.17.1.0:3000/api/user/"
    
 
     

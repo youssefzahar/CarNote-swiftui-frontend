@@ -8,6 +8,9 @@
 import Foundation
 import Alamofire
 import SwiftyJSON
+import UIKit
+@Published var image: UIImage = UIImage.init(named: "empty") ?? UIImage()
+@Published var showFileUpload = false
 
 
 
@@ -180,3 +183,33 @@ public class ProduitViewModel : ObservableObject{
     
     
 }
+/*
+ func AddProduct( title:String, stock:Int, prix:Int, description: String, owned_by: String/*, image: UIImage*/) {
+     let parametres: [String: Any] = [
+         "title": title,
+         "stock": stock ,
+         "prix":prix,
+         "description": description,
+         "owned_by": owned_by
+     ]
+     let imgData = image.jpegData(compressionQuality: 0.2)!
+     AF.upload(multipartFormData: { multipartFormData in
+                multipartFormData.append(imgData, withName: "image",fileName: "file.jpg", mimeType: "image/jpg")
+                for ( key,value) in parametres {
+                    
+                    multipartFormData.append(  (value as! String).data(using: .utf8)!, withName: key)
+                } //Optional for extra parameters
+            },
+                      to:url+"add").responseData(completionHandler: { response in
+                switch response.result {
+                case .success:
+                    
+                    print("success image")
+                    
+                case .failure(let encodingError):
+                    print(encodingError)
+                }
+            })
+         
+ }
+ */
