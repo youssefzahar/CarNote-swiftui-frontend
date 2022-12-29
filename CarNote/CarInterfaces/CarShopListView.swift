@@ -15,7 +15,8 @@ struct CarShopListView: View {
 
     
     @State var cars : [Car] = []
-    
+    let forSale  : LocalizedStringKey = "Cars For Sale"
+
     
     var body: some View {
       //  NavigationView{
@@ -33,7 +34,7 @@ struct CarShopListView: View {
                     }
                 }
                     .padding()
-            } .navigationTitle(Text("Cars For Sale").foregroundColor(.blue))
+            } .navigationTitle(Text(forSale).foregroundColor(.blue))
                /* .navigationTitle(Text("Car Shop"))
                 .toolbar{
                     NavigationLink{

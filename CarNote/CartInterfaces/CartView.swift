@@ -18,6 +18,11 @@ struct CartView: View {
 
     let paymentGateway = PaymentGateway()
     
+    let payinfo  : LocalizedStringKey = "Payment Information"
+    let PayButton  : LocalizedStringKey = "Pay"
+    let chariot  : LocalizedStringKey = "My Cart"
+
+    
     private func pay() {
         
         guard let clientSecret = PaymentConfig.shared.paymentIntentClientSecret else {
@@ -63,12 +68,12 @@ struct CartView: View {
                     // Stripe Credit Card TextField Here
                     STPPaymentCardTextField.Representable.init(paymentMethodParams: $paymentMethodParams)
                 } header: {
-                    Text("Payment Information")
+                    Text(payinfo)
                 }
                 
                 HStack {
                     Spacer()
-                    Button("Pay") {
+                    Button(PayButton) {
                         pay()
                     }.buttonStyle(.plain)
                     Spacer()
@@ -93,7 +98,7 @@ struct CartView: View {
         }
         
         
-        .navigationTitle(Text("My Cart"))
+        .navigationTitle(Text(chariot))
         .padding(.top)
     }
 }

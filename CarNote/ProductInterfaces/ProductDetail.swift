@@ -11,25 +11,29 @@ struct ProductDetail: View {
     var product: Product
     @ObservedObject var viewModel = ProduitViewModel()
 
+    
+    let Title  : LocalizedStringKey = "Title : "
+    let price  : LocalizedStringKey = "Price : "
+    let Description  : LocalizedStringKey = "Description : "
+    let Delete  : LocalizedStringKey = "Delete"
+    let Update_Product  : LocalizedStringKey = "Update Product"
+    
+    
     var body: some View {
             VStack (alignment: .leading) {
                 
                 AsyncImage(url: URL(string: "http://172.17.1.0:3000/uploads/"+product.image!),
-                                                                       content:{ image in
-                                                                image
+                content:{ image in
+                        image
                         .resizable()
                         .cornerRadius(20)
                         .frame(width: 180)
                         .scaledToFit()
-                                                                
-                                                                
-                                                                
-                                                                
-                                                            },placeholder: { })
+                    },placeholder: { })
                 
                 
                 HStack{
-                    Text("Title : ")
+                    Text(Title)
                         .font(.title)
                         .fontWeight(.bold)
                     Text(product.title)
@@ -39,7 +43,7 @@ struct ProductDetail: View {
                 
                 //                Rating
                 
-                Text("Description :")
+                Text(Description)
                     .fontWeight(.medium)
                     .padding(.vertical, 8)
                 Text(product.description!)
@@ -50,7 +54,7 @@ struct ProductDetail: View {
                 HStack (alignment: .top) {
                     VStack (alignment: .leading) {
                         HStack{
-                            Text("Prix :")
+                            Text(price)
                                 .opacity(0.6)
                             Text("\(product.prix!,format: .number) DT").opacity(0.6)
                         }
@@ -60,7 +64,7 @@ struct ProductDetail: View {
                         if product.owned_by! == UserViewModel.currentUser?._id ?? ""
 
                         {
-                            Button("Delete",action:{viewModel.DeleteProduit(_id: product._id!)
+                            Button(Delete,action:{viewModel.DeleteProduit(_id: product._id!)
                                 
                             })
                             .foregroundColor(.white)
@@ -70,7 +74,7 @@ struct ProductDetail: View {
                             
                             
                             NavigationLink(destination:UpdateProduct(product: product)){
-                                Text("Update Product")
+                                Text(Update_Product)
                                     .foregroundColor(.blue)
                                     .frame(width: 180, height: 40)
                                     .background(Color.white)

@@ -9,6 +9,13 @@ import SwiftUI
 
 struct CarView: View {
     var car : Car
+    
+    let Modele  : LocalizedStringKey = "Model  : "
+    let CarType  : LocalizedStringKey = "Type : "
+    let Marque  : LocalizedStringKey = "Brand: "
+    
+    
+    
     var body: some View
     {  ZStack(alignment: .topLeading){
         ZStack(alignment: .bottom){
@@ -26,24 +33,21 @@ struct CarView: View {
                                                         },placeholder: { })
             VStack(alignment: .leading){
                 HStack{
-                    Text("Modele: ")
+                    Text(Modele)
                     Text(car.modele!)
                         .bold()
                 }
                 HStack{
-                    Text("Marque: ")
+                    Text(Marque)
                     Text(car.marque!).bold()
 
                 }
                 HStack{
-                    Text("Type: ")
+                    Text(CarType)
                     Text(car.type!).bold()
 
                 }
-                
 
-              /*  Text("\(car.kilometrage!,format: .number)km")
-                    .font(.caption)*/
             }
             .padding()
             .frame(width: 180 , alignment: .leading)

@@ -39,7 +39,7 @@ struct ProductUIView: View {
                 VStack(alignment: .leading){
                     Text(product.title)
                         .bold()
-                    Text("\(product.prix!,format: .number)DT")
+                    Text("\(product.prix!,format: .number)€")
                         .font(.caption)
                 }
                 .padding()

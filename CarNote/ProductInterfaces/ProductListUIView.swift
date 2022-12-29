@@ -15,7 +15,9 @@ struct ProductListUIView: View {
     @State var products : [Product] = []
     @State private var isActive: Bool = false
 
-    
+    let ProductShop  : LocalizedStringKey = "Product Shop"
+    let Checkout  : LocalizedStringKey = "Checkout"
+
     
     private func startCheckout(completion: @escaping (String?) -> Void) {
        
@@ -60,14 +62,14 @@ struct ProductListUIView: View {
 
                     }
                     
-                       .navigationTitle(Text("Product Shop"))
+                       .navigationTitle(Text(ProductShop))
                      .toolbar{
                     CartButton(numberOfProducts: cartManager.ListProducts.count)
                      NavigationLink(isActive: $isActive){
                      CartView()
                      .environmentObject(cartManager)
                      } label: {
-                         Button("Checkout") {
+                         Button(Checkout) {
                                                  startCheckout { clientSecret in
                                                      
                                                      PaymentConfig.shared.paymentIntentClientSecret = clientSecret
