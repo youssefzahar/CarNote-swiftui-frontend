@@ -12,18 +12,11 @@ struct CarView: View {
     var body: some View
     {  ZStack(alignment: .topLeading){
         ZStack(alignment: .bottom){
-            AsyncImage(url: URL(string: "http://172.17.1.91:3000/uploads/"+car.image!),
-                                                                   content:{ image in
-                                                            image
-                    .resizable()
-                    .cornerRadius(20)
-                    .frame(width: 180)
-                    .scaledToFit()
-                                                            
-                                                            
-                                                            
-                                                            
-                                                        },placeholder: { })
+            Image("P4")
+                .resizable()
+                .cornerRadius(20)
+                .frame(width: 180)
+                .scaledToFit()
             VStack(alignment: .leading){
                 HStack{
                     Text("Modele: ")

@@ -17,7 +17,10 @@ struct CarListView: View {
     
     var body: some View {
         NavigationView{
+          
             ScrollView{
+              
+                
                 LazyVGrid(columns: columns, spacing: 20){
                     ForEach(0 ..< cars.count, id:  \ .self ) {
                         index in
@@ -31,7 +34,7 @@ struct CarListView: View {
                 }
 
                     .padding()
-                } .navigationTitle(Text("My Cars"))
+                } .navigationTitle(Text("Cars Shop"))
             }
             .onAppear{
                 carViewModel.GetCars() {success, result in

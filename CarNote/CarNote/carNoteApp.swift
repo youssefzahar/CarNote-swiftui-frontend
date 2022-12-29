@@ -25,9 +25,10 @@ struct carNoteApp: App {
         //    CarListView()
          //   ModifyUserView()
         //    DetailScreen()
-          LoginScreenView(isLogin:false)
+         LoginScreenView(isLogin:false)
            // ModifyView()
            // AddCarUIView()
+            
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
