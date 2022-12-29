@@ -22,6 +22,15 @@ struct AddProductUIView: View
  
 
     @ObservedObject var viewModel = ProduitViewModel()
+    
+    
+    ///traduction
+    let AddNewProduct  : LocalizedStringKey = "Add New Product ! "
+    let Title  : LocalizedStringKey = "Title : "
+    let Stock  : LocalizedStringKey = "Stock : "
+    let price  : LocalizedStringKey = "Price : "
+    let Description  : LocalizedStringKey = "Description : "
+    let AddProduct  : LocalizedStringKey = "Add Product "
  
     var body: some View {
         NavigationView {
@@ -34,17 +43,17 @@ struct AddProductUIView: View
                 VStackLayout{
                     
                     
-                    Text("Add New Product ! ").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.white)
+                    Text(AddNewProduct).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.white)
                     
                     VStack(alignment: .leading, spacing: 3){
                         ScrollView{
                             VStack{
-                                Text("Product Title : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(Title).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 
                                 HStack{
                                     Image(systemName: "bag.fill.badge.plus").foregroundColor(.blue)
                                         .foregroundColor(.gray).font(.headline)
-                                    TextField("Title", text: $viewModel.title)
+                                    TextField(Title, text: $viewModel.title)
                                         .padding()
                                     .frame(width: 300, height: 30)}
                                 .padding()
@@ -53,12 +62,12 @@ struct AddProductUIView: View
                             
                             
                             VStack{
-                                Text("Product stock : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(Stock).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 
                                 HStack{
                                     Image(systemName: "shippingbox.fill").foregroundColor(.blue)
                                     
-                                    TextField("Stock",value: $viewModel.stock,format: .number)
+                                    TextField(Stock,value: $viewModel.stock,format: .number)
                                         .padding()
                                     .frame(width: 300, height: 30)}
                                 .padding()
@@ -66,10 +75,10 @@ struct AddProductUIView: View
                             }
                             
                             VStack{
-                                Text("Product Price : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(price).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 HStack{
                                     Image(systemName: "banknote.fill").foregroundColor(.blue)
-                                    TextField("Price",value: $viewModel.prix,format: .number)
+                                    TextField(price,value: $viewModel.prix,format: .number)
                                         .padding()
                                     .frame(width: 300, height: 30)}
                                 .padding()
@@ -78,11 +87,11 @@ struct AddProductUIView: View
                             
                             VStack{
                                 
-                                Text("Description : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(Description).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 HStack{
                                     Image(systemName: "line.3.horizontal").foregroundColor(.blue)
                                     
-                                    TextField("Description", text : $viewModel.description)
+                                    TextField(Description, text : $viewModel.description)
                                         .padding()
                                     .frame(width: 300, height: 30)}
                                 .padding()
@@ -111,7 +120,7 @@ struct AddProductUIView: View
                                 
                                 
                                 
-                                    Button("Add",action:{viewModel.AddProduct(title:viewModel.title, stock:viewModel.stock, prix:viewModel.prix, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image)
+                                    Button(AddProduct,action:{viewModel.AddProduct(title:viewModel.title, stock:viewModel.stock, prix:viewModel.prix, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image)
                                         
                                     })
                                     .foregroundColor(.white)

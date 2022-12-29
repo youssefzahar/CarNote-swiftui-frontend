@@ -12,6 +12,9 @@ struct EntretienView: View {
     var rows = [GridItem(.adaptive(minimum: 150), spacing: 30)]
     @StateObject var  entretienViewModel = EntretienViewModel()
     @State var entretiens : [Entretien] = []
+    
+    let Maintenance  : LocalizedStringKey = "Maintenance"
+
     var body: some View {
         NavigationView{
             ScrollView(.horizontal){
@@ -25,7 +28,7 @@ struct EntretienView: View {
                 }
                 .padding()
             }
-               .navigationTitle(Text("Entretien"))
+               .navigationTitle(Text(Maintenance))
              }
         .onAppear{
             entretienViewModel.GetMyEntretiens {success, result in

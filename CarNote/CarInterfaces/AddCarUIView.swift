@@ -33,11 +33,20 @@ struct AddCarUIView: View {
     @State private var type="Voiture"
     var carburants = ["Essence", "Gazoil", "Premium"]
     @State private var carburant="Essence"
-
-
-    
-    //@State private var image=""
     @ObservedObject var viewModel = CarViewModel()
+    
+    ///traduction
+    let AddNewCar  : LocalizedStringKey = "Add New Car"
+    let Modele  : LocalizedStringKey = "Model  : "
+    let CarType  : LocalizedStringKey = "Type : "
+    let Marque  : LocalizedStringKey = "Brand: "
+    let Immatricule  : LocalizedStringKey = "Registration : "
+    let Puissance  : LocalizedStringKey = "Horse Power : "
+    let Fuel  : LocalizedStringKey = "Fuel : "
+    let Description  : LocalizedStringKey = "Description : "
+    let AddCar  : LocalizedStringKey = "Add Car"
+
+
     
     var body: some View {
         NavigationView {
@@ -52,7 +61,7 @@ struct AddCarUIView: View {
                         
                         /*  Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100).clipShape(Circle()).padding()*/
                         
-                        Text("Add New      Car ! ").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.white)
+                        Text(AddNewCar).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.white)
                         
                         
                         ScrollView{
@@ -60,12 +69,12 @@ struct AddCarUIView: View {
                                 
                                 
                                 VStack{
-                                    Text("Car Modele  : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-110)
+                                    Text(Modele).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-110)
                                     
                                     HStack{
                                         Image(systemName: "car").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Modele", text: $viewModel.modele)
+                                        TextField(Modele, text: $viewModel.modele)
                                             .padding()
                                         .frame(width: 300, height: 30)}
                                     .padding()
@@ -75,12 +84,12 @@ struct AddCarUIView: View {
                                 
                                 
                                 VStack{
-                                    Text("Car Type : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-130)
+                                    Text(CarType).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-130)
                                     
                                     HStack{
                                         Image(systemName: "car").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        Picker("Role", selection: $type) {
+                                        Picker(CarType, selection: $type) {
                                                         ForEach(types, id: \.self) {
                                                             Text($0)
                                                         }
@@ -97,12 +106,12 @@ struct AddCarUIView: View {
                                  }*/
                                 
                                 VStack{
-                                    Text("Car Marque: ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-120)
+                                    Text(Marque).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-120)
                                     
                                     HStack{
                                         Image(systemName: "car").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Marque", text: $viewModel.marque)
+                                        TextField(Marque, text: $viewModel.marque)
                                             .padding()
                                         .frame(width: 300, height: 30)}
                                     .padding()
@@ -115,12 +124,12 @@ struct AddCarUIView: View {
                                  
                                  }*/
                                 VStack{
-                                    Text("Car Immatricule : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                    Text(Immatricule).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                     
                                     HStack{
                                         Image(systemName: "creditcard.fill").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Immatricule", text: $viewModel.immatricule)
+                                        TextField(Immatricule, text: $viewModel.immatricule)
                                             .padding()
                                         .frame(width: 300, height: 30)}
                                     .padding()
@@ -130,11 +139,11 @@ struct AddCarUIView: View {
                                 
                                 
                                 VStack{
-                                    Text("Car Puissance : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                    Text(Puissance).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                     HStack{
                                         Image(systemName: "bolt").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Puissance", value: $viewModel.puissance,format: .number)
+                                        TextField(Puissance, value: $viewModel.puissance,format: .number)
                                             .padding()
                                         .frame(width: 300, height: 30)}
                                     .padding()
@@ -143,11 +152,11 @@ struct AddCarUIView: View {
                                 
                                 
                                 VStack{
-                                    Text("Car carburant : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                    Text(Fuel).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                     HStack{
                                         Image(systemName: "fuelpump.fill").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        Picker("Role", selection: $carburant) {
+                                        Picker(Fuel, selection: $carburant) {
                                                         ForEach(carburants, id: \.self) {
                                                             Text($0)
                                                         }
@@ -156,23 +165,12 @@ struct AddCarUIView: View {
                                     .padding()
                                     .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                                 }
-                                //   Form{
-                                //  Section {
-                                /*  Picker(selection: $carburant , label: Text("Carburant")){
-                                 ForEach(0 ..< selectioncarburant.count ) {
-                                 Text(self.selectioncarburant[$0]).tag($0)
-                                 }
-                                 
-                                 }*/
-                                //  }
-                                //   }.navigationBarTitle(Text("Carburant"))
-                                
                                 VStack{
-                                    Text("Car Description : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                    Text(Description).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                     HStack{
                                         Image(systemName: "text.justify.trailing").foregroundColor(.blue)
                                             .foregroundColor(.gray).font(.headline)
-                                        TextField("Description", text: $viewModel.description)
+                                        TextField(Description, text: $viewModel.description)
                                             .padding()
                                         .frame(width: 300, height: 30)}
                                     .padding()
@@ -198,7 +196,7 @@ struct AddCarUIView: View {
                             }
                             
                             NavigationLink(destination:HomeUser()){
-                                Button("Add Car",action:{viewModel.AddCar(modele:viewModel.modele, type:type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
+                                Button(AddCar,action:{viewModel.AddCar(modele:viewModel.modele, type:type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
                                     
                                 })
                                 .foregroundColor(.white)

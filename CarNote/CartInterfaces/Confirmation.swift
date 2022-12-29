@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct Confirmation: View {
+    let paymentcomplet  : LocalizedStringKey = "Payment Completed!"
+
     var body: some View {
-        Text("Payment Completed!")
+        Text(paymentcomplet)
     }
 }
 

@@ -11,6 +11,13 @@ struct UpdateProduct: View {
     var product: Product
     @ObservedObject var viewModel = ProduitViewModel()
  
+    let AddNewProduct  : LocalizedStringKey = "Add New Product ! "
+    let Stock  : LocalizedStringKey = "Stock : "
+    let price  : LocalizedStringKey = "Price : "
+    let Description  : LocalizedStringKey = "Description : "
+    let Update_Product  : LocalizedStringKey = "Update Product"
+    
+    
     var body: some View {
         NavigationView {
             
@@ -26,7 +33,7 @@ struct UpdateProduct: View {
                         ScrollView{
                             
                             VStack{
-                                Text("Product stock : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(Stock).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 
                                 HStack{
                                     Image(systemName: "shippingbox.fill").foregroundColor(.blue)
@@ -39,7 +46,7 @@ struct UpdateProduct: View {
                             }
                             
                             VStack{
-                                Text("Product Price : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(price).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 HStack{
                                     Image(systemName: "banknote.fill").foregroundColor(.blue)
                                     TextField("\(product.prix!,format: .number)",value: $viewModel.prix,format: .number)
@@ -51,7 +58,7 @@ struct UpdateProduct: View {
                             
                             VStack{
                                 
-                                Text("Description : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
+                                Text(Description).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.white).offset(x:-100)
                                 HStack{
                                     Image(systemName: "line.3.horizontal").foregroundColor(.blue)
                                     
@@ -66,7 +73,7 @@ struct UpdateProduct: View {
                             
                             HStack{
                                 NavigationLink(destination:ProductListUIView()){
-                                    Button("Update",action:{viewModel.UpdateProduit(_id: product._id!, stock: viewModel.stock, prix: viewModel.prix, description: viewModel.description)
+                                    Button(Update_Product,action:{viewModel.UpdateProduit(_id: product._id!, stock: viewModel.stock, prix: viewModel.prix, description: viewModel.description)
                                         
                                     })
                                     .foregroundColor(.white)
