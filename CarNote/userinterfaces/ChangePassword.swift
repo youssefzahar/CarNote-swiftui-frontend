@@ -44,14 +44,16 @@ struct ChangePassword: View {
 
                     }
                         HStack {
-                            Spacer().frame(width: 30)
-                            Button("Save Profile", action:{
-                                viewModel.ChangePassword(_id: UserViewModel.currentUser?._id ?? "", password: viewModel.password, confirmedPassword: viewModel.confirmedPassword)
-                            })
+                            NavigationLink(destination: UserProfileView()){
+                                Text("Save Profile").foregroundColor(.white)
+                            }
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             .background(Color.blue)
                             .cornerRadius(10)
+                            .simultaneousGesture(TapGesture().onEnded{
+                                viewModel.ChangePassword(_id: UserViewModel.currentUser?._id ?? "", password: viewModel.password, confirmedPassword: viewModel.confirmedPassword)
+                            })
                         }
                 }
             }

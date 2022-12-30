@@ -29,6 +29,3 @@ struct Entretien : Identifiable  {
 
 
 }
-var  entretienList = [Entretien (title :"P1" , description : "Description" , date: Date.now),
-                      Entretien (title :"P1" , description : "Description"  , date: Date.now),
-                      Entretien (title :"P1" , description : "Description" , date: Date.now)]

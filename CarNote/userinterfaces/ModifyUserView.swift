@@ -49,13 +49,17 @@ struct ModifyUserView: View {
                         
                         HStack {
                             Spacer().frame(width: 30)
-                            Button("Save Profile", action:{
-                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
-                            })
+
+                            NavigationLink(destination: UserProfileView()){
+                                Text("Save Profile").foregroundColor(.white)
+                            }
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             .background(Color.blue)
-                            .cornerRadius(10)                                                                    
+                            .cornerRadius(10)
+                            .simultaneousGesture(TapGesture().onEnded{
+                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
+                            })
                         }
                 }
             }

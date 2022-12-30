@@ -27,7 +27,7 @@ class UserViewModel: ObservableObject {
     var image:String=""
     var confirmedPassword:String=""
     static var currentUser: User?
-    var url:String = "http://172.17.1.0:3000/api/user/"
+    var url:String = "http://172.17.1.75:3000/api/user/"
    
 
     
@@ -79,7 +79,7 @@ class UserViewModel: ObservableObject {
             
     }
     
-    func Register( first_name:String, last_name:String, user_name:String, email: String, password: String, phone_number:String, role:String,  image:String) {
+    func Register( first_name:String, last_name:String, user_name:String, email: String, password: String, phone_number:String, role:String) {
         let parametres: [String: Any] = [
             "first_name": first_name,
             "last_name": last_name,
@@ -88,7 +88,6 @@ class UserViewModel: ObservableObject {
             "password":password,
             "phone_number":phone_number,
             "role":role,
-            "image":image
         ]
         AF.request(url+"register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -124,7 +123,7 @@ class UserViewModel: ObservableObject {
     
     func VerifyAccount(emailToken: String) {
         let parametres: [String: Any] = [
-            "token":emailToken
+            "code":emailToken
         ]
         AF.request(url+"verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {

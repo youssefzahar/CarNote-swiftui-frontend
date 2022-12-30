@@ -51,6 +51,8 @@
 		04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FA2947B49100F2E30C /* ControlLogin.swift */; };
 		04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */; };
 		B008A1F3295737E200014884 /* exemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008A1F2295737E200014884 /* exemple.swift */; };
+		B01FB4D5295F42AD00297CD9 /* Favorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB4D4295F42AD00297CD9 /* Favorie.swift */; };
+		B01FB4D7295F42C100297CD9 /* FavorieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */; };
 		B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A5295745D900509EE0 /* EntretienView.swift */; };
 		B044D9AA29575C5B00509EE0 /* EntretienUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A929575C5B00509EE0 /* EntretienUIView.swift */; };
 		B044D9AC29575D7C00509EE0 /* EntretienDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */; };
@@ -119,6 +121,8 @@
 		04F1F9FA2947B49100F2E30C /* ControlLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLogin.swift; sourceTree = "<group>"; };
 		04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVendeur.swift; sourceTree = "<group>"; };
 		B008A1F2295737E200014884 /* exemple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exemple.swift; sourceTree = "<group>"; };
+		B01FB4D4295F42AD00297CD9 /* Favorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Favorie.swift; path = CarNote/Model/Favorie.swift; sourceTree = SOURCE_ROOT; };
+		B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavorieViewModel.swift; path = CarNote/ViewModel/FavorieViewModel.swift; sourceTree = SOURCE_ROOT; };
 		B044D9A5295745D900509EE0 /* EntretienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienView.swift; sourceTree = "<group>"; };
 		B044D9A929575C5B00509EE0 /* EntretienUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienUIView.swift; sourceTree = "<group>"; };
 		B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienDetail.swift; sourceTree = "<group>"; };
@@ -263,6 +267,7 @@
 				04918F6F2948ED13007024BC /* Entretien.swift */,
 				B0BE4B7B295C7FA3007B1124 /* Message.swift */,
 				B0BE4B7D295C7FB1007B1124 /* Conversation.swift */,
+				B01FB4D4295F42AD00297CD9 /* Favorie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 				04918F712948F014007024BC /* EntretienViewModel.swift */,
 				B0BE4B79295C7F8A007B1124 /* ChatViewModel.swift */,
 				B0BE4B82295C89F7007B1124 /* DateUtils.swift */,
+				B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -425,6 +431,7 @@
 				04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */,
 				B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */,
 				0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */,
+				B01FB4D5295F42AD00297CD9 /* Favorie.swift in Sources */,
 				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
 				04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */,
 				04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */,
@@ -447,6 +454,7 @@
 				B0BE4B7C295C7FA3007B1124 /* Message.swift in Sources */,
 				04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */,
 				04EA30142951D6F100091511 /* PaymentConfig.swift in Sources */,
+				B01FB4D7295F42C100297CD9 /* FavorieViewModel.swift in Sources */,
 				0431740B29312D7C00BF0ADC /* CartManager.swift in Sources */,
 				B0BE4B83295C89F7007B1124 /* DateUtils.swift in Sources */,
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
