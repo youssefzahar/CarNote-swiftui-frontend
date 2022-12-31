@@ -37,7 +37,7 @@ struct CarListView: View {
 
                     .padding()
                 } .navigationTitle(Text(mycars))
-            }
+            }.navigationBarHidden(false)
             .onAppear{
                 carViewModel.GetCars() {success, result in
                     if success {

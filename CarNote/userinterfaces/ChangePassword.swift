@@ -58,7 +58,7 @@ struct ChangePassword: View {
                 }
             }
         }
-        .navigationBarHidden(true)
+        .navigationBarHidden(false)
         
     }
 }

@@ -25,7 +25,7 @@ struct CarDetails: View {
         
         VStack (alignment: .leading) {
             
-            AsyncImage(url: URL(string: "http://172.17.1.75:3000/uploads/"+car.image!),
+            AsyncImage(url: URL(string: "http://172.17.0.156:3000/uploads/"+car.image!),
                                                                    content:{ image in
                                                             image
                     .resizable()
@@ -87,17 +87,23 @@ struct CarDetails: View {
                     if car.owned_by! == UserViewModel.currentUser?._id ?? ""
 
                                         {
-                                            NavigationLink(destination: CarListView()){
+                                            /*NavigationLink(destination: CarListView()){
                                                 Text(Delete).foregroundColor(.red)
                                             }.simultaneousGesture(TapGesture().onEnded{
                                                 viewModel.DeleteCar(_id: car._id!)
-                                            })
-                                            
-                                            NavigationLink(destination: CarListView()){
-                                                Text(sale).foregroundColor(.green)
-                                            }.simultaneousGesture(TapGesture().onEnded{
-                                                viewModel.MakeCarPublic(_id: car._id!)
-                                            })
+                                            })*/
+                        
+                                            Button(Delete,action:{viewModel.DeleteCar(_id: car._id!)})
+                                            .foregroundColor(.white)
+                                            .frame(width: 100, height: 50)
+                                            .background(Color.red)
+                                            .cornerRadius(10)
+                        
+                                            Button(sale,action:{viewModel.MakeCarPublic(_id: car._id!)})
+                                            .foregroundColor(.white)
+                                            .frame(width: 100, height: 50)
+                                            .background(Color.green)
+                                            .cornerRadius(10)
                                             
                                         }
 

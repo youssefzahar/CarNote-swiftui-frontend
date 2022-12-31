@@ -35,7 +35,6 @@ struct AddProductUIView: View
     var body: some View {
         NavigationView {
             
-            
             ZStack{
                 LinearGradient(gradient:Gradient(colors: [.blue,.white]), startPoint: .topTrailing, endPoint:.bottomLeading)
                     .ignoresSafeArea(.all)

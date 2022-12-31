@@ -23,7 +23,7 @@ public class EntretienViewModel : ObservableObject {
     
     
     
-    var url:String = "http://172.17.1.75:3000/api/entretien/"
+    var url:String = "http://172.17.0.156:3000/api/entretien/"
     
     /*  init() {
      

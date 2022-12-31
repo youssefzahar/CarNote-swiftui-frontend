@@ -21,7 +21,7 @@ public class FavorieViewModel : ObservableObject {
     
     
     
-    var url:String = "http://172.17.1.75:3000/api/favorie/"
+    var url:String = "http://172.17.0.156:3000/api/favorie/"
 
     
     func AddFavorie( usr:String, car:String) {

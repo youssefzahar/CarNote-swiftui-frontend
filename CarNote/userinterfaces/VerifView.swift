@@ -54,7 +54,7 @@ struct VerifView: View {
                 })
         }
         }
-        }  .navigationBarHidden(true)
+        }
     }
 }
 

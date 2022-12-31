@@ -29,7 +29,7 @@ struct EntretienView: View {
                 .padding()
             }
                .navigationTitle(Text(Maintenance))
-             }
+             }.navigationBarHidden(false)
         .onAppear{
             entretienViewModel.GetMyEntretiens {success, result in
                 if success {

@@ -71,7 +71,6 @@
 		B0C80D662953309700CE4910 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D652953309700CE4910 /* CarListView.swift */; };
 		B0C80D68295330CA00CE4910 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D67295330CA00CE4910 /* CarView.swift */; };
 		B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D692953543400CE4910 /* CarShopListView.swift */; };
-		B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6B2953577A00CE4910 /* ShopView.swift */; };
 		B0C80D6E29535E8D00CE4910 /* MyproductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6D29535E8D00CE4910 /* MyproductView.swift */; };
 		B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */; };
 		B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD142955E73A001BE6AD /* CarDetails.swift */; };
@@ -140,7 +139,6 @@
 		B0C80D652953309700CE4910 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		B0C80D67295330CA00CE4910 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		B0C80D692953543400CE4910 /* CarShopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopListView.swift; sourceTree = "<group>"; };
-		B0C80D6B2953577A00CE4910 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B0C80D6D29535E8D00CE4910 /* MyproductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyproductView.swift; sourceTree = "<group>"; };
 		B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView2.swift; sourceTree = "<group>"; };
 		B0EBAD142955E73A001BE6AD /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
@@ -195,7 +193,6 @@
 				04F1F9FA2947B49100F2E30C /* ControlLogin.swift */,
 				04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */,
 				04918F6A2948A8C9007024BC /* HomeUser.swift */,
-				B0C80D6B2953577A00CE4910 /* ShopView.swift */,
 			);
 			path = Homes;
 			sourceTree = "<group>";
@@ -460,7 +457,6 @@
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
 				04EA301A2951DC9600091511 /* Utils.swift in Sources */,
 				B0C80D68295330CA00CE4910 /* CarView.swift in Sources */,
-				B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */,
 				B0BE4B91295CB5B7007B1124 /* ChatView.swift in Sources */,
 				04918F722948F014007024BC /* EntretienViewModel.swift in Sources */,
 				04EA30162951DAB100091511 /* PaymentGateway.swift in Sources */,

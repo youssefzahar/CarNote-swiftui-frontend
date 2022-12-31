@@ -121,7 +121,7 @@ struct RegisterView: View {
                                 })
                             }
                             
-                            HStack {
+                         /*   HStack {
                                 Text("Already have any account ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
                                 Spacer().frame(width: 100)
                                 NavigationLink(destination:LoginScreenView(isLogin: false)){
@@ -134,7 +134,7 @@ struct RegisterView: View {
                                     //.offset(x:-80,y:)
                                     
                                 }
-                            }
+                            }*/
                             
                             
                             
