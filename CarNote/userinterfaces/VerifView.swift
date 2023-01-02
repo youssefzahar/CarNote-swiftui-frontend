@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct VerifView: View {
-    @State private var email=""
     @State private var emailToken=""
 @ObservedObject var viewModel = UserViewModel()
     var body: some View {
@@ -29,20 +28,11 @@ struct VerifView: View {
 
                 
             }
-            
-            
-            /*HStack{
-                
-                Spacer()
-                Image("logo").resizable().aspectRatio(contentMode: .fill).frame(width: 200, height: 200).clipShape(Circle()).clipped().padding(.all)
-                Spacer()
-   
-            }*/
            
             HStack{
                 Image(systemName: "envelope").foregroundColor(.blue)
                     .foregroundColor(.gray).font(.headline)
-                TextField("Enter you email address", text: $viewModel.email)
+                TextField("Enter your code", text: $viewModel.emailToken)
                     .padding()
                     .frame(width: 300, height: 30)}
             .padding()
@@ -51,23 +41,20 @@ struct VerifView: View {
             
           
             HStack{
-                
-               
-                
-                
-                NavigationLink(destination:LoginScreenView(isLogin:true)){
-                    Button("Verify", action:{
-                        viewModel.VerifyAccount(emailToken: viewModel.emailToken)
-                    })
-                    .foregroundColor(.white)
-                    .frame(width: 200, height: 50)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .offset(x:0,y: 50)
+
+                NavigationLink(destination: LoginScreenView(isLogin:false)){
+                    Text("Verify").foregroundColor(.white)
                 }
+                .foregroundColor(.white)
+                .frame(width: 250, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                .simultaneousGesture(TapGesture().onEnded{
+                    viewModel.VerifyAccount(emailToken: viewModel.emailToken)
+                })
         }
         }
-        }  .navigationBarHidden(true)
+        }
     }
 }
 

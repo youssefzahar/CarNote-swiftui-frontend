@@ -19,7 +19,7 @@ struct CarView: View {
     var body: some View
     {  ZStack(alignment: .topLeading){
         ZStack(alignment: .bottom){
-            AsyncImage(url: URL(string: "http://172.17.1.0:3000/uploads/"+car.image!),
+            AsyncImage(url: URL(string: "http://172.17.0.156:3000/uploads/"+car.image!),
                                                                    content:{ image in
                                                             image
                     .resizable()

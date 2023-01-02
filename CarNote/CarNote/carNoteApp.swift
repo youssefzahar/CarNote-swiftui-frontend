@@ -28,7 +28,7 @@ struct carNoteApp: App {
          LoginScreenView(isLogin:false)
            // ModifyView()
            // AddCarUIView()
-            
+          //  TermsWebView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

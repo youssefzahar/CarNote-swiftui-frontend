@@ -21,7 +21,7 @@ struct ProductListUIView: View {
     
     private func startCheckout(completion: @escaping (String?) -> Void) {
        
-        let url = URL(string: "http://172.17.1.0:3000/create-payment-intent")!
+        let url = URL(string: "http://172.17.0.156:3000/create-payment-intent")!
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -44,6 +44,8 @@ struct ProductListUIView: View {
         
     }
     
+
+    
     
     var body: some View {
                 NavigationView{
@@ -53,15 +55,13 @@ struct ProductListUIView: View {
                                 index in
                                 NavigationLink(destination: ProductDetail(product : products[index])){
                                     ProductUIView(product : products[index])
-
                                 }
                                     .environmentObject(cartManager)
                             }
                         }
                         .padding()
-
                     }
-                    
+                   // .searchable(text:)
                        .navigationTitle(Text(ProductShop))
                      .toolbar{
                     CartButton(numberOfProducts: cartManager.ListProducts.count)
@@ -78,11 +78,10 @@ struct ProductListUIView: View {
                                                          isActive = true
                                                      }
                                                  }
-                                             }
-                     
+                                            }
                      }
                      }
-                     }
+                     }.navigationBarHidden(false)
                 .onAppear{
                     productViewModel.GetProducts {success, result in
                         if success {
@@ -101,3 +100,6 @@ struct ProductListUIView: View {
                     ProductUIView(product : productList[0]).environmentObject(CartManager())
                 }
             }
+/*   let searchtext : String "" ? products : products.filter{
+$0.contains(searchtext.lowercased())
+}*/

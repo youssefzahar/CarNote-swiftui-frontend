@@ -31,7 +31,7 @@ struct MyproductView: View {
                     .padding()
                 }
                    .navigationTitle(Text(ProductShop))
-                 }
+                 }.navigationBarHidden(false)
             .onAppear{
                 productViewModel.GetMyProducts {success, result in
                     if success {

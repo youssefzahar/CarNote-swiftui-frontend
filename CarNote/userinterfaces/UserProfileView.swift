@@ -31,7 +31,6 @@ struct UserProfileView: View {
                             Text("Pick Date ")
                         }      .foregroundColor(.blue)
                             .frame(width: 100, height: 50)
-                            .background(Color.white)
                             .cornerRadius(10)
                             .offset(x:150,y: -50)
                         Image(systemName: "calendar.badge.plus")
@@ -50,6 +49,7 @@ struct UserProfileView: View {
              
                         }
                     }
+
                     
                     Image("logo")
                         .resizable()
@@ -118,7 +118,7 @@ struct UserProfileView: View {
                 }
                 
                 
-            }}.navigationBarHidden(true)
+            }}.navigationBarHidden(false)
     }
 }
 

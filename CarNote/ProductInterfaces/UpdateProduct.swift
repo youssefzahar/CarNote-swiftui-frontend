@@ -72,17 +72,15 @@ struct UpdateProduct: View {
                             Spacer()
                             
                             HStack{
-                                NavigationLink(destination:ProductListUIView()){
-                                    Button(Update_Product,action:{viewModel.UpdateProduit(_id: product._id!, stock: viewModel.stock, prix: viewModel.prix, description: viewModel.description)
-                                        
-                                    })
-                                    .foregroundColor(.white)
-                                    .frame(width: 100, height: 50)
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
+                                
+                                Button(Update_Product,action:{viewModel.UpdateProduit(_id: product._id!, stock: viewModel.stock, prix: viewModel.prix, description: viewModel.description)
                                     
-                                    
-                                }
+                                })
+                                .foregroundColor(.white)
+                                .frame(width: 100, height: 50)
+                                .background(Color.blue)
+                                .cornerRadius(10)
+                                
                                 
                             }
                             
@@ -90,7 +88,7 @@ struct UpdateProduct: View {
                         }
                     }}
             }
-            .navigationBarHidden(true)
+            .navigationBarHidden(false)
             
         }}
 }

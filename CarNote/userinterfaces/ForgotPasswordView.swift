@@ -53,17 +53,17 @@ struct ForgotPasswordView: View {
              
                 
                 HStack{
-                    NavigationLink(destination:LoginScreenView(isLogin: true)){
-                        
-                        Button("Submit", action:{
-                            viewModel.ResetPassword(email: viewModel.email)
-                        })
-                        .foregroundColor(.white)
-                        .frame(width: 200, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .offset(x:0,y: 50)
+                    
+                    NavigationLink(destination: LoginScreenView(isLogin:false)){
+                        Text("Submit").foregroundColor(.white)
                     }
+                    .foregroundColor(.white)
+                    .frame(width: 250, height: 50)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .simultaneousGesture(TapGesture().onEnded{
+                        viewModel.ResetPassword(email: viewModel.email)
+                    })
                         
 
             }

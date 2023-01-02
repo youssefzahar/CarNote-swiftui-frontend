@@ -124,7 +124,7 @@ struct LoginScreenView: View {
                             }
                         }
                         }
-                } .navigationBarHidden(true)
+                }
                 
             }
             

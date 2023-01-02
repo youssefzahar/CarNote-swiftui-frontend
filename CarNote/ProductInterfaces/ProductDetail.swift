@@ -22,7 +22,7 @@ struct ProductDetail: View {
     var body: some View {
             VStack (alignment: .leading) {
                 
-                AsyncImage(url: URL(string: "http://172.17.1.0:3000/uploads/"+product.image!),
+                AsyncImage(url: URL(string: "http://172.17.0.156:3000/uploads/"+product.image!),
                 content:{ image in
                         image
                         .resizable()

@@ -195,7 +195,7 @@ struct AddCarUIView: View {
                                 
                             }
                             
-                            NavigationLink(destination:HomeUser()){
+                           // NavigationLink(destination:HomeUser()){
                                 Button(AddCar,action:{viewModel.AddCar(modele:viewModel.modele, type:type, marque:viewModel.marque, immatricule:viewModel.immatricule, puissance:viewModel.puissance, carburant:carburant, description: viewModel.description, owned_by: UserViewModel.currentUser?._id ?? "", image: viewModel.image) //image:viewModel.image?
                                     
                                 })
@@ -205,7 +205,7 @@ struct AddCarUIView: View {
                                 .cornerRadius(10)
                                 
                                 
-                            }
+                          //  }
 
                             
                             
