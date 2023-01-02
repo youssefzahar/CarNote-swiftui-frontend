@@ -8,8 +8,8 @@
 import UIKit
 import Alamofire
 //import AlamofireImage
-
-class MessagerieView: UITableViewController/*ModalTransitionListener*/ {
+/*
+class MessagerieView: UITableViewController,ModalTransitionListener {
     @IBOutlet var tableview: UITableView!
     
     // VARS
@@ -33,7 +33,7 @@ class MessagerieView: UITableViewController/*ModalTransitionListener*/ {
        // let blockButton = contentView?.viewWithTag(4) as! UIButton
         
         let conversation = conversations[indexPath.row]
-        let receiver = conversation.receiver
+        let receiver = conversation.recepteur
 //
 //        blockButton.addAction(UIAction(handler: { act in
 //            let reinitAct = UIAlertAction(title: "Ok", style: .default) {  [self] UIAlertAction in
@@ -82,7 +82,7 @@ class MessagerieView: UITableViewController/*ModalTransitionListener*/ {
         
         
         labelUsername.text = receiver.first_name
-        labellastMessage.text = conversation.lastMessage
+        labellastMessage.text = conversation.dernierMessage
         
         return cell!
     }
@@ -98,14 +98,14 @@ class MessagerieView: UITableViewController/*ModalTransitionListener*/ {
         if segue.identifier == "conversationSeguee" {
             let destination = segue.destination as! ChatView
             destination.currentConversation = selectedConversation
-            destination.title = (selectedConversation?.receiver.last_name)
+            destination.title = (selectedConversation?.recepteur.last_name)
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //ModalTransitionMediator.instance.setListener(listener: self)
+        ModalTransitionMediator.instance.setListener(listener: self)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -134,4 +134,4 @@ class MessagerieView: UITableViewController/*ModalTransitionListener*/ {
         }
     }
 }
-
+*/

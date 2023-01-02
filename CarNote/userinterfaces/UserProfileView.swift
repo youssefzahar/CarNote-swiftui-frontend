@@ -19,6 +19,13 @@ struct UserProfileView: View {
     @State var  _id:String = UserViewModel.currentUser?._id ?? ""
     @State var  user_name:String = UserViewModel.currentUser?.user_name ?? ""
     
+    
+    let pickdate  : LocalizedStringKey = "Pick Date "
+    let logout  : LocalizedStringKey = "Logout"
+    let updateprof  : LocalizedStringKey = "Update Account"
+    let changepass  : LocalizedStringKey = "Change Password"
+
+    
     var body: some View {
         NavigationView{
             
@@ -28,10 +35,9 @@ struct UserProfileView: View {
                     if role == "User" {
                         
                         NavigationLink(destination:DateEntretienUIView()) {
-                            Text("Pick Date ")
+                            Text(pickdate)
                         }      .foregroundColor(.blue)
                             .frame(width: 100, height: 50)
-                            .background(Color.white)
                             .cornerRadius(10)
                             .offset(x:150,y: -50)
                         Image(systemName: "calendar.badge.plus")
@@ -44,12 +50,13 @@ struct UserProfileView: View {
                     
                     HStack{
                         NavigationLink(destination:LoginScreenView(isLogin: false)){
-                            Text("Logout")
+                            Text(logout)
                             .foregroundColor(.blue)
                             .frame(width: 200, height: 50)
              
                         }
                     }
+
                     
                     Image("logo")
                         .resizable()
@@ -86,7 +93,7 @@ struct UserProfileView: View {
                 }
                 
                 
-                NavigationLink(destination: ModifyUserView(), label: {Text("Update Account")})
+                NavigationLink(destination: ModifyUserView(), label: {Text(updateprof)})
                     .padding()
                     .background(.blue)
                     .foregroundColor(.white)
@@ -94,31 +101,15 @@ struct UserProfileView: View {
                     .cornerRadius(10)
                 
                 
-                NavigationLink(destination: ChangePassword(), label: {Text("Change Password")})
+                NavigationLink(destination: ChangePassword(), label: {Text(changepass)})
                     .padding()
                     .background(.blue)
                     .foregroundColor(.white)
                     .font(.headline)
                     .cornerRadius(10)
- 
-                
-                Button{
-                    isShowingAlert = true
-                }label: {
-                    Text("Delete")
-                        .bold()
-                        .frame(width:120, height: 50)
-                        .background(Color.red)
-                        .foregroundColor(.white)
-                        .cornerRadius(12)
-                        .alert("Are you Sure ?", isPresented: $isShowingAlert){
-                            Button("Delete",role: .destructive){
-                                print("Profile Deleted")}
-                        }
-                }
                 
                 
-            }}.navigationBarHidden(true)
+            }}.navigationBarHidden(false)
     }
 }
 

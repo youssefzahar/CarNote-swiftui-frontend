@@ -14,6 +14,8 @@ struct CarListView: View {
     
     @State var cars : [Car] = []
     
+    let mycars  : LocalizedStringKey = "My Cars"
+
     
     var body: some View {
         NavigationView{
@@ -34,8 +36,8 @@ struct CarListView: View {
                 }
 
                     .padding()
-                } .navigationTitle(Text("Cars Shop"))
-            }
+                } .navigationTitle(Text(mycars))
+            }.navigationBarHidden(false)
             .onAppear{
                 carViewModel.GetCars() {success, result in
                     if success {

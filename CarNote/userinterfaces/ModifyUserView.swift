@@ -15,30 +15,37 @@ struct ModifyUserView: View {
     @State private var selectedImageData: Data? = nil
 
     @ObservedObject var viewModel = UserViewModel()
+    
+    ///traduction
+    let modifyprof  : LocalizedStringKey = "Modify Your Profile !"
+    let emailmod  : LocalizedStringKey = "Email"
+    let num  : LocalizedStringKey = "Phone Number"
+    let saveprof  : LocalizedStringKey = "Save Profile"
+    
     var body: some View {
         NavigationView{
             ZStack{
-                Text("Modify Your Profile !").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-300)
+                Text(modifyprof).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-300)
                 VStack  (alignment: .leading, spacing: 10){                    
                     VStack{
                         
-                        Text("Email : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                        Text(emailmod).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
                         
                         HStack{
                             Image(systemName: "person").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("First Name", text: $viewModel.email)
+                            TextField(UserViewModel.currentUser?.email ?? "", text: $viewModel.email)
                                 .padding()
                             .frame(width: 300, height: 30)}
                         .padding()
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                     }
                     VStack{
-                        Text("Phone Number : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-70)
+                        Text(num).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-70)
                         HStack{
                             Image(systemName: "phone").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("Phone Number", text: $viewModel.phone_number)
+                            TextField(UserViewModel.currentUser?.phone_number ?? "", text: $viewModel.phone_number)
                                 .padding()
                             .frame(width: 300, height: 30)} .padding()
                             .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
@@ -49,13 +56,29 @@ struct ModifyUserView: View {
                         
                         HStack {
                             Spacer().frame(width: 30)
-                            Button("Save Profile", action:{
-                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
-                            })
+
+                          /*  NavigationLink(destination: UserProfileView()){
+                                Text(saveprof).foregroundColor(.white)
+                            }
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
                             .background(Color.blue)
-                            .cornerRadius(10)                                                                    
+                            .cornerRadius(10)
+                            .simultaneousGesture(TapGesture().onEnded{
+                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
+                            })*/
+                            
+                            
+                            Button(saveprof, action: {
+                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
+                            }
+                                     
+                                   
+                            )
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                         }
                 }
             }

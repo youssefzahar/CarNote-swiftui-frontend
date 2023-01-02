@@ -12,6 +12,11 @@ struct EntretienDetail: View {
     
     @ObservedObject var viewModel = EntretienViewModel()
     
+    let Title  : LocalizedStringKey = "Title : "
+    let Description  : LocalizedStringKey = "Description : "
+    let Delete  : LocalizedStringKey = "Delete"
+
+    
     var body: some View {
         VStack (alignment: .leading) {
             
@@ -19,7 +24,7 @@ struct EntretienDetail: View {
             
             
             HStack{
-                Text("Title : ")
+                Text(Title)
                     .font(.title)
                     .fontWeight(.bold)
                 Text(entretien.title)
@@ -29,13 +34,14 @@ struct EntretienDetail: View {
             
             //                Rating
             HStack{
-                Text("Description :")
+                Text(Description)
                     .fontWeight(.medium)
                     .padding(.vertical, 8)
                 Text(entretien.description!)
                     .lineSpacing(8.0)
                     .opacity(0.6)
             }
+            
         }
     }
 }

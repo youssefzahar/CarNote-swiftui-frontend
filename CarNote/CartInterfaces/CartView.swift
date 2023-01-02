@@ -14,7 +14,14 @@ struct CartView: View {
     @State private var message: String = ""
     @State private var isSuccess: Bool = false
     @State private var paymentMethodParams: STPPaymentMethodParams?
+    @State private var ListProducts : [Product] = []
+
     let paymentGateway = PaymentGateway()
+    
+    let payinfo  : LocalizedStringKey = "Payment Information"
+    let PayButton  : LocalizedStringKey = "Pay"
+    let chariot  : LocalizedStringKey = "My Cart"
+
     
     private func pay() {
         
@@ -34,7 +41,13 @@ struct CartView: View {
                     message = "Cancelled"
                 case .succeeded:
                     message = "Your payment has been successfully completed!"
+
             }
+            /*
+             Button("Empty Cart", action: {
+                 cartManager.emptyCart()
+             }
+             */
             
         }
         
@@ -42,8 +55,9 @@ struct CartView: View {
     
     
     var body: some View {
-        
+
         ScrollView{
+
             if cartManager.ListProducts.count > 0 {
                 ForEach(cartManager.ListProducts, id:  \.id){
                     product in
@@ -54,18 +68,20 @@ struct CartView: View {
                     Spacer()
                     Text("\(cartManager.total) DT")
                         .bold()
+                    
+                    
                 }
                 
                 Section {
                     // Stripe Credit Card TextField Here
                     STPPaymentCardTextField.Representable.init(paymentMethodParams: $paymentMethodParams)
                 } header: {
-                    Text("Payment Information")
+                    Text(payinfo)
                 }
                 
                 HStack {
                     Spacer()
-                    Button("Pay") {
+                    Button(PayButton) {
                         pay()
                     }.buttonStyle(.plain)
                     Spacer()
@@ -73,6 +89,10 @@ struct CartView: View {
                 
                 Text(message)
                     .font(.headline)
+               /* Button("Empty Cart", action: {
+                    cartManager.emptyCart()
+                }*/
+            
                 
                 
             }
@@ -90,8 +110,9 @@ struct CartView: View {
         }
         
         
-        .navigationTitle(Text("My Cart"))
+        .navigationTitle(Text(chariot))
         .padding(.top)
+        
     }
 }
 

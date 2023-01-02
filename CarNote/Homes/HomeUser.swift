@@ -10,7 +10,6 @@ import SwiftUI
 struct HomeUser: View {
     var body: some View {
         TabView {
-          //  ContentView()
             ProductListUIView()  .tabItem{
                     Image(systemName: "cart")
                     Text("Shop")
@@ -37,14 +36,22 @@ struct HomeUser: View {
             
             EntretienView()
                 .tabItem{
-                Image(systemName: "date")
+                Image(systemName: "calendar")
                 Text("Entretien")
             }
+            
+           /* LoginScreenView(isLogin: false)
+                .tabItem{
+                Image(systemName: "lock.fill")
+                Text("Logout")
+            }*/
+
             
             
         }
     }
 }
+
 struct HomeUser_Previews: PreviewProvider {
     static var previews: some View {
         HomeUser()

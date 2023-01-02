@@ -6,14 +6,11 @@
 //
 
 import UIKit
-
+/*
 
 class CUserTableViewController: UITableViewController {
     private var Users : [User] = []
-    @IBOutlet var tableview: UITableView!
 
-     var first_name:String = UserViewModel.currentUser?.first_name ?? ""
-    var  last_name:String = UserViewModel.currentUser?.last_name ?? ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,19 +27,19 @@ class CUserTableViewController: UITableViewController {
         let utilisateur = Users[indexPath.row]
         
       
-        labelName.text =/* c +*/ " " + first_name
+        labelName.text = c + " " + utilisateur.firstName
       //  labelName.text = utilisateur.lastName
-        labelUsername.text = "@" + last_name
+        labelUsername.text = "@" + utilisateur.lastName+utilisateur.firstName
         
     
-      /*  imageProfile.load(url:    URL(string: "http://172.17.1.178:5000/img/"+user.image )!)
-      */  return cell!
+        imageProfile.load(url:    URL(string: "http://172.17.1.178:5000/img/"+utilisateur.image )!)
+        return cell!
     }
   override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         200
     }
    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Users.count
+        return utilisateurs.count
     }
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -50,11 +47,11 @@ class CUserTableViewController: UITableViewController {
         return 1
     }
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-      MessagerieViewModel.sharedInstance.creerNouvelleConversation(recepteur: Users[indexPath.row]._id) { success, Conversation in
+        MessagerieViewModel.sharedInstance.creerNouvelleConversation(recepteur: utilisateurs[indexPath.row].id!) { success, Conversation in
             if (success) {
                 self.dismiss(animated: true, completion: nil)
             } else {
-               // self.present(Alrt.makeServerErrorAlert(), animated: true)
+                self.present(Alrt.makeServerErrorAlert(), animated: true)
             }
         }
     }
@@ -65,19 +62,19 @@ class CUserTableViewController: UITableViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-       // ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
+        ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
     }
     
     // METHODS
     func initialize() {
-        UserViewModel().GetUsers() { success, utilisateursfromRep in
+        UserViewModel().getAllAvoat() { success, utilisateursfromRep in
             if success {
-                self.Users = []
-                self.Users = utilisateursfromRep!
-                print(self.Users)
+                self.utilisateurs = []
+                self.utilisateurs = utilisateursfromRep!
+                print(self.utilisateurs)
                 self.tableView.reloadData()
             }else {
-              //  self.present(Alrt.makeAlert(titre: "Error", message: "Could not load utilisateurs "),animated: true)
+                self.present(Alrt.makeAlert(titre: "Error", message: "Could not load utilisateurs "),animated: true)
             }
         }
     }}
@@ -94,4 +91,4 @@ extension UIImageView {
         }
     }
 }
-
+*/

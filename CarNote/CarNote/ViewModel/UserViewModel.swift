@@ -27,9 +27,8 @@ class UserViewModel: ObservableObject {
     var image:String=""
     var confirmedPassword:String=""
     static var currentUser: User?
-    var url:String = "http://172.17.0.154:3000/api/user/"
-    @Published   var Users : [User] = []
-
+    var url:String = "http://172.17.2.220:3000/api/user/"
+   
 
     
     func LogIn(user_name: String,password: String , complited: @escaping(User?)-> Void) {
@@ -80,7 +79,7 @@ class UserViewModel: ObservableObject {
             
     }
     
-    func Register( first_name:String, last_name:String, user_name:String, email: String, password: String, phone_number:String, role:String,  image:String) {
+    func Register( first_name:String, last_name:String, user_name:String, email: String, password: String, phone_number:String, role:String) {
         let parametres: [String: Any] = [
             "first_name": first_name,
             "last_name": last_name,
@@ -89,7 +88,6 @@ class UserViewModel: ObservableObject {
             "password":password,
             "phone_number":phone_number,
             "role":role,
-            "image":image
         ]
         AF.request(url+"register" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -125,7 +123,7 @@ class UserViewModel: ObservableObject {
     
     func VerifyAccount(emailToken: String) {
         let parametres: [String: Any] = [
-            "token":emailToken
+            "code":emailToken
         ]
         AF.request(url+"verifyAccount" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
@@ -197,7 +195,6 @@ class UserViewModel: ObservableObject {
             }
     }
     
-    /*
     
     func ShowUser(email: String ,first_name:String, last_name:String, phone_number:String, image:String) {
      let parametres: [String: Any] = [
@@ -214,38 +211,7 @@ class UserViewModel: ObservableObject {
              }
          }
  }
-   */
     
-    
-    
-    func GetUsers(complited: @escaping(Bool, [User]?) -> Void) {
-          
-            
-        AF.request(url+"show" , method: .get,encoding:JSONEncoding.default)
-                .validate(statusCode: 200..<500)
-                .validate(contentType: ["application/json"])
-                .responseData {
-                    response in
-                    switch response.result {
-                    case .success:
-                 
-                        
-                   
-                        for singleJsonItem in JSON(response.data!){
-                          
-                            self.Users.append(self.makeItem(jsonItem:singleJsonItem.1))
-                        }
-                        print(self.Users)
-                        
-                        
-                        complited(true,self.Users)
-                    case let .failure(error):
-                        debugPrint(error)
-                    complited(false,nil)
-                    }
-                }
-            
-        }
     
     
     

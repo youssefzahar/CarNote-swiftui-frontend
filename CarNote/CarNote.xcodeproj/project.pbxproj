@@ -51,15 +51,19 @@
 		04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FA2947B49100F2E30C /* ControlLogin.swift */; };
 		04F1FA002947B65500F2E30C /* HomeVendeur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */; };
 		B008A1F3295737E200014884 /* exemple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B008A1F2295737E200014884 /* exemple.swift */; };
+		B01FB4D5295F42AD00297CD9 /* Favorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB4D4295F42AD00297CD9 /* Favorie.swift */; };
+		B01FB4D7295F42C100297CD9 /* FavorieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */; };
 		B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A5295745D900509EE0 /* EntretienView.swift */; };
 		B044D9AA29575C5B00509EE0 /* EntretienUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A929575C5B00509EE0 /* EntretienUIView.swift */; };
 		B044D9AC29575D7C00509EE0 /* EntretienDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */; };
+		B08606DA2963451000F90631 /* TermsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08606D92963451000F90631 /* TermsWebView.swift */; };
 		B08EA7B3295DB8A800E88366 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08EA7B2295DB8A800E88366 /* UserTableViewController.swift */; };
-		B08EA7B7295DD4B300E88366 /* ChatStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B08EA7B6295DD4B300E88366 /* ChatStoryboard.storyboard */; };
 		B096FB0929549854009DD7E7 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0829549854009DD7E7 /* ProductDetail.swift */; };
 		B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */; };
+		B0BE4B7A295C7F8A007B1124 /* ChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B79295C7F8A007B1124 /* ChatViewModel.swift */; };
 		B0BE4B7C295C7FA3007B1124 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B7B295C7FA3007B1124 /* Message.swift */; };
 		B0BE4B7E295C7FB1007B1124 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B7D295C7FB1007B1124 /* Conversation.swift */; };
+		B0BE4B81295C84AB007B1124 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = B0BE4B80295C84AB007B1124 /* MessageKit */; };
 		B0BE4B83295C89F7007B1124 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B82295C89F7007B1124 /* DateUtils.swift */; };
 		B0BE4B8B295CB243007B1124 /* MessagerieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B8A295CB243007B1124 /* MessagerieView.swift */; };
 		B0BE4B91295CB5B7007B1124 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BE4B90295CB5B7007B1124 /* ChatView.swift */; };
@@ -68,13 +72,11 @@
 		B0C80D662953309700CE4910 /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D652953309700CE4910 /* CarListView.swift */; };
 		B0C80D68295330CA00CE4910 /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D67295330CA00CE4910 /* CarView.swift */; };
 		B0C80D6A2953543400CE4910 /* CarShopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D692953543400CE4910 /* CarShopListView.swift */; };
-		B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6B2953577A00CE4910 /* ShopView.swift */; };
 		B0C80D6E29535E8D00CE4910 /* MyproductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C80D6D29535E8D00CE4910 /* MyproductView.swift */; };
-		B0CF3307295F6AAF0065014C /* MessagerieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CF3306295F6AAF0065014C /* MessagerieViewModel.swift */; };
 		B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */; };
 		B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD142955E73A001BE6AD /* CarDetails.swift */; };
 		B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD16295601C2001BE6AD /* ChangePassword.swift */; };
-		EB2E8B967732D761DE663AFF /* Pods_carNote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2D0575F64132889C6B0745 /* Pods_carNote.framework */; };
+		B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F60B2D295DD560008A4E30 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,16 +120,17 @@
 		04EA30192951DC9600091511 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		04F1F9FA2947B49100F2E30C /* ControlLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlLogin.swift; sourceTree = "<group>"; };
 		04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVendeur.swift; sourceTree = "<group>"; };
-		5072FEFC82BBF657914B1BEC /* Pods-carNote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carNote.release.xcconfig"; path = "Target Support Files/Pods-carNote/Pods-carNote.release.xcconfig"; sourceTree = "<group>"; };
-		8F2D0575F64132889C6B0745 /* Pods_carNote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_carNote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B008A1F2295737E200014884 /* exemple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = exemple.swift; sourceTree = "<group>"; };
+		B01FB4D4295F42AD00297CD9 /* Favorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Favorie.swift; path = CarNote/Model/Favorie.swift; sourceTree = SOURCE_ROOT; };
+		B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavorieViewModel.swift; path = CarNote/ViewModel/FavorieViewModel.swift; sourceTree = SOURCE_ROOT; };
 		B044D9A5295745D900509EE0 /* EntretienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienView.swift; sourceTree = "<group>"; };
 		B044D9A929575C5B00509EE0 /* EntretienUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienUIView.swift; sourceTree = "<group>"; };
 		B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienDetail.swift; sourceTree = "<group>"; };
+		B08606D92963451000F90631 /* TermsWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsWebView.swift; path = "../../CarNote-swiftui-frontend-youssef/CarNote/TermsWebView.swift"; sourceTree = "<group>"; };
 		B08EA7B2295DB8A800E88366 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
-		B08EA7B6295DD4B300E88366 /* ChatStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChatStoryboard.storyboard; sourceTree = "<group>"; };
 		B096FB0829549854009DD7E7 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProduct.swift; sourceTree = "<group>"; };
+		B0BE4B79295C7F8A007B1124 /* ChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatViewModel.swift; path = CarNote/ViewModel/ChatViewModel.swift; sourceTree = SOURCE_ROOT; };
 		B0BE4B7B295C7FA3007B1124 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Message.swift; path = CarNote/Model/Message.swift; sourceTree = SOURCE_ROOT; };
 		B0BE4B7D295C7FB1007B1124 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = CarNote/Model/Conversation.swift; sourceTree = SOURCE_ROOT; };
 		B0BE4B82295C89F7007B1124 /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DateUtils.swift; path = CarNote/ViewModel/DateUtils.swift; sourceTree = SOURCE_ROOT; };
@@ -138,13 +141,12 @@
 		B0C80D652953309700CE4910 /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
 		B0C80D67295330CA00CE4910 /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
 		B0C80D692953543400CE4910 /* CarShopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarShopListView.swift; sourceTree = "<group>"; };
-		B0C80D6B2953577A00CE4910 /* ShopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopView.swift; sourceTree = "<group>"; };
 		B0C80D6D29535E8D00CE4910 /* MyproductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyproductView.swift; sourceTree = "<group>"; };
-		B0CF3306295F6AAF0065014C /* MessagerieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MessagerieViewModel.swift; path = CarNote/ViewModel/MessagerieViewModel.swift; sourceTree = SOURCE_ROOT; };
 		B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView2.swift; sourceTree = "<group>"; };
 		B0EBAD142955E73A001BE6AD /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
 		B0EBAD16295601C2001BE6AD /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
-		C5F40129230EF0F2FB06725C /* Pods-carNote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-carNote.debug.xcconfig"; path = "Target Support Files/Pods-carNote/Pods-carNote.debug.xcconfig"; sourceTree = "<group>"; };
+		B0F60B2E295DD560008A4E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../test/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B0F60B30295DD563008A4E30 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../../test/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +158,7 @@
 				04EA300E2951D26F00091511 /* Stripe in Frameworks */,
 				04F050A429364AB60029331F /* SDWebImageSwiftUI in Frameworks */,
 				04989FA2292030F70041FF59 /* Alamofire in Frameworks */,
-				EB2E8B967732D761DE663AFF /* Pods_carNote.framework in Frameworks */,
+				B0BE4B81295C84AB007B1124 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,7 +173,6 @@
 				B0BE4B92295CC7B5007B1124 /* ChatUIView.swift */,
 				B0BE4B94295CCA0F007B1124 /* conversationTVC.swift */,
 				B08EA7B2295DB8A800E88366 /* UserTableViewController.swift */,
-				B08EA7B6295DD4B300E88366 /* ChatStoryboard.storyboard */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -194,7 +195,6 @@
 				04F1F9FA2947B49100F2E30C /* ControlLogin.swift */,
 				04F1F9FF2947B65500F2E30C /* HomeVendeur.swift */,
 				04918F6A2948A8C9007024BC /* HomeUser.swift */,
-				B0C80D6B2953577A00CE4910 /* ShopView.swift */,
 			);
 			path = Homes;
 			sourceTree = "<group>";
@@ -213,6 +213,8 @@
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
+				B08606D92963451000F90631 /* TermsWebView.swift */,
+				B0F60B2D295DD560008A4E30 /* Localizable.strings */,
 				04918F6C2948CB49007024BC /* Enretien */,
 				04918F692948A899007024BC /* Homes */,
 				0414DCDD2944ACCB007BB308 /* Chat */,
@@ -223,8 +225,6 @@
 				04E53373292D5214008BB882 /* userinterfaces */,
 				04989F7629202E7D0041FF59 /* carNote */,
 				04989F7529202E7D0041FF59 /* Products */,
-				1939E55059A18A03A890AAE7 /* Pods */,
-				30FCC516B69E33486EAB05AF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +267,7 @@
 				04918F6F2948ED13007024BC /* Entretien.swift */,
 				B0BE4B7B295C7FA3007B1124 /* Message.swift */,
 				B0BE4B7D295C7FB1007B1124 /* Conversation.swift */,
+				B01FB4D4295F42AD00297CD9 /* Favorie.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -278,8 +279,9 @@
 				04E53371292D0CE9008BB882 /* CarViewModel.swift */,
 				04DA78C02932574D007FBBC8 /* ProduitViewModel.swift */,
 				04918F712948F014007024BC /* EntretienViewModel.swift */,
+				B0BE4B79295C7F8A007B1124 /* ChatViewModel.swift */,
 				B0BE4B82295C89F7007B1124 /* DateUtils.swift */,
-				B0CF3306295F6AAF0065014C /* MessagerieViewModel.swift */,
+				B01FB4D6295F42C100297CD9 /* FavorieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -339,23 +341,6 @@
 			path = userinterfaces;
 			sourceTree = "<group>";
 		};
-		1939E55059A18A03A890AAE7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C5F40129230EF0F2FB06725C /* Pods-carNote.debug.xcconfig */,
-				5072FEFC82BBF657914B1BEC /* Pods-carNote.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
-		30FCC516B69E33486EAB05AF /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8F2D0575F64132889C6B0745 /* Pods_carNote.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,11 +348,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04989F8729202E7E0041FF59 /* Build configuration list for PBXNativeTarget "carNote" */;
 			buildPhases = (
-				F5BC6670B5415EA526ADC5E5 /* [CP] Check Pods Manifest.lock */,
 				04989F7029202E7D0041FF59 /* Sources */,
 				04989F7129202E7D0041FF59 /* Frameworks */,
 				04989F7229202E7D0041FF59 /* Resources */,
-				84CBE90184995A9F32181734 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -379,6 +362,7 @@
 				04F050A329364AB60029331F /* SDWebImageSwiftUI */,
 				04F050A629364AD40029331F /* SwiftyJSON */,
 				04EA300D2951D26F00091511 /* Stripe */,
+				B0BE4B80295C84AB007B1124 /* MessageKit */,
 			);
 			productName = carNote;
 			productReference = 04989F7429202E7D0041FF59 /* carNote.app */;
@@ -410,10 +394,11 @@
 			);
 			mainGroup = 04989F6B29202E7D0041FF59;
 			packageReferences = (
-				04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI.git" */,
+				04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				04F050A529364AD40029331F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
-				04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios.git" */,
+				04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios" */,
+				B0BE4B7F295C84AB007B1124 /* XCRemoteSwiftPackageReference "MessageKit" */,
 			);
 			productRefGroup = 04989F7529202E7D0041FF59 /* Products */;
 			projectDirPath = "";
@@ -430,54 +415,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */,
-				B08EA7B7295DD4B300E88366 /* ChatStoryboard.storyboard in Resources */,
+				B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */,
 				04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		84CBE90184995A9F32181734 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-carNote/Pods-carNote-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-carNote/Pods-carNote-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-carNote/Pods-carNote-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F5BC6670B5415EA526ADC5E5 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-carNote-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04989F7029202E7D0041FF59 /* Sources */ = {
@@ -488,6 +431,7 @@
 				04989F9D2920302C0041FF59 /* RegisterView.swift in Sources */,
 				B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */,
 				0444E684292C1390000AD700 /* AddCarUIView.swift in Sources */,
+				B01FB4D5295F42AD00297CD9 /* Favorie.swift in Sources */,
 				04989F9F2920305F0041FF59 /* VerifView.swift in Sources */,
 				04DA78C12932574D007FBBC8 /* ProduitViewModel.swift in Sources */,
 				04E53372292D0CE9008BB882 /* CarViewModel.swift in Sources */,
@@ -495,6 +439,7 @@
 				04918F702948ED13007024BC /* Entretien.swift in Sources */,
 				0444E67A292C0CD3000AD700 /* SwiftUIView.swift in Sources */,
 				B08EA7B3295DB8A800E88366 /* UserTableViewController.swift in Sources */,
+				B0BE4B7A295C7F8A007B1124 /* ChatViewModel.swift in Sources */,
 				04989F8429202E7E0041FF59 /* carNote.xcdatamodeld in Sources */,
 				B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */,
 				0444E686292C1DFF000AD700 /* Car.swift in Sources */,
@@ -509,16 +454,17 @@
 				B0BE4B7C295C7FA3007B1124 /* Message.swift in Sources */,
 				04E20190293FD7AB00D92706 /* ProductUIView.swift in Sources */,
 				04EA30142951D6F100091511 /* PaymentConfig.swift in Sources */,
+				B01FB4D7295F42C100297CD9 /* FavorieViewModel.swift in Sources */,
 				0431740B29312D7C00BF0ADC /* CartManager.swift in Sources */,
 				B0BE4B83295C89F7007B1124 /* DateUtils.swift in Sources */,
 				0431740929312B9100BF0ADC /* CartView.swift in Sources */,
 				04EA301A2951DC9600091511 /* Utils.swift in Sources */,
 				B0C80D68295330CA00CE4910 /* CarView.swift in Sources */,
-				B0C80D6C2953577A00CE4910 /* ShopView.swift in Sources */,
 				B0BE4B91295CB5B7007B1124 /* ChatView.swift in Sources */,
 				04918F722948F014007024BC /* EntretienViewModel.swift in Sources */,
 				04EA30162951DAB100091511 /* PaymentGateway.swift in Sources */,
 				04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */,
+				B08606DA2963451000F90631 /* TermsWebView.swift in Sources */,
 				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
 				B0C80D662953309700CE4910 /* CarListView.swift in Sources */,
@@ -527,7 +473,6 @@
 				0444E676292BEAE0000AD700 /* UserProfileView.swift in Sources */,
 				B0BE4B7E295C7FB1007B1124 /* Conversation.swift in Sources */,
 				04918F6B2948A8C9007024BC /* HomeUser.swift in Sources */,
-				B0CF3307295F6AAF0065014C /* MessagerieViewModel.swift in Sources */,
 				04989F9729202FE20041FF59 /* LoginScreenView.swift in Sources */,
 				043174072931279900BF0ADC /* CartButton.swift in Sources */,
 				04999AD5294743D200773032 /* ProductRowView.swift in Sources */,
@@ -549,12 +494,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		B0F60B2D295DD560008A4E30 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F60B2E295DD560008A4E30 /* en */,
+				B0F60B30295DD563008A4E30 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		04989F8529202E7E0041FF59 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -616,7 +572,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -670,7 +625,6 @@
 		};
 		04989F8829202E7E0041FF59 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C5F40129230EF0F2FB06725C /* Pods-carNote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -699,7 +653,6 @@
 		};
 		04989F8929202E7E0041FF59 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5072FEFC82BBF657914B1BEC /* Pods-carNote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -750,7 +703,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -758,7 +711,7 @@
 				kind = branch;
 			};
 		};
-		04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios.git" */ = {
+		04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stripe/stripe-ios.git";
 			requirement = {
@@ -766,7 +719,7 @@
 				kind = branch;
 			};
 		};
-		04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI.git" */ = {
+		04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
 			requirement = {
@@ -782,28 +735,41 @@
 				kind = branch;
 			};
 		};
+		B0BE4B7F295C84AB007B1124 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
 		04989FA1292030F70041FF59 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = 04989FA0292030F70041FF59 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		04EA300D2951D26F00091511 /* Stripe */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios.git" */;
+			package = 04EA300C2951D26F00091511 /* XCRemoteSwiftPackageReference "stripe-ios" */;
 			productName = Stripe;
 		};
 		04F050A329364AB60029331F /* SDWebImageSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI.git" */;
+			package = 04F050A229364AB60029331F /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
 		};
 		04F050A629364AD40029331F /* SwiftyJSON */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 04F050A529364AD40029331F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		B0BE4B80295C84AB007B1124 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0BE4B7F295C84AB007B1124 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 

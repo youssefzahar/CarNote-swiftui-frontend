@@ -12,21 +12,26 @@ struct EntretienView: View {
     var rows = [GridItem(.adaptive(minimum: 150), spacing: 30)]
     @StateObject var  entretienViewModel = EntretienViewModel()
     @State var entretiens : [Entretien] = []
+    
+    let Maintenance  : LocalizedStringKey = "Maintenance"
+
     var body: some View {
         NavigationView{
             ScrollView(.horizontal){
                 LazyHGrid(rows: rows, spacing: 20){
                     ForEach(0 ..< entretiens.count, id:  \ .self ) {
                         index in
-                        NavigationLink(destination: EntretienDetail(entretien : entretiens[index])){
+                      //  NavigationLink(destination: EntretienDetail(entretien : entretiens[index])){
                             EntretienUIView(entretien : entretiens[index])
 
-                        }                        }
+                        //}
+                        
+                    }
                 }
                 .padding()
             }
-               .navigationTitle(Text("Entretien"))
-             }
+               .navigationTitle(Text(Maintenance))
+             }.navigationBarHidden(false)
         .onAppear{
             entretienViewModel.GetMyEntretiens {success, result in
                 if success {

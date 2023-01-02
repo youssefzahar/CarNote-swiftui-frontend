@@ -12,6 +12,17 @@ struct LoginScreenView: View {
         @State private var password=""
     @State var isLogin :Bool
         @ObservedObject var viewModel = UserViewModel()
+    
+    //translation
+    let Login : LocalizedStringKey = "Login"
+    let passwordlog : LocalizedStringKey = "Password"
+    let forgot : LocalizedStringKey = "Forgot Password ?"
+    let register : LocalizedStringKey = "Register"
+    let newnew : LocalizedStringKey = "New to NoteCar ?"
+    let username : LocalizedStringKey = "User Name"
+
+    
+    
         var body: some View {
             NavigationView{
                 ZStack{
@@ -20,12 +31,12 @@ struct LoginScreenView: View {
                     Circle().scale(1.50).foregroundColor(.white)
                     VStack{
                         Image("logo").resizable().aspectRatio(contentMode: .fill).frame(width: 180, height: 200).clipShape(Circle())
-                        Text("Login").font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
+                        Text(Login).font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.blue)
                         
                         HStack{
                             Image(systemName: "envelope").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            TextField("User Name", text: $viewModel.user_name)
+                            TextField(username, text: $viewModel.user_name)
                                 .padding()
                                 .frame(width: 300, height: 30)
                             // .background(Color.black.opacity(0.05))
@@ -39,7 +50,7 @@ struct LoginScreenView: View {
                         HStack{
                             Image(systemName: "lock.circle").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
-                            SecureField("Password", text: $viewModel.password)
+                            SecureField(passwordlog, text: $viewModel.password)
                                 .padding()
                                 .frame(width: 275, height: 30)                                //.background(Color.black.opacity(0.05))
                             Image(systemName: "eye.slash")
@@ -53,7 +64,7 @@ struct LoginScreenView: View {
                         
                         NavigationLink(destination:ControlLogin() .navigationBarBackButtonHidden(true), isActive: $isLogin){
                             
-                            Button("Login", action: {
+                            Button(Login, action: {
                                 
                                 viewModel.LogIn(user_name: viewModel.user_name, password: viewModel.password,complited: {(user ) in
                                     
@@ -88,7 +99,7 @@ struct LoginScreenView: View {
                             
                         }
                         NavigationLink(destination:ForgotPasswordView()){
-                            Text("Forgot Password ?")
+                            Text(forgot)
                                 .foregroundColor(.blue)
                                 .frame(width: 180, height: 40)
                                 .background(Color.white)
@@ -106,12 +117,12 @@ struct LoginScreenView: View {
                          
                          }*/
                         HStack{
-                            Text("New to NoteCar ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
+                            Text(newnew).font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
                             
                             NavigationLink(destination:RegisterView()){
                                 
                                 
-                                Text("Register")                .foregroundColor(.blue)
+                                Text(register)                .foregroundColor(.blue)
                                     .frame(width: 80, height: 40)
                                     
                                     .cornerRadius(10)
@@ -119,7 +130,7 @@ struct LoginScreenView: View {
                             }
                         }
                         }
-                } .navigationBarHidden(true)
+                }
                 
             }
             

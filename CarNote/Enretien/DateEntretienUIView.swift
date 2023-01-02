@@ -14,12 +14,16 @@ struct DateEntretienUIView: View {
     @State private var description=""
     @State private var date = Date()
 
-
+    let pickdate  : LocalizedStringKey = "Pick a Date !"
+    let dateentretien  : LocalizedStringKey = "Date entretien"
+    let Title  : LocalizedStringKey = "Title : "
+    let Description  : LocalizedStringKey = "Description : "
+    let Add_Entretien  : LocalizedStringKey = "Add Entretien"
 
     var body: some View {
         
         VStack{
-            Text("Pick a Date !").font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.white)
+            Text(pickdate).font(.system(size: 34, design: .rounded)).bold().padding().foregroundColor(.white)
             
             Spacer()
             HStack{
@@ -27,7 +31,7 @@ struct DateEntretienUIView: View {
                     
                     
                     
-                    DatePicker("Date entretien", selection: $viewModel.date,displayedComponents:[.date] )
+                    DatePicker(dateentretien, selection: $viewModel.date,displayedComponents:[.date] )
                         .datePickerStyle(GraphicalDatePickerStyle())
                 }
             }
@@ -36,7 +40,7 @@ struct DateEntretienUIView: View {
                 HStack{
                     Image(systemName: "car").foregroundColor(.blue)
                         .foregroundColor(.gray).font(.headline)
-                    TextField("Title", text: $viewModel.title)
+                    TextField(Title, text: $viewModel.title)
                         .padding()
                     .frame(width: 300, height: 30)}
                 .padding()
@@ -45,7 +49,7 @@ struct DateEntretienUIView: View {
                 HStack{
                     Image(systemName: "car").foregroundColor(.blue)
                         .foregroundColor(.gray).font(.headline)
-                    TextField("Description", text: $viewModel.description)
+                    TextField(Description, text: $viewModel.description)
                         .padding()
                     .frame(width: 300, height: 30)}
                 .padding()
@@ -53,10 +57,21 @@ struct DateEntretienUIView: View {
                 
                 
                 NavigationLink(destination: CarListView()){
-                    Text("Add Entretien").foregroundColor(.blue)
+                    Text(Add_Entretien).foregroundColor(.blue)
                 }.simultaneousGesture(TapGesture().onEnded{
                     viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
                 })
+                Button(Add_Entretien, action: {
+                    
+                    viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
+
+                }
+                )
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                
                 
             }}}}
 

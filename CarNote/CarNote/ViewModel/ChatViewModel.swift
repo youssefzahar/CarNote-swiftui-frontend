@@ -1,45 +1,37 @@
 //
-//  MessagerieViewModel.swift
+//  ChatViewModel.swift
 //  carNote
 //
-//  Created by Apple Esprit on 30/12/2022.
+//  Created by Apple Esprit on 28/12/2022.
 //
 
 import Foundation
 import SwiftyJSON
 import Alamofire
-
+/*
 public class MessagerieViewModel: ObservableObject{
     
     static let sharedInstance = MessagerieViewModel()
-    let userId = UserViewModel.currentUser?._id
-    //"/chat/my-conversations/6385c2462fdd752a80a093f2"
-    var url:String = "http://172.17.0.154:3000/api/"
+    var url:String = "http://172.17.0.126:3000/api/chat/"
 
+    
     func recupererMesConversations( completed: @escaping (Bool, [Conversation]?) -> Void ) {
-        print(userId!)
-        AF.request(url+"/dis/my-conversations/\(userId!)",
-                   method: .get,
-                  // parameters: [ "sender" : UserDefaults.standard.string(forKey: "id")!],
-                   encoding: URLEncoding.default)
-                   //encoding: JSONEncoding.default)
-           // .validate(statusCode: 200..<300)
+        AF.request(url + "messagerie/mes-conversations",
+                   method: .post,
+                   parameters: [ "envoyeur" : UserDefaults.standard.string(forKey: "idUtilisateur")!],
+                   encoding: JSONEncoding.default)
+            .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
-     
             .responseData { response in
-                print(response)
                 switch response.result {
                 case .success:
                     let jsonData = JSON(response.data!)
-                  
+                    
                     var conversation : [Conversation]? = []
                     for singleJsonItem in jsonData["conversations"] {
                         conversation!.append(self.makeConversation(jsonItem: singleJsonItem.1))
-                        print(conversation)
-                        
                     }
                     completed(true, conversation)
-                    
                 case let .failure(error):
                     debugPrint(error)
                     completed(false, nil)
@@ -48,14 +40,14 @@ public class MessagerieViewModel: ObservableObject{
     }
     
     func creerNouvelleConversation(recepteur: String, completed: @escaping (Bool, Conversation?) -> Void ) {
-        AF.request(url+"/dis/create-conversation",
+        AF.request(url + "messagerie/creer-conversation",
                    method: .post,
                    parameters: [
-                    "sender" : userId!,
-                    "receiver" : recepteur
+                    "envoyeur" : UserDefaults.standard.string(forKey: "idUtilisateur")!,
+                    "recepteur" : recepteur
                    ],
                    encoding: JSONEncoding.default)
-           // .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
                 switch response.result {
@@ -67,13 +59,13 @@ public class MessagerieViewModel: ObservableObject{
                 }
             }
     }
-    //"/chat/my-messages/63961ed3de7389f437a77f2c"
+    
     func recupererMesMessages(idConversation: String, completed: @escaping (Bool, [Message]?) -> Void ) {
-        AF.request(url+"/dis/my-messages/\(idConversation)",
-                   method: .get,
-                  // parameters: [ "conversation" : idConversation ],
+        AF.request(url+"messagerie/mes-messages",
+                   method: .post,
+                   parameters: [ "conversation" : idConversation ],
                    encoding: JSONEncoding.default)
-          //  .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
                 switch response.result {
@@ -93,16 +85,15 @@ public class MessagerieViewModel: ObservableObject{
     }
     
     func envoyerMessage(recepteur: String, description: String, completed: @escaping (Bool, Message?) -> Void ) {
-        AF.request(url+"/dis/send-message",
+        AF.request(url+"messagerie/envoyer-message",
                    method: .post,
                    parameters: [
-                    "senderId": userId!,
-                    //"sender": "63961ed3de7389f437a77f2c",
-                    "receiverId": recepteur,
+                    "envoyeur": UserDefaults.standard.string(forKey: "idUtilisateur")!,
+                    "recepteur": recepteur,
                     "description": description
                    ],
                    encoding: JSONEncoding.default)
-          //  .validate(statusCode: 200..<300)
+            .validate(statusCode: 200..<300)
             .validate(contentType: ["application/json"])
             .responseData { response in
                 switch response.result {
@@ -117,39 +108,20 @@ public class MessagerieViewModel: ObservableObject{
     
     func makeMessage(jsonItem: JSON) -> Message {
         return Message(
-            sender: Sender(senderId: jsonItem["senderConversation"]["sender"].stringValue, displayName: "abc"),
-            messageId: jsonItem["_id"].stringValue,
-            //messageId: "blablala",
-            sentDate: Date(),
-            kind: .text(jsonItem["description"].stringValue)
+            sender: .text(jsonItem["description"].stringValue), messageId: Sender(senderId: jsonItem["conversationEnvoyeur"]["envoyeur"].stringValue, displayName: "abc"),
+            sentDate: jsonItem["_id"].stringValue,
+            kind: Date()
         )
     }
     
     func makeConversation(jsonItem: JSON) -> Conversation {
         return Conversation(
             _id: jsonItem["_id"].stringValue,
-            lastMessage: jsonItem["lastMessage"].stringValue,
-            lastMessageDate: DateUtils.formatFromString(string: jsonItem["lastMessageDate"].stringValue),
-            sender: UserViewModel().makeItem(jsonItem: jsonItem["sender"]),
-            receiver: UserViewModel().makeItem(jsonItem: jsonItem["receiver"])
+            dernierMessage: jsonItem["dernierMessage"].stringValue,
+            dateDernierMessage: DateUtils.formatFromString(string: jsonItem["dateDernierMessage"].stringValue),
+            envoyeur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["envoyeur"]),
+            recepteur: UserViewModel.sharedInstance.makeItem(jsonItem: jsonItem["recepteur"])
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/

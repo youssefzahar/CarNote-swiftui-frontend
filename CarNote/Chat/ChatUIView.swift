@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+/*
 struct ChatUIView: View {
     var body: some View {
         StoryboardViewController()    }
@@ -19,7 +19,7 @@ struct ChatUIView_Previews: PreviewProvider {
 }
 struct StoryboardViewController: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> some UIViewController {
-        let storyboard = UIStoryboard(name: "Chat", bundle: Bundle.main)
+        let storyboard = UIStoryboard(name: "chat", bundle: Bundle.main)
         let controller = storyboard.instantiateViewController(identifier: "bcntroller")
         return controller
     }
@@ -28,4 +28,4 @@ struct StoryboardViewController: UIViewControllerRepresentable {
         
     }
 }
-
+*/

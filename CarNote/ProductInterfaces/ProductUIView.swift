@@ -23,15 +23,23 @@ struct ProductUIView: View {
     var body: some View {
         ZStack(alignment: .topLeading){
             ZStack(alignment: .bottom){
-                Image("P4")
-                    .resizable()
-                    .cornerRadius(20)
-                    .frame(width: 180)
-                    .scaledToFit()
+                AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+product.image!),
+                                                                       content:{ image in
+                                                                image
+                        .resizable()
+                        .cornerRadius(20)
+                        .frame(width: 180)
+                        .scaledToFit()
+                                                                
+                                                                
+                                                                
+                                                                
+                                                            },placeholder: { })
+                
                 VStack(alignment: .leading){
                     Text(product.title)
                         .bold()
-                    Text("\(product.prix!,format: .number)DT")
+                    Text("\(product.prix!,format: .number)€")
                         .font(.caption)
                 }
                 .padding()

@@ -11,19 +11,19 @@ import Foundation
 
 struct Conversation {
     
-    internal init(_id: String? = nil, lastMessage: String, lastMessageDate: Date, sender: User, receiver: User) {
+    internal init(_id: String? = nil, dernierMessage: String, dateDernierMessage: Date, envoyeur: User, recepteur: User) {
         self._id = _id
-        self.lastMessage = lastMessage
-        self.lastMessageDate = lastMessageDate
-        self.sender = sender
-        self.receiver = receiver
+        self.dernierMessage = dernierMessage
+        self.dateDernierMessage = dateDernierMessage
+        self.envoyeur = envoyeur
+        self.recepteur = recepteur
     }
     
     var _id : String?
-    var lastMessage : String
-    var lastMessageDate : Date
+    var dernierMessage : String
+    var dateDernierMessage : Date
     
     // relations
-    var sender : User
-    var receiver : User
+    var envoyeur : User
+    var recepteur : User
 }

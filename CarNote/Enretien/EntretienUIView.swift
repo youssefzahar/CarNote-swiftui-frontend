@@ -11,7 +11,8 @@ struct EntretienUIView: View {
     @State private var isActive: Bool = false
   
     var entretien: Entretien
-    
+    let Delete  : LocalizedStringKey = "Delete"
+
 
     var body: some View {
         ZStack(alignment: .topLeading){
@@ -26,7 +27,15 @@ struct EntretienUIView: View {
                     Text(entretien.title)
                         .bold().foregroundColor(.blue)
                   //  Text("Your entretien Date is \(entretien.date!)")
-                    Text("Your entretien Date is \(Date.now)")
+                    Text("Your entretien Date is \(entretien.date!)")
+                    
+                    Button(Delete,action:{EntretienViewModel().DeleteEntretien(_id: entretien._id!)
+                        
+                    })
+                    .foregroundColor(.white)
+                    .frame(width: 100, height: 50)
+                    .background(Color.red)
+                    .cornerRadius(10)
 
                 
                     

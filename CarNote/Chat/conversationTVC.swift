@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+/*
 class ConversationTableViewCell: UITableViewCell {
 
     @IBOutlet weak var messagechatlabel: UILabel!
@@ -26,4 +26,4 @@ class ConversationTableViewCell: UITableViewCell {
     }
 
 }
-
+*/

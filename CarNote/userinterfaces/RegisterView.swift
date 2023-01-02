@@ -19,6 +19,22 @@ struct RegisterView: View {
     var roles = ["User", "Vendeur"]
     @State private var role="User"
 
+    
+    //translation
+    let username : LocalizedStringKey = "User Name"
+    let first : LocalizedStringKey = "First Name"
+    let last : LocalizedStringKey = "Last Name"
+    let register : LocalizedStringKey = "Register"
+    let emailreg : LocalizedStringKey = "Email"
+    let pass : LocalizedStringKey = "Password"
+    let num : LocalizedStringKey = "Phone Number"
+    let rolereg : LocalizedStringKey = "Role"
+    let part : LocalizedStringKey = "By making an Account you accept the"
+    let part2 : LocalizedStringKey = " Terms And Conditions Of Usage"
+
+
+    
+    
         var body: some View {
            // NavigationView{
                 ZStack{
@@ -26,14 +42,14 @@ struct RegisterView: View {
                     VStack  (alignment: .leading, spacing: 30){
                         /*  Image("logo").resizable().aspectRatio(contentMode: .fit).frame(width: 100, height: 100).clipShape(Circle()).padding()*/
                         
-                        Text("Register").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:0)
+                        Text(register).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:0)
                         
                         
                             
                             HStack{
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("First Name", text: $viewModel.first_name)
+                                TextField(first, text: $viewModel.first_name)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -44,7 +60,7 @@ struct RegisterView: View {
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
                                 
-                                TextField("Last Name", text: $viewModel.last_name)
+                                TextField(last, text: $viewModel.last_name)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -53,7 +69,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "person").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("User Name", text: $viewModel.user_name)
+                                TextField(username, text: $viewModel.user_name)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -61,7 +77,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "envelope").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("Email", text: $viewModel.email)
+                                TextField(emailreg, text: $viewModel.email)
                                     .padding()
                                 .frame(width: 300, height: 30)}
                             .padding()
@@ -70,7 +86,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "lock.circle").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                SecureField("Password", text: $viewModel.password)
+                                SecureField(pass, text: $viewModel.password)
                                     .padding()
                                     .frame(width: 275, height: 30)                                //.background(Color.black.opacity(0.05))
                                 Image(systemName: "eye.slash")
@@ -85,7 +101,7 @@ struct RegisterView: View {
                             HStack{
                                 Image(systemName: "phone").foregroundColor(.blue)
                                     .foregroundColor(.gray).font(.headline)
-                                TextField("Phone Number", text: $viewModel.phone_number)
+                                TextField(num, text: $viewModel.phone_number)
                                     .padding()
                                 .frame(width: 300, height: 30)} .padding()
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
@@ -95,7 +111,7 @@ struct RegisterView: View {
                                     .foregroundColor(.gray).font(.headline)
                                 
                                 
-                                Picker("Please choose a color", selection: $viewModel.role) {
+                                Picker(rolereg, selection: $role) {
                                                 ForEach(roles, id: \.self) {
                                                     Text($0)
                                                 }
@@ -107,38 +123,34 @@ struct RegisterView: View {
                                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                             
                             
-                            HStack {
-                                Spacer().frame(width: 55)
-                                NavigationLink(destination:VerifView()){
-                                    Button("Register",action:{viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:viewModel.role, image:viewModel.image) //image:viewModel.image?
-                                        
-                                    })
-                                    .foregroundColor(.white)
-                                    .frame(width: 250, height: 50)
-                                    .background(Color.blue)
-                                    .cornerRadius(10)
-                                    
-                                    
-                                    
-                                }
-                            }
                             
-                            HStack {
-                                Text("Already have any account ?").font(.system(size: 15, design: .rounded)).foregroundColor(.gray)
-                                Spacer().frame(width: 100)
-                                NavigationLink(destination:LoginScreenView(isLogin: false)){
+                            
+                            VStack {
+                                Text(part)
+                                NavigationLink(destination:TermsWebView()){
                                     
                                     
-                                    Text("Sign In")
+                                    Text(part2)
                                         .foregroundColor(.blue)
-                                        .frame(width: 80, height: 40)
                                         .cornerRadius(10)
                                     //.offset(x:-80,y:)
                                     
                                 }
                             }
                             
-                            
+                        HStack {
+                            Spacer().frame(width: 55)
+                            NavigationLink(destination: VerifView()){
+                                Text("Register").foregroundColor(.white)
+                            }
+                            .foregroundColor(.white)
+                            .frame(width: 250, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
+                            .simultaneousGesture(TapGesture().onEnded{
+                                viewModel.Register(first_name:viewModel.first_name, last_name:viewModel.last_name, user_name:viewModel.user_name, email: viewModel.email, password: viewModel.password, phone_number:viewModel.phone_number, role:role)
+                            })
+                        }
                             
                         }
                     }

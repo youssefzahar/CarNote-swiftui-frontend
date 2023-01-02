@@ -11,6 +11,9 @@ import SwiftUI
 
 struct MyproductView: View {
 
+    let ProductShop  : LocalizedStringKey = "Product Shop"
+
+    
         var columns = [GridItem(.adaptive(minimum: 150), spacing: 30)]
         @StateObject var  productViewModel = ProduitViewModel()
     @State var products : [Product] = []
@@ -27,8 +30,8 @@ struct MyproductView: View {
                     }
                     .padding()
                 }
-                   .navigationTitle(Text("Product Shop"))
-                 }
+                   .navigationTitle(Text(ProductShop))
+                 }.navigationBarHidden(false)
             .onAppear{
                 productViewModel.GetMyProducts {success, result in
                     if success {

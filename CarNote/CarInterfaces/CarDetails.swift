@@ -10,14 +10,33 @@ import SwiftUI
 struct CarDetails: View {
     var car: Car
     @ObservedObject var viewModel = CarViewModel()
+    
+    let CarType  : LocalizedStringKey = "Type : "
+    let Chevaux  : LocalizedStringKey = "Horse Power"
+    let Puissance  : LocalizedStringKey = "Horse Power : "
+    let Fuel  : LocalizedStringKey = "Fuel : "
+    let Description  : LocalizedStringKey = "Description : "
+    let Features  : LocalizedStringKey = "Features"
+    let Delete  : LocalizedStringKey = "Delete"
+    let sale  : LocalizedStringKey = "Put For Sale"
+
+
     var body: some View {
         
         VStack (alignment: .leading) {
             
-            Image("logo")
-                .resizable()
-                .aspectRatio(1,contentMode: .fit)
-                .edgesIgnoringSafeArea(.top)
+            AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+car.image!),
+                                                                   content:{ image in
+                                                            image
+                    .resizable()
+                    .cornerRadius(20)
+                    .frame(width: 180)
+                    .scaledToFit()
+                                                            
+                                                            
+                                                            
+                                                            
+                                                        },placeholder: { })
             
             
             HStack{
@@ -31,7 +50,7 @@ struct CarDetails: View {
             
             //                Rating
             
-            Text("Description :")
+            Text(Description)
                 .fontWeight(.medium)
                 .padding(.vertical, 8)
             Text(car.description!)
@@ -41,22 +60,25 @@ struct CarDetails: View {
             //                Info
             HStack (alignment: .top) {
                 VStack (alignment: .leading) {
-                    Text("Specifications")
+                    Text(Features)
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
                     HStack{
-                        Text("Type :")
+                        Text(CarType)
                             .opacity(0.6)
                         Text(car.type!)
                             .opacity(0.6)
                     }
                     HStack{
-                        Text("Puissance :")
+                        Text(Puissance)
                             .opacity(0.6)
-                        Text("\(car.puissance!,format: .number) Chevaux").opacity(0.6)
+                        HStack{
+                            Text("\(car.puissance!,format: .number)").opacity(0.6)
+                            Text(Chevaux).opacity(0.6)
+                        }
                     }
                     HStack{
-                        Text("Carburant :")
+                        Text(Fuel)
                             .opacity(0.6)
                         Text(car.carburant!)
                             .opacity(0.6)
@@ -65,17 +87,23 @@ struct CarDetails: View {
                     if car.owned_by! == UserViewModel.currentUser?._id ?? ""
 
                                         {
-                                            NavigationLink(destination: CarListView()){
-                                                Text("Delete").foregroundColor(.red)
+                                            /*NavigationLink(destination: CarListView()){
+                                                Text(Delete).foregroundColor(.red)
                                             }.simultaneousGesture(TapGesture().onEnded{
                                                 viewModel.DeleteCar(_id: car._id!)
-                                            })
-                                            
-                                            NavigationLink(destination: CarListView()){
-                                                Text("Put For Sale").foregroundColor(.green)
-                                            }.simultaneousGesture(TapGesture().onEnded{
-                                                viewModel.MakeCarPublic(_id: car._id!)
-                                            })
+                                            })*/
+                        
+                                            Button(Delete,action:{viewModel.DeleteCar(_id: car._id!)})
+                                            .foregroundColor(.white)
+                                            .frame(width: 100, height: 50)
+                                            .background(Color.red)
+                                            .cornerRadius(10)
+                        
+                                            Button(sale,action:{viewModel.MakeCarPublic(_id: car._id!)})
+                                            .foregroundColor(.white)
+                                            .frame(width: 100, height: 50)
+                                            .background(Color.green)
+                                            .cornerRadius(10)
                                             
                                         }
 
