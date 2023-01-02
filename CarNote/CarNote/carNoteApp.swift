@@ -19,6 +19,7 @@ struct carNoteApp: App {
 
     var body: some Scene {
         WindowGroup {
+            //////
             //ProductListUIView()
             //DateEntretienUIView()
             //HomeVendeur()
@@ -28,7 +29,7 @@ struct carNoteApp: App {
          LoginScreenView(isLogin:false)
            // ModifyView()
            // AddCarUIView()
-          //  TermsWebView()
+            
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

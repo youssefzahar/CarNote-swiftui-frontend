@@ -10,6 +10,13 @@ import SwiftUI
 struct VerifView: View {
     @State private var emailToken=""
 @ObservedObject var viewModel = UserViewModel()
+    
+    
+    let verif : LocalizedStringKey = "Verification"
+    let code : LocalizedStringKey = "Enter the verification code we just send you on your email address ."
+    let enter : LocalizedStringKey = "Enter your code"
+    let Verify : LocalizedStringKey = "Verify"
+
     var body: some View {
         ZStack{
             Color.white
@@ -19,12 +26,12 @@ struct VerifView: View {
             
         VStack {
             
-            Text("Verification").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
+            Text(verif).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
             
             
             HStack{
                 
-                Text("Enter the verification code we just send you on your email address .").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
+                Text(code).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
 
                 
             }
@@ -32,7 +39,7 @@ struct VerifView: View {
             HStack{
                 Image(systemName: "envelope").foregroundColor(.blue)
                     .foregroundColor(.gray).font(.headline)
-                TextField("Enter your code", text: $viewModel.emailToken)
+                TextField(enter, text: $viewModel.emailToken)
                     .padding()
                     .frame(width: 300, height: 30)}
             .padding()
@@ -43,7 +50,7 @@ struct VerifView: View {
             HStack{
 
                 NavigationLink(destination: LoginScreenView(isLogin:false)){
-                    Text("Verify").foregroundColor(.white)
+                    Text(Verify).foregroundColor(.white)
                 }
                 .foregroundColor(.white)
                 .frame(width: 250, height: 50)

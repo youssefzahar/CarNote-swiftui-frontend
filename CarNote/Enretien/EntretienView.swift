@@ -21,10 +21,12 @@ struct EntretienView: View {
                 LazyHGrid(rows: rows, spacing: 20){
                     ForEach(0 ..< entretiens.count, id:  \ .self ) {
                         index in
-                        NavigationLink(destination: EntretienDetail(entretien : entretiens[index])){
+                      //  NavigationLink(destination: EntretienDetail(entretien : entretiens[index])){
                             EntretienUIView(entretien : entretiens[index])
 
-                        }                        }
+                        //}
+                        
+                    }
                 }
                 .padding()
             }

@@ -14,6 +14,7 @@ struct EntretienDetail: View {
     
     let Title  : LocalizedStringKey = "Title : "
     let Description  : LocalizedStringKey = "Description : "
+    let Delete  : LocalizedStringKey = "Delete"
 
     
     var body: some View {
@@ -40,6 +41,7 @@ struct EntretienDetail: View {
                     .lineSpacing(8.0)
                     .opacity(0.6)
             }
+            
         }
     }
 }

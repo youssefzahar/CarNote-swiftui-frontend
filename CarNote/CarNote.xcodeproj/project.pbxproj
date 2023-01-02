@@ -56,6 +56,7 @@
 		B044D9A6295745D900509EE0 /* EntretienView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A5295745D900509EE0 /* EntretienView.swift */; };
 		B044D9AA29575C5B00509EE0 /* EntretienUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9A929575C5B00509EE0 /* EntretienUIView.swift */; };
 		B044D9AC29575D7C00509EE0 /* EntretienDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */; };
+		B08606DA2963451000F90631 /* TermsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08606D92963451000F90631 /* TermsWebView.swift */; };
 		B08EA7B3295DB8A800E88366 /* UserTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08EA7B2295DB8A800E88366 /* UserTableViewController.swift */; };
 		B096FB0929549854009DD7E7 /* ProductDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0829549854009DD7E7 /* ProductDetail.swift */; };
 		B096FB0B2954A4B2009DD7E7 /* UpdateProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */; };
@@ -75,7 +76,7 @@
 		B0EBAD132955E2FD001BE6AD /* ProductUIView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */; };
 		B0EBAD152955E73A001BE6AD /* CarDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD142955E73A001BE6AD /* CarDetails.swift */; };
 		B0EBAD17295601C2001BE6AD /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EBAD16295601C2001BE6AD /* ChangePassword.swift */; };
-		E41F40AE29633D3600BF18D6 /* TermsWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E41F40AD29633D3600BF18D6 /* TermsWebView.swift */; };
+		B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0F60B2D295DD560008A4E30 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +126,7 @@
 		B044D9A5295745D900509EE0 /* EntretienView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienView.swift; sourceTree = "<group>"; };
 		B044D9A929575C5B00509EE0 /* EntretienUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienUIView.swift; sourceTree = "<group>"; };
 		B044D9AB29575D7C00509EE0 /* EntretienDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntretienDetail.swift; sourceTree = "<group>"; };
+		B08606D92963451000F90631 /* TermsWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TermsWebView.swift; path = "../../CarNote-swiftui-frontend-youssef/CarNote/TermsWebView.swift"; sourceTree = "<group>"; };
 		B08EA7B2295DB8A800E88366 /* UserTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewController.swift; sourceTree = "<group>"; };
 		B096FB0829549854009DD7E7 /* ProductDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetail.swift; sourceTree = "<group>"; };
 		B096FB0A2954A4B2009DD7E7 /* UpdateProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateProduct.swift; sourceTree = "<group>"; };
@@ -143,7 +145,8 @@
 		B0EBAD122955E2FD001BE6AD /* ProductUIView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductUIView2.swift; sourceTree = "<group>"; };
 		B0EBAD142955E73A001BE6AD /* CarDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDetails.swift; sourceTree = "<group>"; };
 		B0EBAD16295601C2001BE6AD /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
-		E41F40AD29633D3600BF18D6 /* TermsWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsWebView.swift; sourceTree = "<group>"; };
+		B0F60B2E295DD560008A4E30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../../test/en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B0F60B30295DD563008A4E30 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = ../../test/fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +213,8 @@
 		04989F6B29202E7D0041FF59 = {
 			isa = PBXGroup;
 			children = (
-				E41F40AD29633D3600BF18D6 /* TermsWebView.swift */,
+				B08606D92963451000F90631 /* TermsWebView.swift */,
+				B0F60B2D295DD560008A4E30 /* Localizable.strings */,
 				04918F6C2948CB49007024BC /* Enretien */,
 				04918F692948A899007024BC /* Homes */,
 				0414DCDD2944ACCB007BB308 /* Chat */,
@@ -411,6 +415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04989F7F29202E7E0041FF59 /* Preview Assets.xcassets in Resources */,
+				B0F60B2F295DD560008A4E30 /* Localizable.strings in Resources */,
 				04989F7C29202E7E0041FF59 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +464,7 @@
 				04918F722948F014007024BC /* EntretienViewModel.swift in Sources */,
 				04EA30162951DAB100091511 /* PaymentGateway.swift in Sources */,
 				04F1F9FB2947B49100F2E30C /* ControlLogin.swift in Sources */,
-				E41F40AE29633D3600BF18D6 /* TermsWebView.swift in Sources */,
+				B08606DA2963451000F90631 /* TermsWebView.swift in Sources */,
 				04989F9329202F940041FF59 /* UserViewModel.swift in Sources */,
 				04989F8129202E7E0041FF59 /* Persistence.swift in Sources */,
 				B0C80D662953309700CE4910 /* CarListView.swift in Sources */,
@@ -488,6 +493,18 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B0F60B2D295DD560008A4E30 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0F60B2E295DD560008A4E30 /* en */,
+				B0F60B30295DD563008A4E30 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		04989F8529202E7E0041FF59 /* Debug */ = {

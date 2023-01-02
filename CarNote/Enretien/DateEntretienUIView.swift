@@ -61,6 +61,17 @@ struct DateEntretienUIView: View {
                 }.simultaneousGesture(TapGesture().onEnded{
                     viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
                 })
+                Button(Add_Entretien, action: {
+                    
+                    viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
+
+                }
+                )
+                .foregroundColor(.white)
+                .frame(width: 300, height: 50)
+                .background(Color.blue)
+                .cornerRadius(10)
+                
                 
             }}}}
 

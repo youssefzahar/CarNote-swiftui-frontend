@@ -11,6 +11,12 @@ struct ForgotPasswordView: View {
     @State private var email=""
     @ObservedObject var viewModel = UserViewModel()
         
+    
+    let forgot : LocalizedStringKey = "Forgot Password ?"
+    let accountmail : LocalizedStringKey = "Enter the email address associated  with your account ."
+    let mailaddresse : LocalizedStringKey = "Enter you email address"
+    let submit : LocalizedStringKey = "Submit"
+    
         var body: some View {
             ZStack{
                 Color.white
@@ -20,7 +26,7 @@ struct ForgotPasswordView: View {
 
             VStack {
                 
-                Text("Forgot Password?").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
+                Text(forgot).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-50)
                 
              /*   HStack{
                     
@@ -36,7 +42,7 @@ struct ForgotPasswordView: View {
                 
                 HStack{
                     
-                    Text("Enter the email address associated  with your account .").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
+                    Text(accountmail).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.gray).offset(x:0,y:-50)
 
                     
                 }
@@ -45,7 +51,7 @@ struct ForgotPasswordView: View {
                 HStack{
                     Image(systemName: "envelope").foregroundColor(.blue)
                         .foregroundColor(.gray).font(.headline)
-                    TextField("Enter you email address", text: $viewModel.email)
+                    TextField(mailaddresse, text: $viewModel.email)
                         .padding()
                         .frame(width: 300, height: 30)}
                 .padding()
@@ -55,7 +61,7 @@ struct ForgotPasswordView: View {
                 HStack{
                     
                     NavigationLink(destination: LoginScreenView(isLogin:false)){
-                        Text("Submit").foregroundColor(.white)
+                        Text(submit).foregroundColor(.white)
                     }
                     .foregroundColor(.white)
                     .frame(width: 250, height: 50)
