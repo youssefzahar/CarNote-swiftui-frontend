@@ -23,7 +23,7 @@ public class EntretienViewModel : ObservableObject {
     
     
     
-    var url:String = "http://172.17.0.156:3000/api/entretien/"
+    var url:String = "http://172.17.2.220:3000/api/entretien/"
     
     /*  init() {
      
@@ -88,7 +88,23 @@ public class EntretienViewModel : ObservableObject {
             }
     }
     
-    
+    func DeleteEntretien(_id: String) {
+        let parametres: [String: Any] = [
+            "entretientID": _id
+        ]
+        AF.request(url+"delete" , method: .delete,parameters: parametres,encoding: JSONEncoding.default)
+            .responseJSON {
+                (response) in
+                switch response.result {
+                case .success(let JSON):
+                    print("success \(JSON)")
+                case .failure(let error):
+                    print("request failed \(error)")
+                }
+            }
+        
+
+    }
     
     func makeItem (jsonItem: JSON) -> Entretien{
         return Entretien (

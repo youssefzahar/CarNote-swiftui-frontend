@@ -29,7 +29,7 @@ public class ProduitViewModel : ObservableObject{
     
     
     
-    var url:String = "http://172.17.0.156:3000/api/product/"
+    var url:String = "http://172.17.2.220:3000/api/product/"
     
  /*  init() {
         

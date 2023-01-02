@@ -15,14 +15,21 @@ struct ModifyUserView: View {
     @State private var selectedImageData: Data? = nil
 
     @ObservedObject var viewModel = UserViewModel()
+    
+    ///traduction
+    let modifyprof  : LocalizedStringKey = "Modify Your Profile !"
+    let emailmod  : LocalizedStringKey = "Email"
+    let num  : LocalizedStringKey = "Phone Number"
+    let saveprof  : LocalizedStringKey = "Save Profile"
+    
     var body: some View {
         NavigationView{
             ZStack{
-                Text("Modify Your Profile !").font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-300)
+                Text(modifyprof).font(.system(size: 50, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:0,y:-300)
                 VStack  (alignment: .leading, spacing: 10){                    
                     VStack{
                         
-                        Text("Email : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
+                        Text(emailmod).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-110)
                         
                         HStack{
                             Image(systemName: "person").foregroundColor(.blue)
@@ -34,7 +41,7 @@ struct ModifyUserView: View {
                         .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
                     }
                     VStack{
-                        Text("Phone Number : ").font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-70)
+                        Text(num).font(.system(size: 20, design: .rounded)).bold().padding().foregroundColor(.blue).offset(x:-70)
                         HStack{
                             Image(systemName: "phone").foregroundColor(.blue)
                                 .foregroundColor(.gray).font(.headline)
@@ -50,8 +57,8 @@ struct ModifyUserView: View {
                         HStack {
                             Spacer().frame(width: 30)
 
-                            NavigationLink(destination: UserProfileView()){
-                                Text("Save Profile").foregroundColor(.white)
+                          /*  NavigationLink(destination: UserProfileView()){
+                                Text(saveprof).foregroundColor(.white)
                             }
                             .foregroundColor(.white)
                             .frame(width: 300, height: 50)
@@ -59,7 +66,19 @@ struct ModifyUserView: View {
                             .cornerRadius(10)
                             .simultaneousGesture(TapGesture().onEnded{
                                 viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
-                            })
+                            })*/
+                            
+                            
+                            Button(saveprof, action: {
+                                viewModel.UpdateUser(_id: UserViewModel.currentUser?._id ?? "", email: viewModel.email, phone_number: viewModel.phone_number)
+                            }
+                                     
+                                   
+                            )
+                            .foregroundColor(.white)
+                            .frame(width: 300, height: 50)
+                            .background(Color.blue)
+                            .cornerRadius(10)
                         }
                 }
             }

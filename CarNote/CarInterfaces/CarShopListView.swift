@@ -15,11 +15,10 @@ struct CarShopListView: View {
 
     
     @State var cars : [Car] = []
-    let forSale  : LocalizedStringKey = "Cars For Sale"
-
+    
     
     var body: some View {
-        NavigationView{
+      //  NavigationView{
         Text("")
             ScrollView{
                 LazyVGrid(columns: columns, spacing: 20){
@@ -34,9 +33,9 @@ struct CarShopListView: View {
                     }
                 }
                     .padding()
-            } .navigationTitle(Text(forSale).foregroundColor(.blue))
-                .navigationTitle(Text("Car Shop"))
-                /*.toolbar{
+            } .navigationTitle(Text("Cars For Sale").foregroundColor(.blue))
+               /* .navigationTitle(Text("Car Shop"))
+                .toolbar{
                     NavigationLink{
                       CarView(car: Car)
                            
@@ -45,7 +44,7 @@ struct CarShopListView: View {
                         
                     }
                 }*/
-            }.navigationBarHidden(false)
+           // }
             .onAppear{
                 carViewModel.GetPublicCars() {success, result in
                     if success {

@@ -41,8 +41,13 @@ struct CartView: View {
                     message = "Cancelled"
                 case .succeeded:
                     message = "Your payment has been successfully completed!"
-                //cartManager.emptyCart()
+
             }
+            /*
+             Button("Empty Cart", action: {
+                 cartManager.emptyCart()
+             }
+             */
             
         }
         
@@ -50,8 +55,9 @@ struct CartView: View {
     
     
     var body: some View {
-        
+
         ScrollView{
+
             if cartManager.ListProducts.count > 0 {
                 ForEach(cartManager.ListProducts, id:  \.id){
                     product in
@@ -62,6 +68,8 @@ struct CartView: View {
                     Spacer()
                     Text("\(cartManager.total) DT")
                         .bold()
+                    
+                    
                 }
                 
                 Section {
@@ -81,6 +89,10 @@ struct CartView: View {
                 
                 Text(message)
                     .font(.headline)
+               /* Button("Empty Cart", action: {
+                    cartManager.emptyCart()
+                }*/
+            
                 
                 
             }
@@ -100,6 +112,7 @@ struct CartView: View {
         
         .navigationTitle(Text(chariot))
         .padding(.top)
+        
     }
 }
 

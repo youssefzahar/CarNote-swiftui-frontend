@@ -36,7 +36,7 @@ struct HomeUser: View {
             
             EntretienView()
                 .tabItem{
-                Image(systemName: "date")
+                Image(systemName: "calendar")
                 Text("Entretien")
             }
             

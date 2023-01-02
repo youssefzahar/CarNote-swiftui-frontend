@@ -20,49 +20,60 @@ struct ProductDetail: View {
     
     
     var body: some View {
-            VStack (alignment: .leading) {
+        VStack (alignment: .leading ) {
+            
+            
+            
+            
+            VStack{
                 
-                AsyncImage(url: URL(string: "http://172.17.0.156:3000/uploads/"+product.image!),
-                content:{ image in
-                        image
+                
+                AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+product.image!),
+                           content:{ image in
+                    image
                         .resizable()
                         .cornerRadius(20)
-                        .frame(width: 180)
+                        .frame(width: 350)
                         .scaledToFit()
-                    },placeholder: { })
+                },placeholder: { })
                 
                 
                 HStack{
                     Text(Title)
                         .font(.title)
-                        .fontWeight(.bold)
+                        .fontWeight(.bold).foregroundColor(.blue)
                     Text(product.title)
                         .font(.title)
                         .fontWeight(.bold)
                 }
                 
+                
+                
                 //                Rating
                 
-                Text(Description)
-                    .fontWeight(.medium)
-                    .padding(.vertical, 8)
-                Text(product.description!)
-                    .lineSpacing(8.0)
-                    .opacity(0.6)
+                HStack{
+                    
+                }
                 
                 //                Info
                 HStack (alignment: .top) {
                     VStack (alignment: .leading) {
+                        Text(Description)
+                            .fontWeight(.medium)
+                            .foregroundColor(.blue)
+                        Text(product.description!)
+                            .lineSpacing(8.0)
+                            .opacity(0.6)
                         HStack{
-                            Text(price)
-                                .opacity(0.6)
-                            Text("\(product.prix!,format: .number) DT").opacity(0.6)
+                            Text(price).foregroundColor(.blue)
+                            
+                            Text("\(product.prix!,format: .number) €").foregroundColor(.red)
                         }
-
+                        
                         Spacer().frame(width: 30)
                         
                         if product.owned_by! == UserViewModel.currentUser?._id ?? ""
-
+                            
                         {
                             Button(Delete,action:{viewModel.DeleteProduit(_id: product._id!)
                                 
@@ -81,11 +92,12 @@ struct ProductDetail: View {
                                     .cornerRadius(10)
                             }
                         }
-
+                        
                     }
                     
                     .frame(maxWidth: .infinity, alignment: .leading)
                 }
+            }.background(.ultraThinMaterial).cornerRadius(20)
                 .padding(.vertical)
             }
             .padding()

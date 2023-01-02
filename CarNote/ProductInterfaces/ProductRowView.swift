@@ -14,7 +14,7 @@ struct ProductRowView: View {
     
     var body: some View {
         HStack(spacing: 20){
-            AsyncImage(url: URL(string: "http://172.17.0.156:3000/uploads/"+product.image!),
+            AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+product.image!),
                 content:{ image in
                     image
                 .resizable()
