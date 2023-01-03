@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "593F7B2C-2E36-4236-A309-07C2DE3F519B"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "41310378-65C0-46FC-A795-1A0058EF272F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Chat/ProductRowView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ProductRowView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "41310378-65C0-46FC-A795-1A0058EF272F - b610cec5501a3b6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "carNote.ProductRowView.cartManager.getter : carNote.CartManager"
+                  moduleName = "carNote"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youssef-mariem/Desktop/untitled%20folder/CarNote-dev/CarNote/Chat/ProductRowView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "41310378-65C0-46FC-A795-1A0058EF272F - 3f1130d3ea129661"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "carNote.ProductRowView.$cartManager.getter : SwiftUI.EnvironmentObject&lt;carNote.CartManager&gt;.Wrapper"
+                  moduleName = "carNote"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/youssef-mariem/Desktop/untitled%20folder/CarNote-dev/CarNote/Chat/ProductRowView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
