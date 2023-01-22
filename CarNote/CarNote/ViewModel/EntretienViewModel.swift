@@ -23,7 +23,7 @@ public class EntretienViewModel : ObservableObject {
     
     
     
-    var url:String = "http://172.17.2.220:3000/api/entretien/"
+    var url:String = "http://172.17.1.24:3000/api/entretien/"
     
     /*  init() {
      
@@ -92,7 +92,7 @@ public class EntretienViewModel : ObservableObject {
         let parametres: [String: Any] = [
             "entretientID": _id
         ]
-        AF.request(url+"delete" , method: .delete,parameters: parametres,encoding: JSONEncoding.default)
+        AF.request(url+"delete" , method: .post,parameters: parametres,encoding: JSONEncoding.default)
             .responseJSON {
                 (response) in
                 switch response.result {
@@ -113,7 +113,7 @@ public class EntretienViewModel : ObservableObject {
             description: jsonItem["description"].stringValue,
            // date: jsonItem["date"].encode(to: Date(from: date as! Decoder))
            // date:DateUtils.formatFromString(string: jsonItem["date"].stringValue),
-            date: jsonItem["date"].rawValue as? Date
+            date:DateUtils.formatFromString(string: jsonItem["date"].stringValue)
          )
         
     }

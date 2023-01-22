@@ -24,12 +24,6 @@ struct HomeVendeur: View {
                 Text("Add")
             }
             
-            UserProfileView()
-                .tabItem{
-                Image(systemName: "person")
-                Text("Account")
-            }
-            
             
         }
     }

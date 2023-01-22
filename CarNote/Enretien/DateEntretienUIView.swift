@@ -54,13 +54,7 @@ struct DateEntretienUIView: View {
                     .frame(width: 300, height: 30)}
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color.gray,lineWidth: 1))
-                
-                
-                NavigationLink(destination: CarListView()){
-                    Text(Add_Entretien).foregroundColor(.blue)
-                }.simultaneousGesture(TapGesture().onEnded{
-                    viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")
-                })
+
                 Button(Add_Entretien, action: {
                     
                     viewModel.AddEntretien(title:viewModel.title, description:viewModel.description, date: viewModel.date, owned_by: UserViewModel.currentUser?._id ?? "")

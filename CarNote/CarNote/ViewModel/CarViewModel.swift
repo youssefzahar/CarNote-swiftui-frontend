@@ -32,7 +32,7 @@ class CarViewModel : ObservableObject{
     var kilometrage : Int = 0
     @Published var showFileUpload = false
     
-    var url:String = "http://172.17.2.220:3000/api/car/"
+    var url:String = "http://172.17.1.24:3000/api/car/"
     
     
     func DeleteCar(_id: String) {

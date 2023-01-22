@@ -25,7 +25,7 @@ struct CarDetails: View {
         
         VStack (alignment: .leading) {
             
-            AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+car.image!),
+            AsyncImage(url: URL(string: "http://172.17.1.24:3000/uploads/"+car.image!),
                                                                    content:{ image in
                                                             image
                     .resizable()

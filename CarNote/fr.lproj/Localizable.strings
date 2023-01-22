@@ -1,0 +1,120 @@
+/*
+  Localizable.strings
+  CarNote
+
+  Created by Apple Esprit on 22/1/2023.
+  
+*/
+"Login" = "Connexion";
+
+
+
+//add car
+
+ "Add New Car"    = "Ajouter une nouvelle voiture";
+ "Model  : "  = "Modèle : ";
+ "Type : "   = "Type : ";
+ "Brand: "  = "Marque: ";
+ "Registration : "    = "Immatricule : ";
+"Horse Power : "   = "Puissance : ";
+"Fuel : "  = "Carburant : ";
+"Description : "  = "Description : ";
+"Add Car" = "Ajouter Voiture";
+
+//carlistview
+
+"My Cars" = "Mes Voitures";
+
+//caroplistview
+"Cars For Sale" = "Voiture à Vendre";
+
+//cardetails
+
+"Type : "       = "Type : ";
+"Horse Power" = "Cheveaux";
+"Horse Power : " = "Puissance : ";
+"Fuel : " = "Carburant : ";
+"Description : " = "Description : ";
+"Features" = "Specifications";
+"Delete" = "Supprimer";
+"Put For Sale" = "Mettre à vendre";
+
+//addproduct
+
+"Add New Product ! " ="Ajouter Nouveau Produit ! ";
+"Title : "="Titre : ";
+"Stock : "="Stock : ";
+"Price : "="Prix : ";
+"Description : "="Description : ";
+"Add Product "="Ajouter Produit";
+
+//myproductview
+"Product Shop" = "Magasin";
+
+//updateproduct
+
+"Update Product"="Mettre à jour Produit";
+
+//cart -> confirmation
+"Payment Completed!" = "Paiement Terminé!";
+
+//cartview
+
+"Payment Information" = "Informations de Paiement";
+"Pay" = "Payer";
+"My Cart" = "Mon Panier";
+
+//entretienview
+
+"Maintenance"="Entretien";
+
+// dateentrenuiview
+"Pick a Date !"="Choisissez une date !";
+"Date entretien"="Date entretien";
+"Add Entretien"="Ajouter une maintenance";
+
+//changepassword
+" Change Password " = " Changer le mot de passe ";
+" New Password " = " Changer le mot de passe ";
+" Confirme New Password : " = " Confirmer le nouveau mot de passe : ";
+"Save Profile" = "Enregistrer le profil";
+
+//userprofile
+"Pick Date " = "Choisir une Date ";
+"Logout" = "Déconnexion";
+"Update Account" = "Mettre à jour le compte";
+"Change Password" = "Modifier le mot de passe";
+
+//login
+"Password" = "Mot de passe";
+"Forgot Password ?" = "Mot de passe oublié ?";
+"Register" = "S'inscrire";
+"New to NoteCar ?" = "Nouveau sur CarNote ?";
+"User Name" = "Nom d'Utilisateur";
+
+//registerview
+"First Name" = "Prenom";
+"Last Name" = "Nom";
+"Email" = "Email";
+"Phone Number" = "Numero de Telephone";
+"Role" = "Role";
+"By making an Account you accept the" = "En créant un compte, vous acceptez le";
+" Terms And Conditions Of Usage" = " Termes et conditions d'utilisation";
+
+//verifyview
+"Verification" = "Verification";
+"Enter the verification code we just send you on your email address ." = "Saisissez le code de vérification que nous venons de vous envoyer sur votre adresse e-mail .";
+"Enter your code" = "Tapez votre code";
+"Verify" = "Verifier";
+
+//forgotpasswor
+
+"Enter the email address associated  with your account ." = "Entrez l'adresse e-mail associée à votre compte .";
+"Enter you email address" = "Entrez votre adresse e-mail";
+"Submit" = "Soumettre";
+
+//modify user
+"Modify Your Profile !" = "modifier Votre Profile !";
+
+
+"Account" = "Compte";

@@ -13,15 +13,24 @@ struct CarListView: View {
 
     
     @State var cars : [Car] = []
-    
+    @State private var isActive: Bool = false
+
+    let Account  : LocalizedStringKey = "Account"
     let mycars  : LocalizedStringKey = "My Cars"
 
     
     var body: some View {
-        NavigationView{
-          
+       // NavigationView{
             ScrollView{
-              
+                HStack{
+                    Text(mycars).bold().font(.system(size: 36))
+                    Spacer()
+                    NavigationLink(isActive: $isActive){
+                        UserProfileView()
+                    } label: {
+                        Text(Account)
+                    }
+                }
                 
                 LazyVGrid(columns: columns, spacing: 20){
                     ForEach(0 ..< cars.count, id:  \ .self ) {
@@ -37,7 +46,14 @@ struct CarListView: View {
 
                     .padding()
                 } .navigationTitle(Text(mycars))
-            }.navigationBarHidden(false)
+                .toolbar{
+                NavigationLink(isActive: $isActive){
+                    UserProfileView()
+                } label: {
+                    Text(Account)
+                }
+                }
+           // }.navigationBarHidden(false)
             .onAppear{
                 carViewModel.GetCars() {success, result in
                     if success {

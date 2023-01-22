@@ -1,0 +1,120 @@
+/*
+  Localizable.strings
+  CarNote
+
+  Created by Apple Esprit on 22/1/2023.
+  
+*/
+"Login" = "Login";
+
+
+
+//add car
+
+ "Add New Car"    = "Add New Car";
+ "Model  : "  = "Model : ";
+ "Type : "   = "Type : ";
+ "Brand: "  = "Brand: ";
+ "Registration : "    = "Registration : ";
+"Horse Power : "   = "Horse Power : ";
+"Fuel : "  = "Fuel : ";
+"Description : "  = "Description : ";
+"Add Car" = "Add Car";
+
+//carlistview
+
+"My Cars" = "My Cars";
+
+//caroplistview
+"Cars For Sale" = "Cars For Sale";
+
+//cardetails
+
+"Type : "       = "Type : ";
+"Horse Power" = "Horse Power";
+"Horse Power : " = "Horse Power : ";
+"Fuel : " = "Fuel : ";
+"Description : " = "Description : ";
+"Features" = "Features";
+"Delete" = "Delete";
+"Put For Sale" = "Put For Sale";
+
+//addproduct
+
+"Add New Product ! " ="Add New Product ! ";
+"Title : "="Title : ";
+"Stock : "="Stock : ";
+"Price : "="Price : ";
+"Description : "="Description : ";
+"Add Product "="Add Product";
+
+//myproductview
+"Product Shop" = "Shop";
+
+//updateproduct
+
+"Update Product"="Update Product";
+
+//cart -> confirmation
+"Payment Completed!" = "Payment Completed!";
+
+//cartview
+
+"Payment Information" = "Payment Information";
+"Pay" = "Pay";
+"My Cart" = "My Cart";
+
+//entretienview
+
+"Maintenance"="Maintenance";
+
+// dateentrenuiview
+"Pick a Date !"="Pick a Date !";
+"Date entretien"="Maintenance Date";
+"Add Entretien"="Add Entretien";
+
+//changepassword
+" Change Password " = " Change Password ";
+" New Password " = " New Password ";
+" Confirme New Password : " = " Confirme New Password : ";
+"Save Profile" = "Save Profile";
+
+//userprofile
+"Pick Date " = "Pick Date ";
+"Logout" = "Logout";
+"Update Account" = "Update Account";
+"Change Password" = "Change Password";
+
+//login
+"Password" = "Password";
+"Forgot Password ?" = "Forgot Password ?";
+"Register" = "Register";
+"New to NoteCar ?" = "New to NoteCar ?";
+"User Name" = "User Name";
+
+//registerview
+"First Name" = "First Name";
+"Last Name" = "Last Name";
+"Email" = "Email";
+"Phone Number" = "Phone Number";
+"Role" = "Role";
+"By making an Account you accept the" = "By making an Account you accept the";
+" Terms And Conditions Of Usage" = " Terms And Conditions Of Usage";
+
+//verifyview
+"Verification" = "Verification";
+"Enter the verification code we just send you on your email address ." = "Enter the verification code we just send you on your email address .";
+"Enter your code" = "Enter your code";
+"Verify" = "Verify";
+
+//forgotpasswor
+
+"Enter the email address associated  with your account ." = "Enter the email address associated  with your account .";
+"Enter you email address" = "Enter you email address";
+"Submit" = "Submit";
+
+//modify user
+"Modify Your Profile !" = "Modify Your Profile !";
+
+
+"Account" = "Account";

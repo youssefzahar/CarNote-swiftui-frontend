@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeUser: View {
     var body: some View {
         TabView {
+            
             ProductListUIView()  .tabItem{
                     Image(systemName: "cart")
                     Text("Shop")
@@ -22,30 +23,17 @@ struct HomeUser: View {
                 Image(systemName: "plus.circle.fill")
                 Text("Add")
             }
+            
             CarShopListView().tabItem{
                 Image(systemName: "car.side.fill")
                 Text("Car Shop")
-            }
-           
-            UserProfileView()
-                .tabItem{
-                Image(systemName: "person")
-                Text("Account")
-            }
-            
+            }      
             
             EntretienView()
                 .tabItem{
                 Image(systemName: "calendar")
                 Text("Entretien")
             }
-            
-           /* LoginScreenView(isLogin: false)
-                .tabItem{
-                Image(systemName: "lock.fill")
-                Text("Logout")
-            }*/
-
             
             
         }

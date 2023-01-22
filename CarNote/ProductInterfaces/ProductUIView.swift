@@ -23,7 +23,7 @@ struct ProductUIView: View {
     var body: some View {
         ZStack(alignment: .topLeading){
             ZStack(alignment: .bottom){
-                AsyncImage(url: URL(string: "http://172.17.2.220:3000/uploads/"+product.image!),
+                AsyncImage(url: URL(string: "http://172.17.1.24:3000/uploads/"+product.image!),
                                                                        content:{ image in
                                                                 image
                         .resizable()

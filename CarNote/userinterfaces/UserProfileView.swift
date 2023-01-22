@@ -27,12 +27,12 @@ struct UserProfileView: View {
 
     
     var body: some View {
-        NavigationView{
+        //NavigationView{
             
             VStack{
                 VStack{
                     
-                    if role == "User" {
+                    /*if role == "User" {
                         
                         NavigationLink(destination:DateEntretienUIView()) {
                             Text(pickdate)
@@ -43,7 +43,7 @@ struct UserProfileView: View {
                         Image(systemName: "calendar.badge.plus")
                             .foregroundColor(.blue)
                             .offset(x:80,y:-85)
-                    }
+                    }*/
                     
                     
                     
@@ -109,7 +109,7 @@ struct UserProfileView: View {
                     .cornerRadius(10)
                 
                 
-            }}.navigationBarHidden(false)
+            }//}.navigationBarHidden(false)
     }
 }
 

@@ -16,18 +16,15 @@ struct EntretienUIView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading){
-            
-            
-            
-
-          
             ZStack(alignment: .bottom){
                 
                 VStack(alignment: .leading){
                     Text(entretien.title)
                         .bold().foregroundColor(.blue)
                   //  Text("Your entretien Date is \(entretien.date!)")
-                    Text("Your entretien Date is \(Date.now)")
+                    //Text("Your entretien Date is \(Date.now)")
+                    Text("Your entretien Date is \(entretien.date!)")
+
                     
                     Button(Delete,action:{EntretienViewModel().DeleteEntretien(_id: entretien._id!)
                         

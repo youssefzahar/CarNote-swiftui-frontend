@@ -10,7 +10,9 @@ import SwiftUI
 
 
 struct MyproductView: View {
+    @State private var isActive: Bool = false
 
+    let Account  : LocalizedStringKey = "Account"
     let ProductShop  : LocalizedStringKey = "Product Shop"
 
     
@@ -18,8 +20,18 @@ struct MyproductView: View {
         @StateObject var  productViewModel = ProduitViewModel()
     @State var products : [Product] = []
         var body: some View {
-            NavigationView{
+           // NavigationView{
                 ScrollView{
+                    HStack{
+                        Text(ProductShop).bold().font(.system(size: 36))
+                        Spacer()
+                        NavigationLink(isActive: $isActive){
+                            UserProfileView()
+                        } label: {
+                            Text(Account)
+                        }
+                    }
+                    
                     LazyVGrid(columns: columns, spacing: 20){
                         ForEach(0 ..< products.count, id:  \ .self ) {
                             index in
@@ -31,7 +43,7 @@ struct MyproductView: View {
                     .padding()
                 }
                    .navigationTitle(Text(ProductShop))
-                 }.navigationBarHidden(false)
+                 //}.navigationBarHidden(false)
             .onAppear{
                 productViewModel.GetMyProducts {success, result in
                     if success {
